@@ -1,0 +1,19 @@
+import './css/header.css';
+import { NavLink } from "react-router-dom";
+
+export function Header() {
+    return (
+        <header className="flex header">
+            <section className="flex container-lg header__section"> 
+                <NavLink to="home" className="link header__logo">
+                    near
+                    <span>state</span>
+                </NavLink>
+                <nav className="header__nav">
+                    <NavLink to="home" className="link header__nav-link1"> Informacje </NavLink>
+                    <NavLink to="home" className="link header__nav-link2"> Kontakt </NavLink>
+                </nav>
+            </section>
+        </header>
+    )
+}
