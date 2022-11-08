@@ -1,0 +1,11 @@
+.window {
+    width: 100%;
+    padding: 1rem;
+}
+
+.window_module {
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 0.5rem;
+}
