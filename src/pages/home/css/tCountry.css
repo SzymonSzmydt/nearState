@@ -1,0 +1,15 @@
+.weather_img {
+    width: 2.25rem;
+    height: 2.25rem;
+}
+
+.celcius {
+    align-self: center;
+    font-size: 1.75rem;
+    margin: 0 1rem;
+}
+
+.weather_city {
+    padding:c 0 1rem;
+    border: 1px solid red;
+}

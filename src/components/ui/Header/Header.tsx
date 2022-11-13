@@ -10,8 +10,8 @@ export function Header() {
                     <span>state</span>
                 </NavLink>
                 <nav className="header__nav">
-                    <NavLink to="home" className="link header__nav-link1"> Informacje </NavLink>
-                    <NavLink to="home" className="link header__nav-link2"> Kontakt </NavLink>
+                    <NavLink to="home" className="link a"> Informacje </NavLink>
+                    <NavLink to="home" className="link a"> Kontakt </NavLink>
                 </nav>
             </section>
         </header>

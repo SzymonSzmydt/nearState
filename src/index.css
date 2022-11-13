@@ -1,34 +1,75 @@
 :root {
   --color-body-bg: rgb(240, 255, 246);
-  --color-header-bg: rgb(240, 255, 246);
+  --color-header-bg: rgb(240, 255, 246);  
+  --color-window-module: #fdfdfd;
 
   --color-primary: rgba(60, 127, 204, 1);
-  --color-third: #BF3E8E;
+  --color-white: #FFF;
 
-  --color-text: #002843;
-  --color-text-hover: rgb(21, 175, 85);
+  --weather-hu: rgba(0, 162, 255, 1);
+  --weather-pr: #00C0FF;
+  --weather-ws: #00D8E6;
+  --weather-wd: #00EAB9;
+
+  --color-text: #4B4A54;
+  --color-text-hover: rgb(42, 207, 78);
 
   --color-logo: #00A3E0;
   --color-home-title: rgba(255, 255, 255, 0.699);
 
+  --box-shadow: 
+  -8px -8px 20px 0 #fff9,
+  -6px -6px 6px 0 #fff9,
+  8px 8px 20px 0 #0001,
+  5px 5px 6px 0 #0001,
+  inset 0 0 0 0 #fff9,
+  inset 0 0 0 0 #0001,
+  inset 0 0 0 0 #0001;
+
   --header-height: 5rem; 
+  --radius: 6px;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url("./assets/fonts/Dosis-Light.ttf") format("truetype");
+  font-weight: 300;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url("./assets/fonts/Dosis-Regular.ttf") format("truetype");
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url("./assets/fonts/Dosis-Medium.ttf") format("truetype");
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url("./assets/fonts/Dosis-SemiBold.ttf") format("truetype");
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'Dosis';
+  src: url("./assets/fonts/Dosis-Bold.ttf") format("truetype");
+  font-weight: 700;
 }
 
 * {
   box-sizing: border-box;
 }
 
-@font-face {
-  font-family: 'Dosis', sans-serif;
-	src: url('../assets/fonts/Dosis-VariableFont_wght.ttf') format('truetype') tech('variations');
-  font-style: normal;
-  font-weight: 1 900;
-
-}
-
 body {
   font-family: 'Dosis', sans-serif;
   font-size: 16px;
+  font-weight: 400;
   color: var(--color-text);
   background-color: var(--color-body-bg);
 }

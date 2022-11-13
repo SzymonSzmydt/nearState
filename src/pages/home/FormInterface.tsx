@@ -1,42 +1,24 @@
-import "./css/form_interface.css";
-import { WindowModule } from "./../../components/ui/window/WindowModule";
-import { URL, API_KEY } from "../../contex/env";
+import { API_KEY } from '../../contex/env';
 import { useState } from "react";
 import { TCountryInfo } from "./TCountryInfo";
 
-interface RoadInfo {
-    drive_on: string;
-    speed_in: string;
-}
-
-interface FetchedData {
-    annotations: string[];
-    [key: number]: any;
-}
-
-export function FormInterface() {
-    const [country, setCountry] = useState<FetchedData | []>([]);
+export function FormInterFace() {
+    const [dataFromApi, setCountryDataFromApi] = useState<string[] | any>([]);
 
     const handleClick = async () => {
         try {
-            const response = await fetch(`${URL}de&key=${API_KEY}&pretty=1`);
+            const response = await fetch(`http://api.airvisual.com/v2/nearest_city?key=${API_KEY}`);
             const data = await response.json();
-            setCountry(data.results);
+            setCountryDataFromApi(data.data);
         } catch (err) {
             console.error(err);
         }
     };
 
     return (
-        <WindowModule>
-            <TCountryInfo
-                continent={country[0]?.components.continent}
-                country={country[0]?.components.country}
-                country_code={country[0]?.components.country_code}
-                political_union={country[0]?.components.political_union}
-                iso_code={country[0]?.annotations['currency'].iso_code}
-            />
+        <>
+            <TCountryInfo {...dataFromApi} />
             <button onClick={handleClick}>get API</button>
-        </WindowModule>
+        </>
     );
 }
