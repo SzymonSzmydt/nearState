@@ -6,7 +6,7 @@
 .window_module {
     flex-wrap: wrap;
     width: 100%;
-    margin: 0.5rem;
+    margin: 0.5rem 0.25rem;
     padding: 0.5rem;
     background-color: var(--color-window-module);
     box-shadow: var(--box-shadow                                                                              );
@@ -19,13 +19,13 @@
 
 .weather-box {
     flex-direction: column;
-    align-items: stretch;
+    align-items: center;
     width: 5rem;
     height: 5rem;
-    align-items: center;
-    color: var(--color-white);
-    border-radius: var(--radius);
     margin: 0.5rem;
+
+    color: var(--color-text);
+    border-radius: var(--radius);
     box-shadow: var(--box-shadow);
 }
 
@@ -37,5 +37,25 @@
 
 .weather_box-b {
     font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.weather_quality-box-a {
+    
+}
+
+.legend {
+    justify-content: space-between;
+    width: 8.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    margin: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    user-select: none;
+    border-radius: var(--radius);
+}
+
+article {
     font-weight: 500;
 }

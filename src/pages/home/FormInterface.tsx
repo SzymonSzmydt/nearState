@@ -1,6 +1,7 @@
 import { API_KEY } from '../../contex/env';
 import { useState } from "react";
 import { TCountryInfo } from "./TCountryInfo";
+import { WeatherQuality } from '../../components/ui/window/WeatherQuality';
 
 export function FormInterFace() {
     const [dataFromApi, setCountryDataFromApi] = useState<string[] | any>([]);
@@ -17,6 +18,7 @@ export function FormInterFace() {
 
     return (
         <>
+            <WeatherQuality/>
             <TCountryInfo {...dataFromApi} />
             <button onClick={handleClick}>get API</button>
         </>

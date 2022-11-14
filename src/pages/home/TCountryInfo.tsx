@@ -4,24 +4,21 @@ import { WindowModule } from '../../components/ui/window/WindowModule';
 import { WeatherData } from '../../components/ui/window/WeatherData';
 
 export function TCountryInfo( {city, country, state, location, current} : AirVisualApi) {
-    console.log(current?.weather);
-      
+    console.log(current?.pollution);
+    
     return (
         <section className="flex wrap">
-            <WindowModule>
-                <div className="flex">
-                    {current ? (
-                        <img
-                            src={require(`../../assets/${current.weather.ic}.png`)}
-                            className="weather_img"
-                            alt='aktualna temperatura'
-                        />
-                    ) : null}
-                    <span className="celcius"> {current?.weather.tp} </span>
-                    <span className="weather_box_b"> {current ? '\u00b0' : null} </span>
-                    <span className="celcius">{city}</span>
-                </div>
-            </WindowModule>
+            {current ? <WindowModule>
+                <section className="flex weather_box-city">
+                    <img src={require(`../../assets/${current.weather.ic}.png`)}
+                         className="weather_img"
+                         alt='aktualna temperatura'
+                    />
+                    <span className="celcius"> {current.weather.tp} </span>
+                    <span className="celcius-symbol"> {'\u00b0'} </span>
+                    <span className="celcius weather_city">{city}</span>
+                </section>
+            </WindowModule> : null}
             <WindowModule>
                 <WeatherData
                     name={"Wilgotność"}
@@ -37,7 +34,7 @@ export function TCountryInfo( {city, country, state, location, current} : AirVis
                 />
                 <WeatherData
                     name={"Wiatr"}
-                    value={current ? current.weather.ws * 10 : 0}
+                    value={current ? (current.weather.ws * 0.001 * 3600).toFixed(1) : 0}
                     symbol={"km/h"}
                     bgcolor={"var(--weather-ws)"}
                 />

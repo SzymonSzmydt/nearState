@@ -1,17 +1,25 @@
 :root {
-  --color-body-bg: rgb(240, 255, 246);
+  --color-body-bg: rgb(240, 253, 255);
   --color-header-bg: rgb(240, 255, 246);  
-  --color-window-module: #fdfdfd;
+  --color-window-module: #ffffff;
 
   --color-primary: rgba(60, 127, 204, 1);
   --color-white: #FFF;
 
-  --weather-hu: rgba(0, 162, 255, 1);
+  --weather-img: #628DE9;
+  --weather-hu: #00a2ff;
   --weather-pr: #00C0FF;
   --weather-ws: #00D8E6;
   --weather-wd: #00EAB9;
 
-  --color-text: #4B4A54;
+  --legend-good: #9BF68A;
+  --legend-moderate: #F8E277;
+  --legend-semi-unhealthy: #D9A152;
+  --legend-unhealthy: #f89993;
+  --legend-very-unhealthy: #fd6f6a;
+  --legend-hazardous: #d692ce;
+  
+  --color-text: #000000;
   --color-text-hover: rgb(42, 207, 78);
 
   --color-logo: #00A3E0;
