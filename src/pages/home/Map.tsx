@@ -1,13 +1,17 @@
 import './css/map.css';
-import { FormInterFace } from './FormInterFace';
+import { WeatherQuality } from './WeatherQuality';
+import { TCountryInfo } from './TCountryInfo';
 
 export function Map() {
     return (
-            <section className="flex map-box container-lg">
+            <section className="map-box wrap container-lg">
                 <div  className="flex map__box-left">
-                    <FormInterFace/>
+                    <WeatherQuality/>
                 </div>
-                <div className="flex map__box-right"/>   
+                <div className="map__box-right">
+                    <TCountryInfo /> 
+                    <div className="map__img"/> 
+                </div>
             </section>
     )
 }

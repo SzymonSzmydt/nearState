@@ -2,9 +2,28 @@ import './css/tCountry.css';
 import { AirVisualApi } from '../../contex/types/AirVisualApi';
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { WeatherData } from '../../components/ui/window/WeatherData';
+import { useState, useEffect } from 'react';
+import { API_KEY } from '../../contex/env';
 
-export function TCountryInfo( {city, country, state, location, current} : AirVisualApi) {
+export function TCountryInfo() {
+    const [dataFromApi, setCountryDataFromApi] = useState<AirVisualApi | any>([]);
+    const {city, country, state, location, current} = dataFromApi;
+
     console.log(current?.pollution);
+
+    const handleClick = async () => {
+        try {
+            const response = await fetch(`http://api.airvisual.com/v2/nearest_city?key=${API_KEY}`);
+            const data = await response.json();
+            setCountryDataFromApi(data.data);
+        } catch (err) {
+            console.error(err);
+        }
+    };
+
+    useEffect(()=> {
+        handleClick();
+    }, [])
     
     return (
         <section className="flex wrap">

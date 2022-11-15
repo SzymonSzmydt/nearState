@@ -1,0 +1,41 @@
+.weather_box-a {
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+}
+
+.weather_box-b {
+    font-size: 0.8rem;
+    font-weight: 600;
+}
+
+.legend {
+    justify-content: space-between;
+    width: 8.5rem;
+    height: 2.5rem;
+    padding: 0 0.75rem;
+    margin: 0.25rem;
+    font-size: 0.85rem;
+    font-weight: 600;
+    user-select: none;
+    border-radius: var(--radius);
+}
+
+article {
+    font-weight: 500;
+    padding: 0.5rem;
+}
+
+.weather_quality-list {
+    position: relative;
+}
+
+.weather_quality-list-ul > li {
+    cursor: pointer;
+    font-weight: 600;
+    color: rgb(121, 7, 77);
+}
+
+.weather_quality-list-ul > li:hover {
+    color: rgb(7, 114, 121);
+}

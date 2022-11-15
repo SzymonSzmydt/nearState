@@ -1,0 +1,54 @@
+@keyframes slowOpenWindow {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+.chemical {
+    animation: slowOpenWindow 0.3s ease-in;
+    position: absolute;
+    top: -2rem;
+    right: -8rem;
+    left: 12rem;
+    z-index: 1;
+}
+
+.chemical-box {
+    padding: 0.5rem;
+}
+
+.chemical-box-description strong {
+    margin-right: 1rem;
+    font-size: 0.85rem;
+}
+
+@media screen and (max-width: 800px) {
+    .chemical {
+        position: absolute;
+        bottom: -2rem;
+        right: 0;
+        left: 0;
+    }
+    
+    .chemical-box {
+        padding: 0.5rem;
+    }
+}
+
+.close {
+    float: right;
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-image: url('../../assets/close.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.8s transform;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}

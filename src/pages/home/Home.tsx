@@ -1,3 +1,5 @@
+import './css/home.css';
+
 import { Window } from './../../components/ui/window/Window';
 import { Map } from './Map';
 

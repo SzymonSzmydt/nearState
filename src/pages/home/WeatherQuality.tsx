@@ -1,8 +1,16 @@
-import { Legend } from '../../../pages/home/Legend';
-import { WindowModule } from './WindowModule';
-
+import { WindowModule } from '../../components/ui/window/WindowModule';
+import { Legend } from './Legend';
+import { Chemical } from '../chemical/Chemical';
+import { chemicals } from '../../contex/types/ChemicalData';
+import { useState } from 'react';
+    
 export function WeatherQuality() {
-
+    const [ popUpWindow, setPopUpWindow ] = useState(false);
+    const [ chemicalsIndex, setChemicalsIndex ] = useState(0);
+    const handleClick = (indexOfChemical: number) => {
+        setPopUpWindow( true);
+        setChemicalsIndex(indexOfChemical);
+    }
     return (
         <WindowModule>
             <div>
@@ -42,16 +50,21 @@ export function WeatherQuality() {
                 <section>
                     <h3>AQI (ang. Air Quality Index)</h3>
                     <article>
-                        Jest to ocena jakości powietrza, która obejmuje poziom pyłów zawieszonych
-                        PM2.5 i PM10 oraz niektórych zanieczyszczeń gazowych, takich jak:
-                        <ul>
-                            <li>dwutlenku siarki (S0<sub>2</sub>)</li>
-                            <li>ozonu (O<sub>3</sub>)</li>
-                            <li>tlenku azotu (NO)</li>
-                            <li>tlenku węgla (CO)</li>
-                            <li>benzen (C<sub>6</sub>H<sub>6</sub>)</li>
-                        </ul>
-                        które najcz esciej są wynikiem spalania paliw.
+                        Jest to ocena jakości powietrza, która obejmuje poziom
+                        pyłów zawieszonych PM2.5 i PM10 oraz niektórych
+                        zanieczyszczeń gazowych, takich jak:
+                        <div className="weather_quality-list">
+                            <ul className="weather_quality-list-ul">
+                              { chemicals.map((item, index) => (
+                                <li key={item.name} onClick={()=> handleClick(index)}>
+                                    { `${item.name} ${item.pattern}` }
+                                </li>
+                                ))}
+                            </ul>
+                            { popUpWindow ? 
+                                <Chemical handleClick={setPopUpWindow} compound={chemicals[chemicalsIndex]}/> : null }
+                        </div>
+                        które często są wynikiem spalania paliw.
                     </article>
                 </section>
             </div>
