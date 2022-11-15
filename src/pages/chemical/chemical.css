@@ -8,6 +8,7 @@
 }
 
 .chemical {
+    overflow: hidden;
     animation: slowOpenWindow 0.3s ease-in;
     position: absolute;
     top: -2rem;
@@ -17,12 +18,15 @@
 }
 
 .chemical-box {
+    width: 100%;
     padding: 0.5rem;
 }
 
-.chemical-box-description strong {
-    margin-right: 1rem;
+.chemical-box th {
+    width: 9rem;
+    text-align: left;
     font-size: 0.85rem;
+    vertical-align: top;
 }
 
 @media screen and (max-width: 800px) {

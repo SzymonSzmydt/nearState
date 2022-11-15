@@ -1,0 +1,43 @@
+.weather_box-city {
+    border-radius: var(--radius);
+}
+
+.weather_img {
+    width: 5rem;
+    height: 5rem;
+    padding: 0.5rem;
+    margin-right: 1rem;
+    background-color: var(--weather-img);
+    border-radius: var(--radius);
+}
+
+.celcius {
+    align-self: center;
+    font-size: 1.75rem;
+}
+
+.weather_city {
+    justify-content: space-around;
+    width: 20rem;
+    height: 5rem;
+    margin: 0 1rem;
+    border-radius: var(--radius);
+}
+
+.city-aqius {
+    flex-direction: column;
+    font-size: 2rem;
+}
+
+.small-font {
+    font-size: 1rem;
+}
+
+.celcius-symbol {
+    font-size: 1.45rem;
+}
+
+.weather_city-name {
+    flex-direction: column;
+    margin: 0 1rem;
+}

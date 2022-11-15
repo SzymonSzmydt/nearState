@@ -1,6 +1,6 @@
 import './css/map.css';
 import { WeatherQuality } from './WeatherQuality';
-import { TCountryInfo } from './TCountryInfo';
+import { WeatherMainCity } from './WeatherMainCity';
 
 export function Map() {
     return (
@@ -9,7 +9,7 @@ export function Map() {
                     <WeatherQuality/>
                 </div>
                 <div className="map__box-right">
-                    <TCountryInfo /> 
+                    <WeatherMainCity /> 
                     <div className="map__img"/> 
                 </div>
             </section>
