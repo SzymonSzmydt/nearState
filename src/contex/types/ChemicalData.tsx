@@ -1,7 +1,7 @@
 export const chemicals = [
     {
         name: "Dwutlenek Siarki",
-        pattern: "S02",
+        pattern: "SO<sub>2</sub>",
         mass: "64,066 g/mol",
         tempTop: -72,
         tempWrz: -10,
@@ -12,7 +12,7 @@ export const chemicals = [
     },
     {
         name: "Ozon",
-        pattern: "O3",
+        pattern: "O<sub>3</sub>",
         mass: "48 g/mol",
         tempTop: -192.2,
         tempWrz: -112,
@@ -35,7 +35,7 @@ export const chemicals = [
     },
     {
         name: "Tlenek węgla",
-        pattern: "CO2",
+        pattern: "CO<sub>2</sub>",
         mass: "28,01 g/mol",
         tempTop: -205,
         tempWrz: -191.5,
@@ -46,7 +46,7 @@ export const chemicals = [
     },
     {
         name: "Benzen",
-        pattern: "C6H6",
+        pattern: "C<sub>6</sub>H<sub>6</sub>",
         mass: "78,11 g/mol",
         tempTop: 5.5,
         tempWrz: 80.1,

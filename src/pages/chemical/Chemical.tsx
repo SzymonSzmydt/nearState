@@ -1,10 +1,11 @@
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import './chemical.css'
+import parse from 'html-react-parser';
 
 interface ChemicalProps {
     compound?: {
         name?: string;
-        pattern?: string;
+        pattern?: any;
         mass?: string;
         tempTop?: number;
         tempWrz?: number;
@@ -22,13 +23,12 @@ export function Chemical({ compound, handleClick }: ChemicalProps) {
                     <div className="close" onClick={() => handleClick(false)} />
                     <div className="chemical-box-description">
                         <p>
-                            {" "}
-                            <b> {compound?.name} </b> - {compound?.pattern}
+                            <b> {compound?.name} </b> - {parse(compound?.pattern)}
                         </p>
                         <table className="chemical-box">
                             <tbody>
                                 <tr>
-                                    <th> Masa </th>
+                                    <th> Masa molowa</th>
                                     <td> {compound?.mass} </td>
                                 </tr>
                                 <tr>
@@ -45,7 +45,7 @@ export function Chemical({ compound, handleClick }: ChemicalProps) {
                                 </tr>
                             </tbody>
                         </table>
-                        <p>
+                        <article>
                             {compound?.description}
                             <a
                                 href={compound?.link}
@@ -54,7 +54,7 @@ export function Chemical({ compound, handleClick }: ChemicalProps) {
                                 {" "}
                                 Wikipedia
                             </a>
-                        </p>
+                        </article>
                     </div>
                 </div>
             </WindowModule>

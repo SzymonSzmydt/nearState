@@ -33,7 +33,7 @@ article {
 .weather_quality-list-ul > li {
     cursor: pointer;
     font-weight: 600;
-    color: rgb(121, 7, 77);
+    color: rgb(48, 86, 211);
 }
 
 .weather_quality-list-ul > li:hover {

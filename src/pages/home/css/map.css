@@ -21,14 +21,6 @@
     background-repeat: no-repeat;
     background-position: right;
     background-size: contain;
-    filter: 
-        invert(47%) 
-        sepia(75%) 
-        saturate(516%) 
-        hue-rotate(173deg) 
-        brightness(84%) 
-        contrast(89%);
-    z-index: 0;
 }
 
 @media screen and (max-width: 800px) {

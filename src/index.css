@@ -5,7 +5,7 @@
 
   --color-popup: rgb(226, 244, 250);
 
-  --color-primary: rgba(60, 127, 204, 1);
+  --color-primary: #3c7fcc;
   --color-white: #FFF;
 
   --weather-img: rgb(104, 173, 149);
@@ -92,5 +92,5 @@ a {
 }
 
 a:hover {
-  color: var(--color-primary);
+  color: var(--color-text-hover);
 }

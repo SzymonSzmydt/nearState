@@ -1,10 +1,10 @@
 import { WindowModule } from '../../components/ui/window/WindowModule';
-import { Legend } from './Legend';
+import { Legend } from '../home/Legend';
 import { Chemical } from '../chemical/Chemical';
 import { chemicals } from '../../contex/types/ChemicalData';
 import { useState } from 'react';
-    
-export function WeatherQuality() {
+
+export function AirQuality() {
     const [ popUpWindow, setPopUpWindow ] = useState(false);
     const [ chemicalsIndex, setChemicalsIndex ] = useState(0);
     const handleClick = (indexOfChemical: number) => {
@@ -14,7 +14,9 @@ export function WeatherQuality() {
     return (
         <WindowModule>
             <div>
-                <h1>Ranking miast jakości powietrza i zanieczyszczenia</h1>
+                <h1>Ranking miast jakości powietrza i zanieczyszczenia
+                    <span className="small-font"> - US AQI </span>
+                </h1>
                 <section className="flex wrap weather_quality-box-a">
                     <Legend
                         rank={"Dobre"}
@@ -57,7 +59,7 @@ export function WeatherQuality() {
                             <ul className="weather_quality-list-ul">
                               { chemicals.map((item, index) => (
                                 <li key={item.name} onClick={()=> handleClick(index)}>
-                                    { `${item.name} ${item.pattern}` }
+                                    { item.name}
                                 </li>
                                 ))}
                             </ul>

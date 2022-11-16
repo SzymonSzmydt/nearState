@@ -1,5 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { store } from './contex/redux/store'
+import { Provider } from 'react-redux'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -16,7 +18,7 @@ const router = createBrowserRouter(
     <>
       <Route path="/" element={ <App/> }>
         <Route index={true} element={ <Home />} />
-        <Route path="home/:homeId" element={ <Home />} />
+        <Route path=":homeId" element={ <Home />} />
       </Route>
       <Route path="*" element={ <App/> } />
     </>
@@ -28,7 +30,9 @@ const root = ReactDOM.createRoot(
 );
 
 root.render(
-  <React.StrictMode>
-    <RouterProvider router={router} />
-  </React.StrictMode>
+    <React.StrictMode>
+        <Provider store={store}>
+            <RouterProvider router={router} />
+        </Provider>
+    </React.StrictMode>
 );

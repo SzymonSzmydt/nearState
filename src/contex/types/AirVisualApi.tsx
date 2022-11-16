@@ -8,11 +8,11 @@ export interface AirVisualApi {
     current?: {
         pollution?: {
             aqicn: number;
-            aquis: number;
+            aqius: number;
             mainus: string;
             ts: string;
         }
-        weather: {
+        weather?: {
             hu: number;
             ic: string;
             pr: number;

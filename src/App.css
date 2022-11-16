@@ -28,3 +28,7 @@
 .link:hover {
   color: var(--color-text-hover);
 }
+
+.small-font {
+  font-size: 0.85rem;
+}
