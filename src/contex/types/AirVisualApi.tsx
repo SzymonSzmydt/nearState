@@ -4,14 +4,14 @@ export interface AirVisualApi {
     country?: string;
     location?: {
         coordinates: number[];
-    }
+    },
     current?: {
         pollution?: {
             aqicn: number;
             aqius: number;
             mainus: string;
             ts: string;
-        }
+        },
         weather?: {
             hu: number;
             ic: string;
@@ -19,6 +19,6 @@ export interface AirVisualApi {
             tp: number;
             wd: number;
             ws: number;
-        }
-    }
+        },
+    },
 }

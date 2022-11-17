@@ -14,7 +14,7 @@ export function AirQuality() {
     return (
         <WindowModule>
             <div>
-                <h1>Ranking miast jakości powietrza i zanieczyszczenia
+                <h1 className="h1">Ranking miast jakości powietrza i zanieczyszczenia
                     <span className="small-font"> - US AQI </span>
                 </h1>
                 <section className="flex wrap weather_quality-box-a">

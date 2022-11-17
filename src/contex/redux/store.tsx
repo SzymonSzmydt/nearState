@@ -1,10 +1,10 @@
 import { configureStore } from '@reduxjs/toolkit'
+import airCityreducer from '../redux/AirCitySlice'
+
 
 export const store = configureStore({
   reducer: {
-    posts: postsReducer,
-    comments: commentsReducer,
-    users: usersReducer,
+    airCity: airCityreducer,
   },
 })
 

@@ -1,54 +1,47 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
-import type { RootState } from '../redux/store'
 import { AirVisualApi } from '../types/AirVisualApi';
 
-const initialState: AirVisualApi = {
-  city: '',
-  state: '',
-  country: '',
-  location: {
-      coordinates: []
-  },
-  current: {
-      pollution: {
-          aqicn: 0,
-          aqius: 0,
-          mainus: '',
-          ts: ''
-      },
-      weather: {
-          hu: 0,
-          ic: '',
-          pr: 0,
-          tp: 0,
-          wd: 0,
-          ws: 0
-      },
+interface AirCityType {
+  data?: AirVisualApi;
+}
+
+const initialState: AirCityType = {
+  data: {
+    city: "",
+    state: "",
+    country: "",
+    location: {
+        coordinates: [],
+    },
+    current: {
+        pollution: {
+            aqicn: 0,
+            aqius: 0,
+            mainus: "",
+            ts: "",
+        },
+        weather: {
+            hu: 0,
+            ic: "01n",
+            pr: 0,
+            tp: 0,
+            wd: 0,
+            ws: 0,
+        },
+    },
   }
 }
 
-export const counterSlice = createSlice({
-  name: 'counter',
-  // `createSlice` will infer the state type from the `initialState` argument
+export const airCitySlice = createSlice({
+  name: 'airCity',
   initialState,
   reducers: {
-    increment: (state) => {
-      state.value += 1
-    },
-    decrement: (state) => {
-      state.value -= 1
-    },
-    // Use the PayloadAction type to declare the contents of `action.payload`
-    incrementByAmount: (state, action: PayloadAction<number>) => {
-      state.value += action.payload
+    getAirCityData: (state, action: PayloadAction<any>) => {
+      state.data = action.payload
     },
   },
 })
 
-export const { increment, decrement, incrementByAmount } = counterSlice.actions
-
-// Other code such as selectors can use the imported `RootState` type
-export const selectCount = (state: RootState) => state.counter.value
-
-export default counterSlice.reducer
+export const { getAirCityData } = airCitySlice.actions
+export default airCitySlice.reducer

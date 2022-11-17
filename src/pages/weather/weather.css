@@ -4,12 +4,26 @@
 }
 
 .weather_img {
+    flex-direction: column;
     width: 5rem;
     height: 5rem;
     padding: 0.5rem;
     margin-right: 0.25rem;
     background-color: var(--weather-img);
     border-radius: var(--radius);
+}
+
+.weather-arrow {
+    margin: 0.5rem;
+    background-color: var(--weather-arrow);
+}
+
+.wind_img {
+    width: 2.5rem;
+    height: 2.5rem;
+    background-image: url("../../assets/arrow.png");
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 
 .celcius {
@@ -19,13 +33,17 @@
 
 .weather_city {
     justify-content: space-around;
-    width: 20rem;
-    height: 5rem;
     margin: 0 0.25rem;
     border-radius: var(--radius);
 }
 
+.city-aqius_img {
+    height: 3rem;
+    margin: 1rem;
+}
+
 .city-aqius {
+    margin: 1rem 1.25rem;
     flex-direction: column;
     font-size: 2rem;
 }
@@ -36,5 +54,12 @@
 
 .weather_city-small {
     flex-direction: column;
-    margin: 0 1rem;
+    margin: 1rem 1.25rem;
 }
+
+@media screen and (max-width: 305px) {
+    .h1 {
+        font-size: 1.25rem;
+    }
+}
+

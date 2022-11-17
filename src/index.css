@@ -13,6 +13,7 @@
   --weather-pr: rgba(65, 199, 243, 0.7);
   --weather-ws: rgba(0, 216, 230, 0.7);
   --weather-wd: rgba(0, 234, 185, 0.7);
+  --weather-arrow: #00C9B9;
 
   --legend-good: rgba(154, 246, 138, 0.7);
   --legend-moderate: rgba(248, 227, 119, 0.7);

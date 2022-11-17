@@ -4,10 +4,10 @@ import { Header } from './components/ui/Header/Header';
 
 function App() {
   return (
-    <main className="App">
-      <Header/>
-      <Outlet />
-    </main>
+          <main className="App">
+              <Header />
+              <Outlet />
+          </main>
   );
 }
 

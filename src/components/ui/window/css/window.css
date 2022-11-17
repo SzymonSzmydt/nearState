@@ -28,3 +28,14 @@
     padding: 1rem;
     box-shadow: var(--box-shadow);
 }
+
+.weather_box-a {
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding: 0.5rem;
+}
+
+.weather_box-b {
+    font-size: 0.8rem;
+    font-weight: 600;
+}

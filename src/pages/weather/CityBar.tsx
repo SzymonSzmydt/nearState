@@ -5,7 +5,7 @@ import { CityProps } from '../../contex/types/CityProps';
 
 function earthQualityColor(range:any, type:string) { 
     const color:boolean = type === "color";
-    if (range <= 50) return color ? "var(----legend-good)" : "aqi1";
+    if (range <= 50) return color ? "var(--legend-good)" : "aqi1";
     if (range > 50 && range <= 100) return color ? "var(--legend-moderate)" : "aqi2";
     if (range > 100 && range <= 150) return color ? "var(--legend-semi-unhealthy)" : "aqi3";
     if (range > 150 && range <= 200) return color ? "var(--legend-unhealthy)" : "aqi4";
@@ -19,20 +19,19 @@ export function CityBar({city, country, state, pollution, weather}: CityProps) {
     
     return (
         <WindowModule>
-            <section className="flex wrap weather_box-city">
+            <section className="flex wrap weather_box-city">              
                 <img
                     src={require(`../../assets/weather/${weather?.ic}.png`)}
                     className="weather_img"
                     alt="aktualna temperatura"
                 />
                 <WeatherData
+                    fSize={"1.75rem"}
                     value={weather?.tp + "\u00b0"}
                     bgcolor={"var(--weather-img"}
                 />
-                <span className="celcius"> {} </span>
-                <span className="celcius-symbol"> {} </span>
                 <div
-                    className="flex weather_city"
+                    className="flex wrap weather_city"
                     style={{
                         backgroundColor: pollution
                             ? earthQualityColor(pollution?.aqius, "color")
@@ -47,7 +46,7 @@ export function CityBar({city, country, state, pollution, weather}: CityProps) {
                     </div>
                     <img
                         src={require(`../../assets/faces/${earthQualityColor(pollution?.aqius, "aqius")}.png`)}
-                        style={{height: "3rem"}}
+                        className="city-aqius_img"
                         alt="Twarz odzwierciedlająca zanieczyszczenie powietrza"
                     />
                     <div className="flex city-aqius">

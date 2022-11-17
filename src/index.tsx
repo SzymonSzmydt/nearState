@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
+import { Provider } from 'react-redux';
 import { store } from './contex/redux/store'
-import { Provider } from 'react-redux'
 import {
   createBrowserRouter,
   createRoutesFromElements,
@@ -14,15 +14,14 @@ import App from './App';
 import { Home } from './pages/home/Home';
 
 const router = createBrowserRouter(
-  createRoutesFromElements(
-    <>
-      <Route path="/" element={ <App/> }>
-        <Route index={true} element={ <Home />} />
-        <Route path=":homeId" element={ <Home />} />
-      </Route>
-      <Route path="*" element={ <App/> } />
-    </>
-  )
+    createRoutesFromElements(
+        <>
+            <Route path="/" element={<App />}>
+                <Route index={true} element={<Home />} />
+            </Route>
+            <Route path="*" element={<App />} />
+        </>
+    )
 );
 
 const root = ReactDOM.createRoot(

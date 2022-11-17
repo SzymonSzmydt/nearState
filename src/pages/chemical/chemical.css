@@ -9,7 +9,7 @@
 
 .chemical {
     overflow: hidden;
-    animation: slowOpenWindow 0.3s ease-in;
+    animation: slowOpenWindow 0.2s ease-in;
     position: absolute;
     top: -8rem;
     right: -8rem;
