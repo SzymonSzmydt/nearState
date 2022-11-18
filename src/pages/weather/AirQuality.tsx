@@ -1,15 +1,21 @@
+import './css/ariQuality.css';
 import { WindowModule } from '../../components/ui/window/WindowModule';
-import { Legend } from '../home/Legend';
 import { Chemical } from '../chemical/Chemical';
 import { chemicals } from '../../contex/ChemicalData';
 import { useState } from 'react';
+import { legend } from '../../contex/types/AirLegendDescription';
+import { PopUp } from '../../components/ui/window/PopUp';
 
 export function AirQuality() {
-    const [ popUpWindow, setPopUpWindow ] = useState(false);
-    const [ chemicalsIndex, setChemicalsIndex ] = useState(0);
-    const handleClick = (indexOfChemical: number) => {
-        setPopUpWindow( true);
-        setChemicalsIndex(indexOfChemical);
+    const [ chemicalPopUp, setChemicalPopUp ] = useState(false);
+    const [ popUpIndex, setPopUpIndex ] = useState(0);
+    const [ legendPopUp, setLegendPopUp ] = useState(false);
+
+    const handleClick = (index: number, fn: (e:boolean)=> void) => {
+        if (chemicalPopUp) setChemicalPopUp(false);
+        if (legendPopUp) setLegendPopUp(false);
+        fn( true );
+        setPopUpIndex(index);
     }
     return (
         <WindowModule>
@@ -17,37 +23,19 @@ export function AirQuality() {
                 <h1 className="h1">Ranking miast jakości powietrza i zanieczyszczenia
                     <span className="small-font"> - US AQI </span>
                 </h1>
-                <section className="flex wrap weather_quality-box-a">
-                    <Legend
-                        rank={"Dobre"}
-                        range={"0-50"}
-                        bgcolor={"var(--legend-good)"}
-                    />
-                    <Legend
-                        rank={"Umiarkowane"}
-                        range={"51-100"}
-                        bgcolor={"var(--legend-moderate)"}
-                    />
-                    <Legend
-                        rank={"Dostateczne"}
-                        range={"101-150"}
-                        bgcolor={"var(--legend-semi-unhealthy)"}
-                    />
-                    <Legend
-                        rank={"Niezdrowe"}
-                        range={"151-200"}
-                        bgcolor={"var(--legend-unhealthy)"}
-                    />
-                    <Legend
-                        rank={"Bardzo niezdrowe"}
-                        range={"201-300"}
-                        bgcolor={"var(--legend-very-unhealthy)"}
-                    />
-                    <Legend
-                        rank={"Toksyczne"}
-                        range={"301+"}
-                        bgcolor={"var(--legend-hazardous)"}
-                    />
+                <section className="flex wrap legend__section">
+                    { legend.map( (element, index) => 
+                    <div 
+                        key={ element.rank } 
+                        className="flex legend" 
+                        style={{ backgroundColor: element.bgcolor }}
+                        onClick={ ()=> handleClick(index, setLegendPopUp) }>
+                        <span> { element.rank } </span>
+                        <span> { element.range } </span>
+                    </div> )}
+                    { legendPopUp ? 
+                    <PopUp {...legend[popUpIndex]} handleClick={setLegendPopUp}/> 
+                    : null }
                 </section>
                 <section>
                     <h3>AQI (ang. Air Quality Index)</h3>
@@ -58,13 +46,13 @@ export function AirQuality() {
                         <div className="weather_quality-list">
                             <ul className="weather_quality-list-ul">
                               { chemicals.map((item, index) => (
-                                <li key={item.name} onClick={()=> handleClick(index)}>
+                                <li key={item.name} onClick={()=> handleClick(index, setChemicalPopUp)}>
                                     { item.name}
                                 </li>
                                 ))}
                             </ul>
-                            { popUpWindow ? 
-                                <Chemical handleClick={setPopUpWindow} compound={chemicals[chemicalsIndex]}/> : null }
+                            { chemicalPopUp ? 
+                                <Chemical handleClick={setChemicalPopUp} compound={chemicals[popUpIndex]}/> : null }
                         </div>
                         które często są wynikiem spalania paliw.
                     </article>

@@ -2,7 +2,6 @@ import { WeatherData } from '../../components/ui/window/WeatherData';
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { CityProps } from '../../contex/types/CityProps';
 
-
 function earthQualityColor(range:any, type:string) { 
     const color:boolean = type === "color";
     if (range <= 50) return color ? "var(--legend-good)" : "aqi1";

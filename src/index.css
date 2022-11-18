@@ -3,7 +3,7 @@
   --color-header-bg: rgb(240, 253, 255);  
   --color-window-module: #ffffff;
 
-  --color-popup: rgb(226, 244, 250);
+  --color-popup: rgb(172, 234, 255);
 
   --color-primary: #3c7fcc;
   --color-white: #FFF;
@@ -15,12 +15,12 @@
   --weather-wd: rgba(0, 234, 185, 0.7);
   --weather-arrow: #00C9B9;
 
-  --legend-good: rgba(154, 246, 138, 0.7);
-  --legend-moderate: rgba(248, 227, 119, 0.7);
-  --legend-semi-unhealthy: rgba(241, 188, 113, 0.7);
-  --legend-unhealthy: rgba(248, 175, 170, 0.7);
-  --legend-very-unhealthy: rgba(248, 139, 135, 0.7);
-  --legend-hazardous: rgba(240, 180, 233, 0.7);
+  --legend-good: rgb(176, 250, 162);
+  --legend-moderate: rgb(250, 236, 165);
+  --legend-semi-unhealthy: rgb(238, 195, 134);
+  --legend-unhealthy: rgb(248, 194, 191);
+  --legend-very-unhealthy: rgb(245, 159, 156);
+  --legend-hazardous: rgb(240, 193, 234);
   
   --color-text: #000000;
   --color-text-hover: rgb(42, 207, 78);

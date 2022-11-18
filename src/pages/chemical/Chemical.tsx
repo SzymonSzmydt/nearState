@@ -21,11 +21,11 @@ export function Chemical({ compound, handleClick }: ChemicalProps) {
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="chemical-box">
                     <div className="close" onClick={() => handleClick(false)} />
-                    <div className="chemical-box-description">
+                    <div>
                         <p>
                             <b> {compound?.name} </b> - {parse(compound?.pattern)}
                         </p>
-                        <table className="chemical-box">
+                        <table className="popUp-box">
                             <tbody>
                                 <tr>
                                     <th> Masa molowa</th>

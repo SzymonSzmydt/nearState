@@ -1,4 +1,5 @@
 .legend {
+    cursor: pointer;
     justify-content: space-between;
     width: 8.5rem;
     height: 2.5rem;
@@ -8,23 +9,14 @@
     font-weight: 600;
     user-select: none;
     border-radius: var(--radius);
+    transition: 0.5s all;
 }
 
-article {
-    font-weight: 500;
-    padding: 0.5rem;
+.legend:hover {
+    transform: scale(0.95);
+    box-shadow: var(--box-shadow);
 }
 
-.weather_quality-list {
+.legend__section {
     position: relative;
-}
-
-.weather_quality-list-ul > li {
-    cursor: pointer;
-    font-weight: 600;
-    color: rgb(48, 86, 211);
-}
-
-.weather_quality-list-ul > li:hover {
-    color: rgb(7, 114, 121);
 }

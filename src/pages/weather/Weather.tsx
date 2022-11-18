@@ -1,4 +1,4 @@
-import './weather.css';
+import "./css/weather.css";
 import { AirVisualApi } from '../../contex/types/AirVisualApi';
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { WeatherData } from '../../components/ui/window/WeatherData';

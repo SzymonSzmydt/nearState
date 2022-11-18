@@ -39,3 +39,18 @@
     font-size: 0.8rem;
     font-weight: 600;
 }
+
+.close {
+    float: right;
+    cursor: pointer;
+    width: 1.75rem;
+    height: 1.75rem;
+    background-image: url('../../../../assets/close.png');
+    background-repeat: no-repeat;
+    background-size: cover;
+    transition: 0.8s transform;
+}
+
+.close:hover {
+    transform: rotate(90deg);
+}
