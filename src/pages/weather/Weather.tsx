@@ -2,7 +2,7 @@ import './weather.css';
 import { AirVisualApi } from '../../contex/types/AirVisualApi';
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { WeatherData } from '../../components/ui/window/WeatherData';
-import { API_KEY } from '../../contex/env';
+import { apiKey_airVisual } from '../../contex/env';
 import { CityBar } from './CityBar';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../../contex/redux/store';
@@ -17,7 +17,7 @@ export function Weather() {
 
     const handleClick = async () => {
         try {
-            const response = await fetch(`http://api.airvisual.com/v2/nearest_city?key=${API_KEY}`,
+            const response = await fetch(`http://api.airvisual.com/v2/nearest_city?key=${apiKey_airVisual}`,
             {method: 'GET',
                 redirect: "follow"});
             const data = await response.json();

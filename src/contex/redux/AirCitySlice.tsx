@@ -37,7 +37,7 @@ export const airCitySlice = createSlice({
   name: 'airCity',
   initialState,
   reducers: {
-    getAirCityData: (state, action: PayloadAction<any>) => {
+    getAirCityData: (state, action: PayloadAction<AirVisualApi>) => {
       state.data = action.payload
     },
   },

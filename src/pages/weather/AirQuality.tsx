@@ -1,7 +1,7 @@
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { Legend } from '../home/Legend';
 import { Chemical } from '../chemical/Chemical';
-import { chemicals } from '../../contex/types/ChemicalData';
+import { chemicals } from '../../contex/ChemicalData';
 import { useState } from 'react';
 
 export function AirQuality() {
