@@ -1,26 +1,22 @@
+import "./global.css";
 import { useState } from 'react';
-import { Glass } from '../../components/ui/window/Glass';
-import { token_aqicn } from '../../contex/env';
-
-interface Params {
-    search: string;
-}
+import { apiKey_airVisual } from '../../contex/env';
+import { AirVisualApi } from '../../contex/types/AirVisualApi';
+import { GlassCityBar } from './GlassCityBar';
 
 export function GlobalRanking() {
-    // const locale = JSON.parse(localStorage.getItem("Global") || ""); /// locale
-    
-    const [globalData, setGlobalData] = useState([]);
+    const data = JSON.parse(localStorage.getItem('Katowice') || "");
+    const [globalData, setGlobalData] = useState(data);
+    const { city, current } = globalData as [] as AirVisualApi;
 
-    const params: Params = {
-        search: "Wroclaw"
-    }
 
     const handleClick = async () => {
 
         try {
-            const response = await fetch(`https://pl.wikipedia.org/w/api.php?origin=*&action=query&list=search&srsearch=${params.search}&format=json`);
+            const response = await fetch(`http://api.airvisual.com/v2/city?city=Katowice&state=Silesia&country=POLAND&key=${apiKey_airVisual}`);
             const data = await response.json();
-            setGlobalData(data.query); 
+            localStorage.setItem('Katowice', JSON.stringify(data.data));  /// locale
+            setGlobalData(data.data); 
             } catch (e) {
             console.log(e);
         }
@@ -29,9 +25,10 @@ export function GlobalRanking() {
     console.log("Global ", globalData);
     
     return (
-        <Glass>
+        <>
+            <GlassCityBar city={city} pollution={current?.pollution} weather={current?.weather}/>
             <button onClick={handleClick}>API</button>
-        </Glass>
+        </>
 
     )
 }

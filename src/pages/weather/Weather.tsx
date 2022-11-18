@@ -9,11 +9,10 @@ import { RootState } from '../../contex/redux/store';
 import { getAirCityData } from '../../contex/redux/AirCitySlice';
 import { useEffect } from 'react';
 
-
 export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);
     const dispatch = useDispatch();
-    const { city, state, country, location, current } = airData as [] as AirVisualApi;
+    const { city, current } = airData as [] as AirVisualApi;
 
     const handleClick = async () => {
         try {
