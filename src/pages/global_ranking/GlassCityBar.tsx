@@ -12,7 +12,7 @@ export function GlassCityBar({city, pollution, weather}: CityProps) {
                     alt="aktualna temperatura"
                 />
                 <p className="glass-degree">{weather?.tp + "\u00b0"}</p>
-                <div className="flex celcius global-glass_small">
+                <div className="flex global-glass_small">
                         {city}
                 </div>
                 <div
@@ -22,7 +22,6 @@ export function GlassCityBar({city, pollution, weather}: CityProps) {
                             ? earthQualityColor(pollution?.aqius, "color")
                             : "",
                     }}>
-                    
                     <img
                         src={require(`../../assets/faces/${earthQualityColor(pollution?.aqius, "aqius")}.png`)}
                         className="global-glass_img"
@@ -30,7 +29,7 @@ export function GlassCityBar({city, pollution, weather}: CityProps) {
                     />
                     <div className="global-aqius">
                         {pollution?.aqius }
-                        <span className="small-font"> US AQI</span>
+                        <span className="glass-small_font"> US AQI</span>
                     </div>
                 </div>
             </section>

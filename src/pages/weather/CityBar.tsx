@@ -1,18 +1,9 @@
 import { WeatherData } from '../../components/ui/window/WeatherData';
 import { WindowModule } from '../../components/ui/window/WindowModule';
 import { CityProps } from '../../contex/types/CityProps';
+import { earthQualityColor } from '../../contex/hooks/Functions';
 
-function earthQualityColor(range:any, type:string) { 
-    const color:boolean = type === "color";
-    if (range <= 50) return color ? "var(--legend-good)" : "aqi1";
-    if (range > 50 && range <= 100) return color ? "var(--legend-moderate)" : "aqi2";
-    if (range > 100 && range <= 150) return color ? "var(--legend-semi-unhealthy)" : "aqi3";
-    if (range > 150 && range <= 200) return color ? "var(--legend-unhealthy)" : "aqi4";
-    if (range > 200 && range <= 300) return color ? "var(--legend-very-unhealthy)" : "aqi5";
-    if (range > 300) return color ? "var(--legend-hazardous)" : "aqi5";
-}
-
-export function CityBar({city, country, state, pollution, weather}: CityProps) {
+export function CityBar({city, pollution, weather}: CityProps) {
     const date:string = pollution ? (pollution.ts).slice(0, 10) : '-';
     const hour:string = pollution ? (pollution.ts).slice(11, 16) : '-';
     

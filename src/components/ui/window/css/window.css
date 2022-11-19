@@ -25,7 +25,7 @@
 
 .glass {
     width: fit-content;
-    margin: 0 auto;
+    margin: 0.5rem auto;
     padding: 0 0.5rem;
     background: rgba(255, 255, 255, 0);
     border-radius: 10px;
