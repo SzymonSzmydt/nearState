@@ -1,7 +1,7 @@
-import { WeatherData } from '../../components/ui/window/WeatherData';
-import { WindowModule } from '../../components/ui/window/WindowModule';
+import { WeatherData } from '../../components/ui/WeatherData';
+import { WindowModule } from '../../components/window/WindowModule';
 import { CityProps } from '../../contex/types/CityProps';
-import { earthQualityColor } from '../../contex/hooks/Functions';
+import { earthQualityColor } from '../../contex/hooks/EarthQualityColor';
 
 export function CityBar({city, pollution, weather}: CityProps) {
     const date:string = pollution ? (pollution.ts).slice(0, 10) : '-';

@@ -1,4 +1,4 @@
-import { Window } from './../../components/ui/window/Window';
+import { Window } from './../../components/window/Window';
 import { Map } from './Map';
 
 export function Home() {

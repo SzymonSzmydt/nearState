@@ -1,5 +1,5 @@
 import './css/popUp.css';
-import { WindowModule } from './WindowModule';
+import { WindowModule } from '../window/WindowModule';
 
 type PopUpProps = {
     rank: string;
@@ -17,7 +17,7 @@ export function PopUp({rank, range, face, bgcolor, description, handleClick}: Po
                 <div className="popUp-box">
                     <div className="close" onClick={() => handleClick(false)} />
                     <section className="flex">
-                        <img src={require(`../../../assets/faces/${face}.png`)} alt="Jakość powietrza" className="popUp-img"/>
+                        <img src={require(`../../assets/faces/${face}.png`)} alt="Jakość powietrza" className="popUp-img"/>
                         <table className="popUp-box">
                             <tbody>
                                 <tr className="popup-box__tr">

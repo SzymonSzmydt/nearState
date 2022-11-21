@@ -5,7 +5,7 @@ export function Header() {
     return (
         <header className="flex header">
             <section className="flex container-lg header__section"> 
-                <NavLink to="home" className="link header__logo">
+                <NavLink to="/" className="link header__logo">
                     near
                     <span>state</span>
                 </NavLink>

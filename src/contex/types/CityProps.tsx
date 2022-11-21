@@ -1,4 +1,5 @@
 export type CityProps = {
+    number?: number;
     city?: string;
     state?: string;
     country?: string;

@@ -16,7 +16,7 @@
 }
 .map__img {
     width: 100%;
-    height: 30rem;
+    min-height: 30rem;
     background-image: url('../../../assets/world.png');
     background-repeat: no-repeat;
     background-position: right;
@@ -30,7 +30,6 @@
     
     .map__box-right {
         width: 100%;
-        height: 15rem;
         background-position: center;
     }
 }

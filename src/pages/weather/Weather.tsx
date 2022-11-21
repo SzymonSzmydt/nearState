@@ -1,7 +1,7 @@
 import "./css/weather.css";
 import { AirVisualApi } from '../../contex/types/AirVisualApi';
-import { WindowModule } from '../../components/ui/window/WindowModule';
-import { WeatherData } from '../../components/ui/window/WeatherData';
+import { WindowModule } from '../../components/window/WindowModule';
+import { WeatherData } from '../../components/ui/WeatherData';
 import { urlNearest } from '../../contex/env';
 import { CityBar } from './CityBar';
 import { useSelector, useDispatch } from 'react-redux';
@@ -18,7 +18,7 @@ export function Weather() {
         try {
             const response = await fetch(urlNearest)
             const data = await response.json();
-            localStorage.setItem('AirApi', JSON.stringify(data.data));  /// locale
+            localStorage.setItem('Wroclaw', JSON.stringify(data.data));  /// locale
             dispatch(getAirCityData(data.data))
         } catch (err) {
             console.error(err);
@@ -26,7 +26,7 @@ export function Weather() {
     };
 
     useEffect(()=> {
-        const data = JSON.parse(localStorage.getItem('AirApi') || "");
+        const data = JSON.parse(localStorage.getItem('Wroclaw') || "");
         dispatch(getAirCityData(data))
     }, [])
 
@@ -73,7 +73,7 @@ export function Weather() {
         </section>
     );
 }
-function windDirection(wind:number):string {
+function windDirection(wind:number) {
     if (wind >= 345 && wind <= 15) return "N";
     if (wind > 15 && wind < 75) return "NE";
     if (wind >= 75 && wind <= 105) return "E";
@@ -82,5 +82,4 @@ function windDirection(wind:number):string {
     if (wind >= 195 && wind <= 255) return "SW";
     if (wind > 255 && wind < 285) return "W";
     if (wind >= 285 && wind < 345) return "NW";
-    else return "--"
 }

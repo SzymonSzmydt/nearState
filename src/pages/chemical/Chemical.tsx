@@ -1,4 +1,4 @@
-import { WindowModule } from '../../components/ui/window/WindowModule';
+import { WindowModule } from '../../components/window/WindowModule';
 import './chemical.css'
 import parse from 'html-react-parser';
 

@@ -1,23 +1,19 @@
 .global {
+    cursor: pointer;
     margin: -1rem 0;
     border-radius: var(--radius);
     user-select: none;
+    transition: 0.2s transform;
+}
+
+.global:hover {
+    transform: scale(1.025);
 }
 
 .global_city {
     justify-content: space-around;
     margin: 0 0.25rem;
     border-radius: var(--radius);
-}
-
-.global-weather_img {
-    flex-direction: column;
-    width: 2.75rem;
-    height: 2.75rem;
-    padding: 0.25rem;
-    margin-right: 0.25rem;
-    border-radius: var(--radius);
-    background-color: var(--color-primary-t);
 }
 
 .global-glass_img {
@@ -32,15 +28,11 @@
     font-size: 1.5rem;
 }
 
-.glass-degree {
-    width: 4rem;
-    font-size: 1.5rem;
-    font-weight: 500;
+.glass-nr {
+    width: 2rem;
+    padding: 0.5rem 0;
     text-align: center;
-    padding: 0.4rem 0.75rem; 
-    background: rgba(255, 255, 255, 0.75);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
+    font-size: 1.25rem;
     border-radius: var(--radius);
 }
 
@@ -50,9 +42,6 @@
     margin: 0 0.5rem;
     padding: 0.5rem 0;
     font-size: 1.25rem;
-    background: rgba(255, 255, 255, 0.9);
-    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
-    border: 1px solid rgba(255, 255, 255, 0.3);
     border-radius: var(--radius);
 }
 
@@ -63,17 +52,6 @@
 @media screen and (min-width: 350px) and (max-width: 800px) {
     .global-glass_img {
         display: none;
-    }
-
-    .glass-degree {
-        width: 3.5rem;
-        font-size: 1.25rem;
-        font-weight: 500;
-    }
-
-    .global-weather_img {
-        width: 2rem;
-        height: 2rem;
     }
 
     .global-aqius {
@@ -98,14 +76,6 @@
     }
 
     .global-glass_img {
-        display: none;
-    }
-
-    .global-weather_img {
-        display: none;
-    }
-
-    .glass-degree {
         display: none;
     }
 

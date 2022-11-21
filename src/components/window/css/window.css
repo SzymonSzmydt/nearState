@@ -49,7 +49,7 @@
     cursor: pointer;
     width: 1.75rem;
     height: 1.75rem;
-    background-image: url('../../../../assets/close.png');
+    background-image: url('../../../assets/close.png');
     background-repeat: no-repeat;
     background-size: cover;
     transition: 0.8s transform;

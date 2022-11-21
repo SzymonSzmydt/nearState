@@ -1,10 +1,10 @@
 import './css/ariQuality.css';
-import { WindowModule } from '../../components/ui/window/WindowModule';
+import { WindowModule } from '../../components/window/WindowModule';
 import { Chemical } from '../chemical/Chemical';
 import { chemicals } from '../../contex/ChemicalData';
 import { useState } from 'react';
 import { legend } from '../../contex/types/AirLegendDescription';
-import { PopUp } from '../../components/ui/window/PopUp';
+import { PopUp } from '../../components/ui/PopUp';
 
 export function AirQuality() {
     const [ chemicalPopUp, setChemicalPopUp ] = useState(false);
