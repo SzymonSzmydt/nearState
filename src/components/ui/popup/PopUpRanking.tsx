@@ -1,17 +1,16 @@
 import './css/popUp.css';
-import { WindowModule } from '../window/WindowModule';
+import { WindowModule } from '../../window/WindowModule';
+import { useDispatch } from 'react-redux';
+import { rankingPopUp } from '../../../contex/redux/PopUpLogic';
 
-type PopUpProps = {
-    handleClick: React.Dispatch<React.SetStateAction<boolean>>;
-}
-
-export function PopUpRanking({handleClick}: PopUpProps) {
+export function PopUpRanking() {
+    const dispatch = useDispatch();
 
     return (
-        <section className="popUp">
+        <section className="popUp-ranking">
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="popUp-box">
-                    <div className="close" onClick={() => handleClick(false)} />
+                    <div className="close" onClick={() => dispatch(rankingPopUp(false))} />
                     <section className="flex">
                         <table className="popUp-box">
                             <tbody>

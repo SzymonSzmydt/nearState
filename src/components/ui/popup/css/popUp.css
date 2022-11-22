@@ -17,6 +17,12 @@
     z-index: 1;
 }
 
+.popUp-ranking {
+    position: absolute;
+    top: 0;
+    left: -10rem;
+}
+
 .popUp-box {
     width: 100%;
     padding: 0 0.5rem;

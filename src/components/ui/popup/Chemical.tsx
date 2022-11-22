@@ -1,6 +1,8 @@
-import { WindowModule } from '../../components/window/WindowModule';
-import './chemical.css'
+import { WindowModule } from '../../../components/window/WindowModule';
+import './css/chemical.css'
 import parse from 'html-react-parser';
+import { useDispatch } from 'react-redux';
+import { chemicalPopUp } from '../../../contex/redux/PopUpLogic';
 
 interface ChemicalProps {
     compound?: {
@@ -13,14 +15,14 @@ interface ChemicalProps {
         solvent: string;
         description?: string;
     },
-    handleClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
-export function Chemical({ compound, handleClick }: ChemicalProps) {
+export function Chemical({ compound }: ChemicalProps) {
+    const dispatch = useDispatch();
     return (
         <section className="chemical">
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="chemical-box">
-                    <div className="close" onClick={() => handleClick(false)} />
+                    <div className="close" onClick={() => dispatch(chemicalPopUp(false))} />
                     <div>
                         <p className="chemical-box_p">
                             <b> {compound?.name} </b> - {parse(compound?.pattern)}

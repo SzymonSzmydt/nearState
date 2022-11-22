@@ -10,6 +10,7 @@
     padding: 0.5rem;
     background-color: var(--color-window-module);
     box-shadow: var(--box-shadow);
+    border-radius: var(--radius);
 }
 
 .weather-box {

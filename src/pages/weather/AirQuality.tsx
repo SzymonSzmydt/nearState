@@ -1,21 +1,24 @@
 import './css/ariQuality.css';
 import { WindowModule } from '../../components/window/WindowModule';
-import { Chemical } from '../chemical/Chemical';
+import { Chemical } from '../../components/ui/popup/Chemical';
 import { chemicals } from '../../contex/ChemicalData';
-import { useState } from 'react';
 import { legend } from '../../contex/types/AirLegendDescription';
-import { PopUpLegend } from '../../components/ui/PopUpLegend';
+import { PopUpLegend } from '../../components/ui/popup/PopUpLegend';
+import { useDispatch, useSelector } from 'react-redux';
+import { popUpOff, legendPopUp, chemicalPopUp, indexPopUp } from '../../contex/redux/PopUpLogic';
+import { RootState } from '../../contex/redux/store';
 
 export function AirQuality() {
-    const [ chemicalPopUp, setChemicalPopUp ] = useState(false);
-    const [ popUpIndex, setPopUpIndex ] = useState(0);
-    const [ legendPopUp, setLegendPopUp ] = useState(false);
+    const dispatch = useDispatch();
+    const chemicalPop = useSelector((state: RootState) => state.popUp.chemical);
+    const legendPop = useSelector((state: RootState) => state.popUp.legend);
+    const indexPop = useSelector((state: RootState) => state.popUp.index);
 
-    const handleClick = (index: number, fn: (e:boolean)=> void) => {
-        if (chemicalPopUp) setChemicalPopUp(false);
-        if (legendPopUp) setLegendPopUp(false);
-        fn( true );
-        setPopUpIndex(index);
+    const handleClick = (index: number, fn: 'chemical' | 'legend') => {
+        dispatch(popUpOff());
+        if (fn && fn === 'chemical') dispatch(chemicalPopUp(true));
+        else if (fn && fn === 'legend') dispatch(legendPopUp(true))
+        dispatch(indexPopUp(index));
     }
     return (
         <WindowModule>
@@ -29,12 +32,12 @@ export function AirQuality() {
                         key={ element.rank } 
                         className="flex legend" 
                         style={{ backgroundColor: element.bgcolor }}
-                        onClick={ ()=> handleClick(index, setLegendPopUp) }>
+                        onClick={ ()=> handleClick(index, 'legend') }>
                         <span> { element.rank } </span>
                         <span> { element.range } </span>
                     </div> )}
-                    { legendPopUp ? 
-                    <PopUpLegend {...legend[popUpIndex]} handleClick={setLegendPopUp}/> 
+                    { legendPop ? 
+                    <PopUpLegend {...legend[indexPop]} /> 
                     : null }
                 </section>
                 <section>
@@ -46,13 +49,13 @@ export function AirQuality() {
                         <div className="weather_quality-list">
                             <ul className="weather_quality-list-ul">
                               { chemicals.map((item, index) => (
-                                <li key={item.name} onClick={()=> handleClick(index, setChemicalPopUp)}>
+                                <li key={item.name} onClick={()=> handleClick(index, 'chemical')}>
                                     { item.name}
                                 </li>
                                 ))}
                             </ul>
-                            { chemicalPopUp ? 
-                                <Chemical handleClick={setChemicalPopUp} compound={chemicals[popUpIndex]}/> : null }
+                            { chemicalPop ? 
+                                <Chemical compound={chemicals[indexPop]}/> : null }
                         </div>
                         które często są wynikiem spalania paliw.
                     </article>

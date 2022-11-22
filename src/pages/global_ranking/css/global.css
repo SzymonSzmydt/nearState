@@ -1,3 +1,7 @@
+.global-ranking {
+    position: relative;
+}
+
 .global {
     cursor: pointer;
     margin: -1rem 0;
