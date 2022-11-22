@@ -6,6 +6,10 @@
     left: 12rem;
 }
 
+.chemical-box_p {
+    padding: 0 0.5rem;
+} 
+
 .chemical-box th {
     width: 8.5rem;
     text-align: left;

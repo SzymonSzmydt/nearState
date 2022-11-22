@@ -10,7 +10,7 @@ type PopUpProps = {
     handleClick: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-export function PopUp({rank, range, face, bgcolor, description, handleClick}: PopUpProps) {
+export function PopUpLegend({rank, range, face, bgcolor, description, handleClick}: PopUpProps) {
     return (
         <section className="popUp">
             <WindowModule bgcolor={bgcolor}>

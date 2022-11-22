@@ -4,7 +4,7 @@ import { Chemical } from '../chemical/Chemical';
 import { chemicals } from '../../contex/ChemicalData';
 import { useState } from 'react';
 import { legend } from '../../contex/types/AirLegendDescription';
-import { PopUp } from '../../components/ui/PopUp';
+import { PopUpLegend } from '../../components/ui/PopUpLegend';
 
 export function AirQuality() {
     const [ chemicalPopUp, setChemicalPopUp ] = useState(false);
@@ -34,7 +34,7 @@ export function AirQuality() {
                         <span> { element.range } </span>
                     </div> )}
                     { legendPopUp ? 
-                    <PopUp {...legend[popUpIndex]} handleClick={setLegendPopUp}/> 
+                    <PopUpLegend {...legend[popUpIndex]} handleClick={setLegendPopUp}/> 
                     : null }
                 </section>
                 <section>

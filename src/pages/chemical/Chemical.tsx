@@ -22,7 +22,7 @@ export function Chemical({ compound, handleClick }: ChemicalProps) {
                 <div className="chemical-box">
                     <div className="close" onClick={() => handleClick(false)} />
                     <div>
-                        <p>
+                        <p className="chemical-box_p">
                             <b> {compound?.name} </b> - {parse(compound?.pattern)}
                         </p>
                         <table className="popUp-box">

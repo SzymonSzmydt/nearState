@@ -1,15 +1,17 @@
 import { Glass } from '../../components/window/Glass';
 import { earthQualityColor } from '../../contex/hooks/EarthQualityColor';
+import { Aqicn } from '../../contex/types/Aqicn';
 
 type CityBarProps = {
     number: number;
-    city: string;
-    aqi: number
 }
 
 const citys = ["Katowice", "Poznań", "Warszawa", "Gdansk", "Kraków", "Łódź", "Szczecin", "Wrocław"];
 
-export function GlassCityBar({number, city, aqi}: CityBarProps) {
+export function GlassCityBar({number, ...element}: CityBarProps & Aqicn) {
+
+    const { aqi, city, ...rest } = element;
+
     return (
         <Glass>
             <section className="flex wrap global">
@@ -23,7 +25,7 @@ export function GlassCityBar({number, city, aqi}: CityBarProps) {
                             ? earthQualityColor(aqi, "color")
                             : "",
                     }}>
-                        { citys.filter(e => city.includes(e.slice(0, 4))) }
+                        { citys.filter(e => city?.name.includes(e.slice(0, 4))) }
                 </div>
                 <div
                     className="flex wrap global_city"
