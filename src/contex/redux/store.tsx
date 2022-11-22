@@ -1,11 +1,11 @@
 import { configureStore } from '@reduxjs/toolkit'
 import airCityReducer from '../redux/AirCitySlice'
-import katowiceReducer from '../redux/AirCitySlice'
+import aqicnCityReducer from '../redux/AqicnCity'
 
 export const store = configureStore({
   reducer: {
     airCity: airCityReducer,
-    katowiceCity: katowiceReducer,
+    aqicn: aqicnCityReducer,
   },
 })
 
