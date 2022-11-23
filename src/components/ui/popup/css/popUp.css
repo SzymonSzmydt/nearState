@@ -18,9 +18,12 @@
 }
 
 .popUp-ranking {
+    overflow: hidden;
+    animation: slowOpenWindow 0.2s ease-in;
     position: absolute;
     top: 0;
-    left: -10rem;
+    right: 0;
+    left: 0;
 }
 
 .popUp-box {

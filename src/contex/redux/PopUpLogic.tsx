@@ -1,19 +1,18 @@
 import { createSlice } from '@reduxjs/toolkit'
-import type { PayloadAction } from '@reduxjs/toolkit'
+import { PayloadAction } from '@reduxjs/toolkit'
 
 interface PopUpType {
-    index: number;
     chemical: boolean;
     legend: boolean;
     ranking: boolean;
-
+    index: number;
 }
 
 const initialState: PopUpType = {
-    index: 0,
     chemical: false,
     legend: false,
     ranking: false,
+    index: 0
 }
 
 export const popUpSlice = createSlice({
@@ -35,7 +34,7 @@ export const popUpSlice = createSlice({
       rankingPopUp: (state, action:PayloadAction<boolean>) => {
         state.ranking = action.payload
       },
-    indexPopUp: (state, action:PayloadAction<number>) => {
+     indexPopUp: (state, action:PayloadAction<number>) => {
       state.index = action.payload
     },
   },

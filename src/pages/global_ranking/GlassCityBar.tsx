@@ -2,26 +2,33 @@ import { Glass } from '../../components/window/Glass';
 import { earthQualityColor } from '../../contex/hooks/EarthQualityColor';
 import { Aqicn } from '../../contex/types/Aqicn';
 import { useDispatch } from 'react-redux';
-import { rankingPopUp } from '../../contex/redux/PopUpLogic';
+import { rankingPopUp, popUpOff, indexPopUp } from '../../contex/redux/PopUpLogic';
 
 type CityBarProps = {
-    number: number;
+    index: number;
 }
 
 const citys = ["Katowice", "Poznań", "Warszawa", "Gdansk", "Kraków", "Łódź", "Szczecin", "Wrocław"];
 
-export function GlassCityBar({number, ...element}: CityBarProps & Aqicn) {
+export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
     const dispatch = useDispatch()
     const { aqi, city } = element;
 
+    const handleClick = () => {
+        console.log(index);
+        dispatch(popUpOff());
+        dispatch(indexPopUp(index));
+        dispatch(rankingPopUp(true));
+    }
+
     return (
         <Glass>
-            <section className="flex wrap global" onClick={()=> dispatch(rankingPopUp(true))}>
+            <section className="flex wrap global" onClick={handleClick}>
                 <p className="glass-nr" style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
                             : "",
-                    }}> {`${number}.`} </p>              
+                    }}> {`${index + 1}.`} </p>              
                 <div className="flex global-glass_small" style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
