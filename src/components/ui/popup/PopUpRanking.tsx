@@ -13,7 +13,7 @@ export function PopUpRanking() {
 
     return (
         <section className="popUp-ranking">
-            <WindowModule bgcolor={"var(--color-popup)"}>
+            <WindowModule>
                 <div className="popUp-box">
                     <div className="close" onClick={() => dispatch(rankingPopUp(false))} />
                     <section>
@@ -23,12 +23,12 @@ export function PopUpRanking() {
                                 <tr>
                                     <td className="popup-box__td">Monitoring</td>
                                     <th className="popup-box__th"> { city.name } </th>
-                                    <td className="rowSpan" rowSpan={5}> 
-                                        <div style={{backgroundColor: earthQualityColor(aqi, 'color')}} className="td-rank-img face">
+                                    <td rowSpan={5}> 
+                                        <div style={{backgroundColor: earthQualityColor(aqi, 'color')}} className="flex popup-box__img">
                                             <img src={require(`../../../assets/faces/${earthQualityColor(aqi, 'aqius')}.png`)}
                                             className="popUp-img"
                                             />
-                                            <p className="popUp-box-p">{ aqi } <span className="small-font">US AQI</span></p>
+                                            <span className="popUp-box-p margin-up">{ aqi } <span className="small-font">US AQI</span></span>
                                         </div>                                      
                                     </td>
                                 </tr>

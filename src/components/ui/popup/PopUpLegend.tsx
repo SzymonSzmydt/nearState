@@ -13,7 +13,6 @@ type PopUpProps = {
 
 export function PopUpLegend({rank, range, face, bgcolor, description}: PopUpProps) {
     const dispatch = useDispatch();
-
     return (
         <section className="popUp">
             <WindowModule bgcolor={bgcolor}>
