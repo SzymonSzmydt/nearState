@@ -3,6 +3,7 @@ import { WindowModule } from '../../window/WindowModule';
 import { useSelector, useDispatch } from 'react-redux';
 import { rankingPopUp } from '../../../contex/redux/PopUpLogic';
 import { RootState } from '../../../contex/redux/store';
+import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 
 export function PopUpRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
@@ -10,38 +11,48 @@ export function PopUpRanking() {
     const dispatch = useDispatch();
     const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
 
-    console.log(index);
-    
-
     return (
         <section className="popUp-ranking">
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="popUp-box">
                     <div className="close" onClick={() => dispatch(rankingPopUp(false))} />
-                    <section className="flex">
-                        <table className="popUp-box">
-                            <thead>
-                                <tr className="popup-box__tr">
-                                    <th>Monitoring</th>
-                                    <td> { city.name } </td>
+                    <section>
+                        <h3>Dokładne dane dla wybranego miasta</h3>
+                        <table className="popUp-box align-tr">
+                            <tbody className="popup-box_tbody">
+                                <tr>
+                                    <td className="popup-box__td">Monitoring</td>
+                                    <th className="popup-box__th"> { city.name } </th>
+                                    <td className="rowSpan" rowSpan={5}> 
+                                        <div style={{backgroundColor: earthQualityColor(aqi, 'color')}} className="td-rank-img face">
+                                            <img src={require(`../../../assets/faces/${earthQualityColor(aqi, 'aqius')}.png`)}
+                                            className="popUp-img"
+                                            />
+                                            <p className="popUp-box-p">{ aqi } <span className="small-font">US AQI</span></p>
+                                        </div>                                      
+                                    </td>
                                 </tr>
                                 <tr>
-                                    <th>AQI</th>
-                                    <td> { aqi } </td>
+                                    <td>AQI</td>
+                                    <th> { aqi } </th>
+                                    <td></td>
                                 </tr>
                                 <tr>
-                                    <th>Dane z dnia</th>
-                                    <td> { time.s } </td>
+                                    <td>Dane z dnia</td>
+                                    <th> { time.s } </th>
+                                    <td></td>
                                 </tr>
-                            </thead>
-                            <tbody>
-                                <tr className="popup-box__tr">
-                                    <td> </td>
-                                    <th> </th>
+                                <tr>
+                                    <td> Pył zawieszony dominujący </td>
+                                    <th> { dominentpol } </th>
                                 </tr>
-                                <tr className="popup-box__tr">
-                                    <td>  </td>
-                                    <th>  </th>
+                                <tr>
+                                    <td> pm2.5 </td>
+                                    <th> { iaqi.pm25.v } </th>
+                                </tr>
+                                <tr>
+                                    <td> pm10 </td>
+                                    <th> { iaqi.pm10.v } </th>
                                 </tr>
                             </tbody>
                         </table>

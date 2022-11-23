@@ -1,6 +1,6 @@
 import "./css/global.css";
 import { GlassCityBar } from './GlassCityBar';
-import { useSelector, useDispatch } from 'react-redux';
+import { useSelector } from 'react-redux';
 import { RootState } from '../../contex/redux/store';
 import { PopUpRanking } from '../../components/ui/popup/PopUpRanking';
 
