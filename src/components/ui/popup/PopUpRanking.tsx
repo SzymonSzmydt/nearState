@@ -3,6 +3,7 @@ import { WindowModule } from '../../window/WindowModule';
 import { useDispatch } from 'react-redux';
 import { rankingPopUp } from '../../../contex/redux/PopUpLogic';
 
+
 export function PopUpRanking() {
     const dispatch = useDispatch();
 
@@ -16,7 +17,7 @@ export function PopUpRanking() {
                             <tbody>
                                 <tr className="popup-box__tr">
                                     <td> Jakość powietrza </td>
-                                    <th>  </th>
+                                    <th> </th>
                                 </tr>
                                 <tr className="popup-box__tr">
                                     <td> AQI </td>

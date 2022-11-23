@@ -7,10 +7,13 @@ import { rankingPopUp, popUpOff, indexPopUp  } from '../../contex/redux/PopUpLog
 
 export function GlobalRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
+    const fileIndex = useSelector((state: RootState) => state.popUp.index);
     const ranking = useSelector((state: RootState) => state.popUp.ranking);
     const dispatch = useDispatch();
 
-    console.log("aqicnData ", aqicnData);
+
+    console.log("aqicnData ", aqicnData, typeof aqicnData);
+    
     const handleClick = (index: number) => {
         dispatch(popUpOff());
         dispatch(indexPopUp(index));
@@ -18,12 +21,11 @@ export function GlobalRanking() {
     }
     return (
         <div className="global-ranking">
-            { aqicnData ? (aqicnData as any[]).map((element, index) => (
+            { aqicnData ? aqicnData.map((element, index) => (
                 <GlassCityBar
                     key={element.idx}
                     number={index + 1}
                     {...element}
-                    handleClick={()=> handleClick(index)}
                 />
             )) : null }
            { ranking ? <PopUpRanking /> : null}

@@ -1,6 +1,6 @@
 import { configureStore } from '@reduxjs/toolkit'
 import airCityReducer from '../redux/AirCitySlice'
-import aqicnCityReducer from '../redux/AqicnCity'
+import aqicnCityReducer from '../redux/AqicnCitySlice'
 import popUpSliceReducer from './PopUpLogic';
 
 export const store = configureStore({

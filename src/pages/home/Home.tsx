@@ -2,7 +2,7 @@ import { Window } from './../../components/window/Window';
 import { Map } from './Map';
 import { urls } from '../../contex/env';
 import { useDispatch } from 'react-redux';
-import { getAqicn } from '../../contex/redux/AqicnCity';
+import { getAqicn } from '../../contex/redux/AqicnCitySlice';
 import { useEffect } from 'react';
 
 export function Home() {
