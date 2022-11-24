@@ -31,6 +31,8 @@
   --legend-unhealthy-t: rgba(248, 194, 191, 0.7);
   --legend-very-unhealthy-t: rgba(245, 159, 156, 0.7);
   --legend-hazardous-t: rgba(240, 193, 234, 0.7);
+
+  --air-pollution-table: rgba(153, 211, 245, 0.3);
   
   --color-text: #000000;
   --color-text-hover: rgb(42, 207, 78);

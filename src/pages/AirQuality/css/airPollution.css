@@ -10,11 +10,7 @@
 
 .air__pollution-tr {
     text-align: center;
-    background-color: var(--weather-hu);
-}
-
-.air__pollution-table > td:first-child {
-    border-top-left-radius: var(--radius);
+    background-color: var(--air-pollution-table);
 }
 
 .air__pollution-td {
@@ -25,4 +21,20 @@
     width: 8rem;
     font-weight: 600;
     padding: 0.75rem;
+}
+
+.td-border-tl {
+    border-top-left-radius: var(--radius);
+}
+
+.td-border-tr {
+    border-top-right-radius: var(--radius);
+}
+
+.td-border-bl {
+    border-bottom-left-radius: var(--radius);
+}
+
+.td-border-br {
+    border-bottom-right-radius: var(--radius);
 }

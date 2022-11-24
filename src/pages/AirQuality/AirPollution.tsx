@@ -14,8 +14,8 @@ export function AirPollution() {
                 <table className="air__pollution-table">
                     <tbody>
                         <tr className="air__pollution-tr">
-                            <td className="air__pollution-td"> CO </td>
-                            <th className="air__pollution-th"> { airData ? airData[index]?.iaqi?.co?.v : null } 
+                            <td className="air__pollution-td td-border-tl"> CO </td>
+                            <th className="air__pollution-th td-border-tr"> { airData ? airData[index]?.iaqi?.co?.v : null } 
                             <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
                         </tr>
                         <tr className="air__pollution-tr">
@@ -24,8 +24,8 @@ export function AirPollution() {
                             <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
                         </tr>
                         <tr className="air__pollution-tr">
-                            <td className="air__pollution-td"> O<sub>3</sub> </td>
-                            <th className="air__pollution-th"> { airData ? airData[index]?.iaqi?.no2?.v : null } 
+                            <td className="air__pollution-td  td-border-bl"> O<sub>3</sub> </td>
+                            <th className="air__pollution-th td-border-br"> { airData ? airData[index]?.iaqi?.no2?.v : null } 
                             <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
                         </tr>
                     </tbody>
