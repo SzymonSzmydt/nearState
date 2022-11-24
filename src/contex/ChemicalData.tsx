@@ -35,7 +35,7 @@ export const chemicals = [
     },
     {
         name: "Tlenek węgla",
-        pattern: "CO<sub>2</sub>",
+        pattern: "CO",
         mass: "28,01 g/mol",
         tempTop: -205,
         tempWrz: -191.5,

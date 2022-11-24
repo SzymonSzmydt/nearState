@@ -1,19 +1,12 @@
 import { ResponsiveBar } from '@nivo/bar'
 
-interface Result {
-  o3?: number;
-  pm10?: number;
-  pm25?: number;
-  day?: string;
-}
-
 interface Data {
   readonly day?: string;
   readonly avg?: number;
 }
 
 function MakeAGoodObject(x: Data[], y:Data[], z:Data[]): any[] {
-  return x.map((e, i) => ({o3: e['avg'], pm10: y[i]['avg'], pm25: z[i]['avg'], day: e['day'] }));
+  return x.map((e, i) => ({O3: e['avg'], pm10: y[i]['avg'], pm25: z[i]['avg'], day: e['day'] }));
 }
 
 
@@ -23,7 +16,7 @@ export function Bar({ o3, pm10, pm25 }: any) {
     return (
         <ResponsiveBar
             data={data}
-            keys={["o3", "pm10", "pm25"]}
+            keys={["O3", "pm10", "pm25"]}
             indexBy="day"
             margin={{ top: 50, right: 130, bottom: 50, left: 60 }}
             padding={0.5}
