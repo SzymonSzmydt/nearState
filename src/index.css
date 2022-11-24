@@ -83,8 +83,29 @@
   font-weight: 700;
 }
 
+html {
+  overflow-y: scroll;
+  scroll-behavior: smooth;
+}
+
 * {
   box-sizing: border-box;
+}
+
+::-webkit-scrollbar {
+  width: 10px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--weather-hu); 
+}
+ 
+::-webkit-scrollbar-thumb {
+  background: var(--weather-pr); 
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--weather-ws); 
 }
 
 body {

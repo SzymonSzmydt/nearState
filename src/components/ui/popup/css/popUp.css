@@ -25,13 +25,14 @@
     width: 50%;
 }
 
-.popUp-ranking {
+.popup-ranking {
     overflow: hidden;
     animation: slowOpenWindow 0.2s ease-in;
     position: absolute;
     top: -1rem;
-    right: 0;
-    left: 0;
+    right: 0.25rem;
+    left: 0.25rem;
+    z-index: 1;
 }
 
 .popUp-box {
@@ -72,7 +73,7 @@
 }
 
 .popup-box__chart {
-    margin: 1rem;
+    overflow: hidden;
     width: 100%;
     height: 25rem;
 }
@@ -106,5 +107,9 @@
     .popup-box__th {
         width: 55%;
         font-size: 0.8rem;
+    }
+
+    .popup-box__chart {
+        display: none;
     }
 }

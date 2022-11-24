@@ -13,12 +13,12 @@ export function PopUpRanking() {
     const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
     
     return (
-        <section className="popUp-ranking">
+        <section className="popup-ranking">
             <WindowModule>
                 <div className="popUp-box">
                     <div className="close" onClick={() => dispatch(rankingPopUp(false))} />
                     <section>
-                        <h3>Dokładne dane dla wybranego miasta</h3>
+                        <h3>Informacje dotyczące wybranego miasta</h3>
                         <table className="popUp-box align-tr">
                             <tbody className="popup-box_tbody">
                                 <tr>

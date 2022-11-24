@@ -69,7 +69,6 @@ export function Weather() {
                     <span className="weather_box-b">Kierunek</span>
                 </div>
             </WindowModule>
-            <button onClick={handleClick}>API</button>
         </section>
     );
 }

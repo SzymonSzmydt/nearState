@@ -7,8 +7,6 @@ import { PopUpRanking } from '../../components/ui/popup/PopUpRanking';
 export function GlobalRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
     const ranking = useSelector((state: RootState) => state.popUp.ranking);
-
-    console.log("aqicnData ", aqicnData);
     return (
         <div className="global-ranking">
             { aqicnData ? aqicnData.map((element, index) => (
