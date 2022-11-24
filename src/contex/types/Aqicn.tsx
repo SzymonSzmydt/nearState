@@ -21,6 +21,10 @@ export interface Daily {
 
 export interface Aqicn {
     aqi?: number;
+    attributions?: {
+        url: string;
+        name: string;
+    }
     city?: {
         name: string;
     },

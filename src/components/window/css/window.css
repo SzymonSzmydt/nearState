@@ -22,6 +22,7 @@
     color: var(--color-text);
     border-radius: var(--radius);
     box-shadow: var(--box-shadow);
+    user-select: none;
 }
 
 .glass {

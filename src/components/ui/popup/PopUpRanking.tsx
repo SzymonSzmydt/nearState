@@ -36,25 +36,27 @@ export function PopUpRanking() {
                                 </tr>
                                 <tr>
                                     <td>AQI</td>
-                                    <th> { aqi } </th>
+                                    <th className="popup-box__th"> { aqi } </th>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td>Dane z dnia</td>
-                                    <th> { time?.s } </th>
+                                    <th className="popup-box__th"> { time?.s } </th>
                                     <td></td>
                                 </tr>
                                 <tr>
                                     <td> Pył zawieszony dominujący </td>
-                                    <th> { dominentpol } </th>
+                                    <th className="popup-box__th"> { dominentpol } </th>
                                 </tr>
                                 <tr>
                                     <td> pm2.5 </td>
-                                    <th> { iaqi?.pm25?.v } </th>
+                                    <th className="popup-box__th"> { iaqi?.pm25?.v } 
+                                    <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
                                 </tr>
                                 <tr>
                                     <td> pm10 </td>
-                                    <th> { iaqi?.pm10?.v } </th>
+                                    <th className="popup-box__th"> { iaqi?.pm10?.v }
+                                    <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
                                 </tr>
                             </tbody>
                         </table>

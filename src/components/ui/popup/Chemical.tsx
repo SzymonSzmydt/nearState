@@ -48,13 +48,15 @@ export function Chemical({ compound }: ChemicalProps) {
                             </tbody>
                         </table>
                         <article>
-                            {compound?.description}
+                            {compound?.description} 
+                            <br/>
+                            <br/>
+                            <em> źródło: </em>
                             <a
                                 href={compound?.link}
                                 target="_blank"
                                 rel="noreferrer">
-                                {" "}
-                                Wikipedia
+                                <em> Wikipedia </em>
                             </a>
                         </article>
                     </div>

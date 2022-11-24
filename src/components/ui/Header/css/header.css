@@ -28,7 +28,6 @@
 .header__nav {
     font-size: 1.15rem;
     font-weight: 600;
-    text-transform: lowercase;
 }
 
 @media screen and (max-width: 350px) {

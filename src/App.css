@@ -32,3 +32,7 @@
 .small-font {
   font-size: 0.85rem;
 }
+
+.thin-font {
+  font-weight: 400;
+}

@@ -1,6 +1,6 @@
 export const chemicals = [
     {
-        name: "Dwutlenek Siarki",
+        name: "Dwutlenek siarki",
         pattern: "SO<sub>2</sub>",
         mass: "64,066 g/mol",
         tempTop: -72,
@@ -54,6 +54,6 @@ export const chemicals = [
         solvent:
             "Kwas octowy, Aceton, Chloroform, Tetrachlorometan, Eter dietylowy",
         description:
-            "Benzen – organiczny związek chemiczny z grupy arenów. Jest to najprostszy karbocykliczny, obojętny węglowodór aromatyczny. Jego nieorganicznym analogiem jest borazyna",
+            "Benzen – organiczny związek chemiczny z grupy arenów. Jest to najprostszy karbocykliczny, obojętny węglowodór aromatyczny. Jego nieorganicznym analogiem jest borazyna.",
     },
 ];

@@ -46,6 +46,7 @@ export function Home() {
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('aqicn') || "");
         dispatch(getAqicn(data));
+        console.log(data);
     }, []);
 
     return (
