@@ -4,13 +4,14 @@ import { useSelector, useDispatch } from 'react-redux';
 import { rankingPopUp } from '../../../contex/redux/PopUpLogic';
 import { RootState } from '../../../contex/redux/store';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
+import { Bar } from '../../Charts/Bar';
 
 export function PopUpRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState) => state.popUp.index);
     const dispatch = useDispatch();
     const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
-
+    
     return (
         <section className="popUp-ranking">
             <WindowModule>
@@ -22,13 +23,14 @@ export function PopUpRanking() {
                             <tbody className="popup-box_tbody">
                                 <tr>
                                     <td className="popup-box__td">Monitoring</td>
-                                    <th className="popup-box__th"> { city.name } </th>
+                                    <th className="popup-box__th"> { city?.name } </th>
                                     <td rowSpan={5}> 
                                         <div style={{backgroundColor: earthQualityColor(aqi, 'color')}} className="flex popup-box__img">
                                             <img src={require(`../../../assets/faces/${earthQualityColor(aqi, 'aqius')}.png`)}
                                             className="popUp-img"
                                             />
-                                            <span className="popUp-box-p margin-up">{ aqi } <span className="small-font">US AQI</span></span>
+                                            <span className="popUp-box-p margin-up">{ aqi } </span>
+                                            <span className="small-font"><b>US AQI</b></span>
                                         </div>                                      
                                     </td>
                                 </tr>
@@ -39,7 +41,7 @@ export function PopUpRanking() {
                                 </tr>
                                 <tr>
                                     <td>Dane z dnia</td>
-                                    <th> { time.s } </th>
+                                    <th> { time?.s } </th>
                                     <td></td>
                                 </tr>
                                 <tr>
@@ -48,18 +50,18 @@ export function PopUpRanking() {
                                 </tr>
                                 <tr>
                                     <td> pm2.5 </td>
-                                    <th> { iaqi.pm25.v } </th>
+                                    <th> { iaqi?.pm25?.v } </th>
                                 </tr>
                                 <tr>
                                     <td> pm10 </td>
-                                    <th> { iaqi.pm10.v } </th>
+                                    <th> { iaqi?.pm10?.v } </th>
                                 </tr>
                             </tbody>
                         </table>
                     </section>
-                    <article>
-                      
-                    </article>
+                    <div className="popup-box__chart">
+                        <Bar {...forecast?.daily}/>
+                    </div>
                 </div>
             </WindowModule>
         </section>

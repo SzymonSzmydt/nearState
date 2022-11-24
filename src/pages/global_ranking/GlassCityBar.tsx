@@ -15,7 +15,6 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
     const { aqi, city } = element;
 
     const handleClick = () => {
-        console.log(index);
         dispatch(popUpOff());
         dispatch(indexPopUp(index));
         dispatch(rankingPopUp(true));
