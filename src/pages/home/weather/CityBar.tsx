@@ -1,6 +1,6 @@
-import { WeatherData } from '../../components/ui/WeatherData';
-import { WindowModule } from '../../components/window/WindowModule';
-import { CityProps } from '../../contex/types/CityProps';
+import { WeatherData } from '../../../components/ui/WeatherData';
+import { WindowModule } from '../../../components/window/WindowModule';
+import { CityProps } from '../../../contex/types/CityProps';
 
 export function CityBar({city, pollution, weather}: CityProps) {
     const date:string = pollution ? (pollution.ts).slice(0, 10) : '-';
@@ -10,7 +10,7 @@ export function CityBar({city, pollution, weather}: CityProps) {
         <WindowModule>
             <section className="flex wrap weather_box-city">              
                 <img
-                    src={require(`../../assets/weather/${weather?.ic}.png`)}
+                    src={require(`../../../assets/weather/${weather?.ic}.png`)}
                     className="weather_img"
                     alt="aktualna temperatura"
                 />

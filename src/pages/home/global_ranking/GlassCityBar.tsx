@@ -1,8 +1,8 @@
-import { Glass } from '../../components/window/Glass';
-import { earthQualityColor } from '../../contex/hooks/EarthQualityColor';
-import { Aqicn } from '../../contex/types/Aqicn';
 import { useDispatch } from 'react-redux';
-import { rankingPopUp, popUpOff, indexPopUp } from '../../contex/redux/PopUpLogic';
+import { rankingPopUp, popUpOff, indexPopUp } from '../../../contex/redux/PopUpLogic';
+import { Glass } from '../../../components/window/Glass';
+import { Aqicn } from '../../../contex/types/Aqicn';
+import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 
 type CityBarProps = {
     index: number;
@@ -43,7 +43,7 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
                             : "",
                     }}>
                     <img
-                        src={require(`../../assets/faces/${earthQualityColor(aqi, "aqius")}.png`)}
+                        src={require(`../../../assets/faces/${earthQualityColor(aqi, "aqius")}.png`)}
                         className="global-glass_img"
                         alt="Twarz odzwierciedlająca zanieczyszczenie powietrza"
                     />

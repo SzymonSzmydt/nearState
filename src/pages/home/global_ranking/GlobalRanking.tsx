@@ -1,8 +1,8 @@
 import "./css/global.css";
-import { GlassCityBar } from './GlassCityBar';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../contex/redux/store';
-import { PopUpRanking } from '../../components/ui/popup/PopUpRanking';
+import { RootState } from '../../../contex/redux/store';
+import { PopUpRanking } from '../../../components/ui/popup/PopUpRanking';
+import { GlassCityBar } from './GlassCityBar'
 
 export function GlobalRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);

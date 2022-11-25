@@ -6,7 +6,6 @@ import { RootState } from '../../contex/redux/store';
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState)=> state.popUp.index);
-    
     return (
         airData ?
         <WindowModule>

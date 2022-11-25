@@ -1,13 +1,13 @@
 import "./css/weather.css";
-import { AirVisualApi } from '../../contex/types/AirVisualApi';
-import { WindowModule } from '../../components/window/WindowModule';
-import { WeatherData } from '../../components/ui/WeatherData';
-import { urlNearest } from '../../contex/env';
+import { AirVisualApi } from '../../../contex/types/AirVisualApi';
+import { WindowModule } from '../../../components/window/WindowModule';
+import { WeatherData } from '../../../components/ui/WeatherData';
+import { urlNearest } from '../../../contex/env';
 import { CityBar } from './CityBar';
 import { useSelector, useDispatch } from 'react-redux';
-import { RootState } from '../../contex/redux/store';
-import { getAirCityData } from '../../contex/redux/AirCitySlice';
+import { getAirCityData } from '../../../contex/redux/AirCitySlice';
 import { useEffect } from 'react';
+import { RootState } from '../../../contex/redux/store';
 
 export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);

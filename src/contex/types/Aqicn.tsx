@@ -19,12 +19,14 @@ export interface Daily {
     }
 }
 
+type Attributions = {
+    url: string;
+    name: string;
+}
+
 export interface Aqicn {
     aqi?: number;
-    attributions?: {
-        url: string;
-        name: string;
-    }
+    attributions: Attributions[]
     city?: {
         name: string;
     },
