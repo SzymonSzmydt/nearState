@@ -38,3 +38,9 @@
 .td-border-br {
     border-bottom-right-radius: var(--radius);
 }
+
+@media screen and (max-width: 800px) {
+    .air__pollution {
+        display: none;
+    }
+}

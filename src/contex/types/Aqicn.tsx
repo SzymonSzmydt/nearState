@@ -36,6 +36,7 @@ export interface Aqicn {
         co: { v: number };
         no2: { v: number };
         o3: { v: number };
+        so2: { v: number };
         pm10: { v: number };
         pm25: { v: number };
     },
