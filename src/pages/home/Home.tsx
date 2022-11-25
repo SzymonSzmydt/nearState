@@ -42,11 +42,9 @@ export function Home() {
                 console.log(err);  
             }
         }
-
     useEffect(() => {
         const data = JSON.parse(localStorage.getItem('aqicn') || "");
         dispatch(getAqicn(data));
-        console.log(data);
     }, []);
 
     return (

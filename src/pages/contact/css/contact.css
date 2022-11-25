@@ -1,10 +1,16 @@
 .contact {
+    max-width: 52rem;
+    margin: 2rem auto;
     animation: slowOpenWindow 0.5s ease-in;
-    max-width: 38rem;
-    margin: 1rem auto;
 }
 
-.contact__box {
+.information {
+    flex-direction: column;
+    align-items: center;
+    width: 50%;
+}
+
+.information__box {
     justify-content: flex-start;
     font-weight: 500;
 }

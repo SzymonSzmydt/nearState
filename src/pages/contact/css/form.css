@@ -1,0 +1,25 @@
+.form__box {
+    width: 50%;
+    background-color: var(--color-primary);
+    border-radius: var(--radius);
+}
+
+.form {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 1rem;
+}
+
+.form label {
+    margin: 0.5rem 0;
+    color: var(--color-white);
+}
+
+.form textarea {
+    appearance: none;
+    border: 0;
+}
+
+.form textarea:focus {
+    border: none;
+}
