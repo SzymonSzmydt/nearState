@@ -5,7 +5,7 @@ import { RootState } from '../../../contex/redux/store';
 
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);
-    const index = useSelector((state: RootState)=> state.popUp.index);
+    const index = useSelector((state: RootState)=> state.popUp.rankIndex);
     return (
         airData ?
         <WindowModule>
@@ -35,6 +35,7 @@ export function AirPollution() {
                         </tr>
                     </tbody>
                 </table>
+                Ilości zanieczyszczeń występująca w powietrzu
             </section>
         </WindowModule> : null
     );

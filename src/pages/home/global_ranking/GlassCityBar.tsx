@@ -1,5 +1,5 @@
 import { useDispatch } from 'react-redux';
-import { rankingPopUp, popUpOff, indexPopUp } from '../../../contex/redux/PopUpLogic';
+import { rankingPopUp, popUpOff, indexRank } from '../../../contex/redux/PopUpLogic';
 import { Glass } from '../../../components/window/Glass';
 import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
@@ -16,7 +16,7 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
 
     const handleClick = () => {
         dispatch(popUpOff());
-        dispatch(indexPopUp(index));
+        dispatch(indexRank(index));
         dispatch(rankingPopUp(true));
     }
 

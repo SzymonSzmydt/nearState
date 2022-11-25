@@ -6,13 +6,15 @@ interface PopUpType {
     legend: boolean;
     ranking: boolean;
     index: number;
+    rankIndex: number;
 }
 
 const initialState: PopUpType = {
     chemical: false,
     legend: false,
     ranking: false,
-    index: 0
+    index: 0,
+    rankIndex: 0
 }
 
 export const popUpSlice = createSlice({
@@ -37,6 +39,9 @@ export const popUpSlice = createSlice({
      indexPopUp: (state, action:PayloadAction<number>) => {
       state.index = action.payload
     },
+    indexRank: (state, action:PayloadAction<number>) => {
+      state.index = action.payload
+    },
   },
 })
 
@@ -45,6 +50,7 @@ export const {
     legendPopUp, 
     chemicalPopUp,
     rankingPopUp, 
-    indexPopUp 
+    indexPopUp,
+    indexRank
 } = popUpSlice.actions
 export default popUpSlice.reducer
