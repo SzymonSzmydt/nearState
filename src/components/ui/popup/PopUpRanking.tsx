@@ -8,7 +8,7 @@ import { Bar } from '../../Charts/Bar';
 
 export function PopUpRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
-    const index = useSelector((state: RootState) => state.popUp.index);
+    const index = useSelector((state: RootState) => state.popUp.indexR);
     const dispatch = useDispatch();
     const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
     

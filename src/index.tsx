@@ -12,12 +12,14 @@ import 'normalize.css';
 import './index.css';
 import App from './App';
 import { Home } from './pages/home/Home';
+import { Contact } from './pages/contact/Contact';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<App />}>
                 <Route index={true} element={<Home />} />
+                <Route path="contact" element={<Contact />} />
             </Route>
             <Route path="*" element={<App />} />
         </>
