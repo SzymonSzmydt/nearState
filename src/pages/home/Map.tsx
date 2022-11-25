@@ -1,8 +1,8 @@
 import './css/map.css';
-import { AirPollution } from '../AirQuality/AirPollution';
-import { GlobalRanking } from '../home/global_ranking/GlobalRanking';
-import { AirQuality } from '../AirQuality/AirQuality';
+import { AirPollution } from './AirQuality/AirPollution';
 import { Weather } from './weather/Weather';
+import { AirQuality } from './AirQuality/AirQuality';
+import { GlobalRanking } from './global_ranking/GlobalRanking';
 
 export function Map() {
     return (

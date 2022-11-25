@@ -1,7 +1,7 @@
 import './css/airPollution.css'
-import { WindowModule } from '../../components/window/WindowModule';
+import { WindowModule } from '../../../components/window/WindowModule';
 import { useSelector } from 'react-redux';
-import { RootState } from '../../contex/redux/store';
+import { RootState } from '../../../contex/redux/store';
 
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);

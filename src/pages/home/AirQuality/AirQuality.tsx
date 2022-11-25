@@ -1,12 +1,12 @@
 import './css/ariQuality.css';
-import { WindowModule } from '../../components/window/WindowModule';
-import { Chemical } from '../../components/ui/popup/Chemical';
-import { chemicals } from '../../contex/ChemicalData';
-import { legend } from '../../contex/types/AirLegendDescription';
-import { PopUpLegend } from '../../components/ui/popup/PopUpLegend';
+import { WindowModule } from '../../../components/window/WindowModule';
+import { Chemical } from '../../../components/ui/popup/Chemical';
+import { chemicals } from '../../../contex/ChemicalData';
+import { legend } from '../../../contex/types/AirLegendDescription';
+import { PopUpLegend } from '../../../components/ui/popup/PopUpLegend';
 import { useDispatch, useSelector } from 'react-redux';
-import { popUpOff, legendPopUp, chemicalPopUp, indexPopUp } from '../../contex/redux/PopUpLogic';
-import { RootState } from '../../contex/redux/store';
+import { popUpOff, legendPopUp, chemicalPopUp, indexPopUp } from '../../../contex/redux/PopUpLogic';
+import { RootState } from '../../../contex/redux/store';
 
 export function AirQuality() {
     const dispatch = useDispatch();
