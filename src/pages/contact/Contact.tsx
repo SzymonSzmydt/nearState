@@ -1,4 +1,3 @@
-import './css/form.css'
 import { Information } from './Information';
 import { WindowModule } from '../../components/window/WindowModule';
 import { Form } from './Form';

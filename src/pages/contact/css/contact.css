@@ -8,9 +8,14 @@
     flex-direction: column;
     align-items: center;
     width: 50%;
+    user-select: none;
 }
 
-.information__box {
+.information__wrapper h3 {
+    text-align: center;
+}
+
+.information__wrapper-box {
     justify-content: flex-start;
     font-weight: 500;
 }
@@ -41,4 +46,15 @@
 
 .phone-filter {
     filter: invert(47%) sepia(41%) saturate(845%) hue-rotate(171deg) brightness(90%) contrast(88%);
+}
+
+@media screen and (max-width: 800px) {
+    .contact {
+        max-width: 100%;
+        margin: 0 auto;
+    }
+
+    .information {
+        width: 100%;
+    }
 }

@@ -7,19 +7,59 @@
 .form {
     flex-direction: column;
     align-items: flex-start;
-    padding: 1rem;
+    padding: 0 2rem;
 }
 
 .form label {
     margin: 0.5rem 0;
     color: var(--color-white);
+    font-size: 0.75rem;
+    font-weight: 500;
+    border: none;
 }
 
-.form textarea {
-    appearance: none;
+.input, textarea {
+    padding: 0.15rem 0.5rem;
+    font-weight: 500;
     border: 0;
 }
 
-.form textarea:focus {
+.input {
+    width: 100%;
+}
+
+.input:focus {
+    outline: none;
+}
+
+textarea {
+    width: 100%;
+    height: 4rem;
+}
+
+textarea:focus {
+    outline: none;
+}
+
+.error {
+    color: red;
+}
+
+@media screen and (max-width: 800px) {
+    .form__box {
+        width: 100%;
+        margin: 1rem 0;
+    }
+}
+
+.btn {
+    appearance: none;
+    padding: 0.25rem 2rem;
+    margin: 0.5rem 0;
+    font-size: 0.85rem;
+    font-weight: 600;
+    color: var(--color-white);
     border: none;
+    background-color: var(--color-primary-t);
+    border-radius: var(--radius);
 }
