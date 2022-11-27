@@ -42,7 +42,12 @@ textarea:focus {
 }
 
 .error {
-    color: red;
+    color: rgb(250, 162, 162);
+    font-weight: 600;
+}
+
+.success {
+    color: greenyellow;
 }
 
 @media screen and (max-width: 800px) {
