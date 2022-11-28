@@ -1,16 +1,19 @@
 import "./css/form.css";
-import { useState } from "react";
+import { useState, useRef } from "react";
 import emailjs from '@emailjs/browser';
 import { emailJSserviceID, emailJStemplateID, emailJSpubKey } from '../../contex/env';
+const a = Math.floor(Math.random() * (20 - 1 + 1) + 1);
+const b = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
 export function Form() {
-    const [form, setForm] = useState({ fullName: "", email: "", message: "" });
-    const [error, setError] = useState({ fullName: '', email: '', message: '', signs: 100, success: ""});
+    const [ mathAnswer, setMathAnswer ] = useState('');
+    const [form, setForm] = useState({ fullName: "", email: "", message: ""});
+    const [error, setError] = useState({ fullName: '', email: '', message: '', signs: 100, success: '', math: ''});
 
     const sendEmail = () => {
           emailjs.send(emailJSserviceID, emailJStemplateID, form, emailJSpubKey)
             .then(() => {
-                setError({...error, success: 'Success!'})
+                setError({...error, fullName: '', email: '', message: '', success: 'Success!'})
             }, (error) => {
                 console.log(error.text);
             });
@@ -22,13 +25,15 @@ export function Form() {
             return setError({...error, fullName: 'Niepoprawne imię!'});
         }
         if (form.email.length < 7 && !(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i).test(form.email)) {
-            console.log(/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,4}$/i.test(form.email))
             return setError({...error, email: 'Niepoprawny email!'});
         }
         if (form.message.length < 8) {
             return setError({...error, message: 'Wiadomość jest zbyt krótka'})
         }
-        else sendEmail();
+        if (mathAnswer !== (a + b).toString()) {
+            return setError({...error, math: 'Źle!'})
+        }
+        sendEmail();
     }
 
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
@@ -43,7 +48,6 @@ export function Form() {
         const textLength = e.target.value.length < 100 ? 100 - e.target.value.length : 0;
         setError({...error, signs: textLength})
     }
-    console.log(form);
     
     return (
         <section className="form__box">
@@ -72,8 +76,16 @@ export function Form() {
                     value={form.message}
                     onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => textareaTextLengthCheckOut(event)}
                 />
-                <button className="btn" type="submit" value="Send">Wyślij</button>
-                <span className="success"> { error.success } </span>
+                <div className="flex">                
+                    <span className="math__question"> { `${a} + ${b} = `}</span>
+                    <input  type="text" inputMode="numeric" className="math__question-input"
+                        value={mathAnswer}
+                        onChange={e => setMathAnswer(e.target.value)}
+                    />
+                    <div className="error error-length"> { error.math } </div>
+                    <button className="btn" type="submit" value="Send">Wyślij</button>
+                    <div className="success"> { error.success } </div>
+                </div>
             </form>
         </section>
     );
