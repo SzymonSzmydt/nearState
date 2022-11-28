@@ -7,7 +7,7 @@ import { chemicalPopUp } from '../../../contex/redux/PopUpLogic';
 interface ChemicalProps {
     compound?: {
         name?: string;
-        pattern?: any;
+        pattern: string;
         mass?: string;
         tempTop?: number;
         tempWrz?: number;
@@ -19,31 +19,32 @@ interface ChemicalProps {
 export function Chemical({ compound }: ChemicalProps) {
     const dispatch = useDispatch();
     return (
+        compound ?
         <section className="chemical">
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="chemical-box">
                     <div className="close" onClick={() => dispatch(chemicalPopUp(false))} />
                     <div>
                         <p className="chemical-box_p">
-                            <b> {compound?.name} </b> - {parse(compound?.pattern)}
+                            <b> {compound.name} </b> - {parse(compound.pattern)}
                         </p>
                         <table className="popUp-box">
                             <tbody>
                                 <tr>
                                     <th> Masa molowa</th>
-                                    <td> {compound?.mass} </td>
+                                    <td> {compound.mass} </td>
                                 </tr>
                                 <tr>
                                     <th>Temperatura topnienia</th>
-                                    <td> {compound?.tempTop + "\u00b0 C"} </td>
+                                    <td> {compound.tempTop + "\u00b0 C"} </td>
                                 </tr>
                                 <tr>
                                     <th>Temperatura wrzenia</th>
-                                    <td>{compound?.tempWrz + "\u00b0 C"}</td>
+                                    <td>{compound.tempWrz + "\u00b0 C"}</td>
                                 </tr>
                                 <tr>
                                     <th>Rozpuszczlnik</th>
-                                    <td>{compound?.solvent}</td>
+                                    <td>{compound.solvent}</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -53,7 +54,7 @@ export function Chemical({ compound }: ChemicalProps) {
                             <br/>
                             <em> źródło: </em>
                             <a
-                                href={compound?.link}
+                                href={compound.link}
                                 target="_blank"
                                 rel="noreferrer">
                                 <em> Wikipedia </em>
@@ -62,6 +63,6 @@ export function Chemical({ compound }: ChemicalProps) {
                     </div>
                 </div>
             </WindowModule>
-        </section>
+        </section> : null
     );
 }

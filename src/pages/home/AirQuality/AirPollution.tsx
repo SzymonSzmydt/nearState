@@ -35,7 +35,7 @@ export function AirPollution() {
                         </tr>
                     </tbody>
                 </table>
-                Ilości zanieczyszczeń występująca w powietrzu
+                Ilość zanieczyszczeń występująca w powietrzu { airData[index]?.time?.s }
             </section>
         </WindowModule> : null
     );
