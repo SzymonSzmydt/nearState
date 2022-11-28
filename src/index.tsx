@@ -13,6 +13,7 @@ import './index.css';
 import App from './App';
 import { Home } from './pages/home/Home';
 import { Contact } from './pages/contact/Contact';
+import { Informations } from './pages/informations/Infortmations';
 
 const router = createBrowserRouter(
     createRoutesFromElements(
@@ -20,6 +21,7 @@ const router = createBrowserRouter(
             <Route path="/" element={<App />}>
                 <Route index={true} element={<Home />} />
                 <Route path="contact" element={<Contact />} />
+                <Route path="informations" element={<Informations />} />
             </Route>
             <Route path="*" element={<App />} />
         </>
