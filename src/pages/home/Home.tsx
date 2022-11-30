@@ -38,9 +38,9 @@ export function Home() {
                 console.log(err);  
             }
         }
-    // useEffect(() => {
-    //   dataFetch();
-    // }, []);
+    useEffect(() => {
+      dataFetch();
+    }, []);
     return (
         <Window>
             <Map/>
