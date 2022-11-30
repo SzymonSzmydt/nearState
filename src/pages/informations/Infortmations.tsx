@@ -8,10 +8,9 @@ export function Informations() {
             <WindowModule>
                 <h2>Informacje dotyczące danych na stronie</h2>
                 <p>
-                    Dane dotyczące jakości powietrza pobierane są ze strony 
-                    <a href="https://aqicn.org/" target="_blank" rel="noreferrer"> aqicn.org. </a>
-                    Dane publikowane w Światowym Indeksie Jakości Powietrza są
-                    publikowane w czasie rzeczywistym i dlatego nie są
+                    Dane dotyczące jakości powietrza pobierane są ze
+                    Światowego Indeksu Jakości Powietrza. Dane te
+                    publikowane są w czasie rzeczywistym, dlatego nie mogą być
                     potwierdzone w momencie publikacji. Jednak w celu
                     zapewnienia wysokiego poziomu dokładności dla każdej
                     wartości AQI, stosuje się kilka rozwiązań do przetwarzania

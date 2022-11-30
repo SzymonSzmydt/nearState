@@ -7,7 +7,7 @@ import parse from 'html-react-parser';
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState)=> state.popUp.indexR);
-    export const jm = '<span className="thin-font"> &mu;</span>g/m<sup>3</sup>';
+    const jm = '<span className="thin-font"> &mu;</span>g/m<sup>3</sup>';
     return (
         airData ?
         <WindowModule>
