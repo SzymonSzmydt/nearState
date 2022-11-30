@@ -4,6 +4,7 @@
 }
 
 .window_module {
+    animation: slowOpenWindow 0.2s ease-in;
     flex-wrap: wrap;
     width: 100%;
     margin: 0.5rem 0.25rem;

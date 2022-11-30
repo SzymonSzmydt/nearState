@@ -36,3 +36,12 @@
 .thin-font {
   font-weight: 400;
 }
+
+@keyframes slowOpenWindow {
+  from {
+      opacity: 0;
+  }
+  to {
+      opacity: 1;
+  }
+}
