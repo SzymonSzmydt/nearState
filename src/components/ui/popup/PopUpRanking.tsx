@@ -5,6 +5,8 @@ import { rankingPopUp } from '../../../contex/redux/PopUpLogic';
 import { RootState } from '../../../contex/redux/store';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 import { Bar } from '../../Charts/Bar';
+import { jm } from '../../../pages/home/AirQuality/AirPollution';
+import parse from 'html-react-parser';
 
 export function PopUpRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
@@ -50,12 +52,14 @@ export function PopUpRanking() {
                                 <tr>
                                     <td> pm2.5 </td>
                                     <th className="popup-box__th"> { iaqi?.pm25?.v } 
-                                    <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                                        { iaqi?.pm25?.v ? parse(jm) : 'brak pomiaru' } 
+                                    </th>
                                 </tr>
                                 <tr>
                                     <td> pm10 </td>
                                     <th className="popup-box__th"> { iaqi?.pm10?.v }
-                                    <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                                        { iaqi?.pm10?.v ? parse(jm) : 'brak pomiaru' } 
+                                    </th>
                                 </tr>
                             </tbody>
                         </table>
