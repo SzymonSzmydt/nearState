@@ -24,6 +24,7 @@ export function Form() {
                         fullName: "",
                         email: "",
                         message: "",
+                        error: "",
                         success: "Success!",
                     });
                 },
@@ -90,15 +91,17 @@ export function Form() {
                     value={form.message}
                     onChange={(event: React.ChangeEvent<HTMLTextAreaElement>) => textareaTextLengthCheckOut(event)}
                 />
-                <div className="flex">                
-                    <span className="math__question"> { `${a} + ${b} = `}</span>
-                    <input  type="text" inputMode="numeric" className="math__question-input"
-                        value={mathAnswer}
-                        onChange={e => setMathAnswer(e.target.value)}
-                    />
-                    <div className="error error-length"> { error.math } </div>
+                <div className="flex submit-box wrap">          
+                    <section>
+                        <span className="math__question"> { `${a} + ${b} = ` }</span>
+                        <input  type="text" inputMode="numeric" className="math__question-input"
+                            value={mathAnswer}
+                            onChange={e => setMathAnswer(e.target.value)}
+                        />
+                        <div className="error"> { error.math } </div>
+                        <div className="success space"> { error.success } </div>
+                    </section>      
                     <button className="btn" type="submit" value="Send">Wyślij</button>
-                    <div className="success"> { error.success } </div>
                 </div>
             </form>
         </section>
