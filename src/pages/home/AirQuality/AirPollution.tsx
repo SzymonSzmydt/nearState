@@ -18,25 +18,25 @@ export function AirPollution() {
                         <tr className="air__pollution-tr">
                             <td className="air__pollution-td td-border-tl"> CO </td>
                             <th className="air__pollution-th td-border-tr"> { airData[index]?.iaqi?.co?.v } 
-                            { airData[index]?.iaqi?.co?.v ? parse(jm) : 'nie badano' } 
+                            { airData[index]?.iaqi?.co?.v ? parse(jm) : 'brak pomiaru' } 
                             </th>
                         </tr>
                         <tr className="air__pollution-tr">
                             <td className="air__pollution-td"> NO<jm>2</jm> </td>
                             <th className="air__pollution-th"> { airData[index]?.iaqi?.no2?.v } 
-                            { airData[index]?.iaqi?.no2?.v ? parse(jm) : 'nie badano' } 
+                            { airData[index]?.iaqi?.no2?.v ? parse(jm) : 'brak pomiaru' } 
                             </th>
                         </tr>
                         <tr className="air__pollution-tr">
                             <td className="air__pollution-td  td-border-bl"> O<jm>3</jm> </td>
                             <th className="air__pollution-th td-border-br"> { airData[index]?.iaqi?.o3?.v } 
-                            { airData[index]?.iaqi?.o3?.v ? parse(jm) : 'nie badano' }
+                            { airData[index]?.iaqi?.o3?.v ? parse(jm) : 'brak pomiaru' }
                             </th>
                         </tr>
                         <tr className="air__pollution-tr">
                             <td className="air__pollution-td  td-border-bl"> SO<jm>2</jm> </td>
                             <th className="air__pollution-th td-border-br"> { airData[index]?.iaqi?.so2?.v } 
-                            { airData[index]?.iaqi?.so2?.v ? parse(jm) : 'nie badano' }
+                            { airData[index]?.iaqi?.so2?.v ? parse(jm) : 'brak pomiaru' }
                             </th>
                         </tr>
                     </tbody>
