@@ -11,7 +11,6 @@ export function PopUpRanking() {
     const index = useSelector((state: RootState) => state.popUp.indexR);
     const dispatch = useDispatch();
     const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
-    
     return (
         <section className="popup-ranking">
             <WindowModule>

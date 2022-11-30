@@ -4,7 +4,8 @@
 /node_modules
 /.pnp
 .pnp.js
-env.tsx
+index.js
+.env
 
 # testing
 /coverage

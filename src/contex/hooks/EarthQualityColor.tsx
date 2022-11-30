@@ -1,4 +1,4 @@
-export function earthQualityColor(range:any, type: "color" | "aqius") { 
+export function earthQualityColor(range:number, type: "color" | "aqius") { 
     const color:boolean = type === "color";
     if (range <= 50) return color ? "var(--legend-good-t)" : "aqi1";
     if (range > 50 && range <= 100) return color ? "var(--legend-moderate-t)" : "aqi2";

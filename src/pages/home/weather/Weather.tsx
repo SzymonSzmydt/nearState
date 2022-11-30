@@ -2,7 +2,6 @@ import "./css/weather.css";
 import { AirVisualApi } from '../../../contex/types/AirVisualApi';
 import { WindowModule } from '../../../components/window/WindowModule';
 import { WeatherData } from '../../../components/ui/WeatherData';
-import { urlNearest } from '../../../contex/env';
 import { CityBar } from './CityBar';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAirCityData } from '../../../contex/redux/AirCitySlice';
@@ -13,23 +12,18 @@ export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);
     const dispatch = useDispatch();
     const { city, current } = airData as [] as AirVisualApi;
-
-    const handleClick = async () => {
+    const fetchData = async () => {
         try {
-            const response = await fetch(urlNearest)
+            const response = await fetch(process.env.REACT_APP_urlNearest);
             const data = await response.json();
-            localStorage.setItem('Wroclaw', JSON.stringify(data.data));  /// locale
-            dispatch(getAirCityData(data.data))
+            dispatch(getAirCityData(data.data));
         } catch (err) {
             console.error(err);
         }
     };
-
     useEffect(()=> {
-        const data = JSON.parse(localStorage.getItem('Wroclaw') || "");
-        dispatch(getAirCityData(data))
+        fetchData();
     }, [])
-
     return (
         <section className="flex wrap">
             {current ? (

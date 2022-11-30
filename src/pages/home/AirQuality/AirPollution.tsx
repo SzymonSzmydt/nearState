@@ -2,10 +2,12 @@ import './css/airPollution.css'
 import { WindowModule } from '../../../components/window/WindowModule';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../contex/redux/store';
+import parse from 'html-react-parser';
 
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState)=> state.popUp.indexR);
+    export const jm = '<span className="thin-font"> &mu;</span>g/m<sup>3</sup>';
     return (
         airData ?
         <WindowModule>
@@ -16,22 +18,26 @@ export function AirPollution() {
                         <tr className="air__pollution-tr">
                             <td className="air__pollution-td td-border-tl"> CO </td>
                             <th className="air__pollution-th td-border-tr"> { airData[index]?.iaqi?.co?.v } 
-                            <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                            { airData[index]?.iaqi?.co?.v ? parse(jm) : 'nie badano' } 
+                            </th>
                         </tr>
                         <tr className="air__pollution-tr">
-                            <td className="air__pollution-td"> NO<sub>2</sub> </td>
+                            <td className="air__pollution-td"> NO<jm>2</jm> </td>
                             <th className="air__pollution-th"> { airData[index]?.iaqi?.no2?.v } 
-                            <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                            { airData[index]?.iaqi?.no2?.v ? parse(jm) : 'nie badano' } 
+                            </th>
                         </tr>
                         <tr className="air__pollution-tr">
-                            <td className="air__pollution-td  td-border-bl"> O<sub>3</sub> </td>
+                            <td className="air__pollution-td  td-border-bl"> O<jm>3</jm> </td>
                             <th className="air__pollution-th td-border-br"> { airData[index]?.iaqi?.o3?.v } 
-                            <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                            { airData[index]?.iaqi?.o3?.v ? parse(jm) : 'nie badano' }
+                            </th>
                         </tr>
                         <tr className="air__pollution-tr">
-                            <td className="air__pollution-td  td-border-bl"> SO<sub>2</sub> </td>
+                            <td className="air__pollution-td  td-border-bl"> SO<jm>2</jm> </td>
                             <th className="air__pollution-th td-border-br"> { airData[index]?.iaqi?.so2?.v } 
-                            <span className="thin-font"> &mu;</span>g/m<sup>3</sup> </th>
+                            { airData[index]?.iaqi?.so2?.v ? parse(jm) : 'nie badano' }
+                            </th>
                         </tr>
                     </tbody>
                 </table>

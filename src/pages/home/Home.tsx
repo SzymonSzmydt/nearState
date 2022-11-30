@@ -1,25 +1,23 @@
 import { Window } from './../../components/window/Window';
 import { Map } from './Map';
-import { urls } from '../../contex/env';
 import { useDispatch } from 'react-redux';
 import { getAqicn } from '../../contex/redux/AqicnCitySlice';
 import { useEffect } from 'react';
 
 export function Home() {
     const dispatch = useDispatch();
-
     const dataFetch = async () => {
         try {
             const result = (
                 await Promise.all([
-                  fetch(urls.katowice),
-                  fetch(urls.poznan),
-                  fetch(urls.warszawa),
-                  fetch(urls.gdansk),
-                  fetch(urls.krakow),
-                  fetch(urls.lodz),
-                  fetch(urls.szczecin),
-                  fetch(urls.wroclaw)
+                  fetch(process.env.REACT_APP_katowice),
+                  fetch(process.env.REACT_APP_poznan),
+                  fetch(process.env.REACT_APP_warszawa),
+                  fetch(process.env.REACT_APP_gdansk),
+                  fetch(process.env.REACT_APP_krakow),
+                  fetch(process.env.REACT_APP_lodz),
+                  fetch(process.env.REACT_APP_szczecin),
+                  fetch(process.env.REACT_APP_wroclaw)
                 ])
               ).map((r) => r.json());
               const [katowice, poznan, warszawa, gdansk, krakow, lodz, szczecin, wroclaw] = await Promise.all(
@@ -36,17 +34,13 @@ export function Home() {
                 wroclaw.data
                 ].sort((a, b) => b.aqi - a.aqi);
               dispatch(getAqicn(data));
-              localStorage.setItem('aqicn', JSON.stringify(data) || "");
-              console.log(data)
             } catch(err) {
                 console.log(err);  
             }
         }
     useEffect(() => {
-        const data = JSON.parse(localStorage.getItem('aqicn') || "");
-        dispatch(getAqicn(data));
+      dataFetch();
     }, []);
-
     return (
         <Window>
             <Map/>

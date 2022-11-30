@@ -1,7 +1,6 @@
 import "./css/form.css";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-import { emailJSserviceID, emailJStemplateID, emailJSpubKey } from '../../contex/env';
 const a = Math.floor(Math.random() * (20 - 1 + 1) + 1);
 const b = Math.floor(Math.random() * (10 - 1 + 1) + 1);
 
@@ -11,12 +10,27 @@ export function Form() {
     const [error, setError] = useState({ fullName: '', email: '', message: '', signs: 100, success: '', math: ''});
 
     const sendEmail = () => {
-          emailjs.send(emailJSserviceID, emailJStemplateID, form, emailJSpubKey)
-            .then(() => {
-                setError({...error, fullName: '', email: '', message: '', success: 'Success!'})
-            }, (error) => {
-                console.log(error.text);
-            });
+        emailjs
+            .send(
+                process.env.REACT_APP_emailJSservice,
+                process.env.REACT_APP_emailJStemplate,
+                form,
+                process.env.REACT_APP_emailJSpub
+            )
+            .then(
+                () => {
+                    setError({
+                        ...error,
+                        fullName: "",
+                        email: "",
+                        message: "",
+                        success: "Success!",
+                    });
+                },
+                (error) => {
+                    console.log(error.text);
+                }
+            );
     };
 
     const validation = (e: React.FormEvent<HTMLFormElement>) => {
