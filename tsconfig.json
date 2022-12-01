@@ -19,9 +19,9 @@
     "isolatedModules": true,
     "noEmit": true,
     "jsx": "react-jsx",
-    // "ts-node": {
-    //   "files": true
-    // }
+    "ts-node": {
+      "files": true
+    }
   },
   "include": [
     "src/**/*.tsx"

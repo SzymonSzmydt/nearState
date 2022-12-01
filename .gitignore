@@ -6,7 +6,8 @@
 .pnp.js
 index.js
 .env
-
+config.ts
+config.env
 # testing
 /coverage
 

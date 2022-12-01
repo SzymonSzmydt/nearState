@@ -1,29 +1,25 @@
-
 export type Avarge = {              
     avg: number;
     day: string;
 }
-
 export interface Daily {
-    o3?: {
+    o3: {
         avg: number;
         day: string;
     },
-    pm10?: {
+    pm10: {
         avg: number;
         day: string;
     },
-    pm25?: {
+    pm25: {
         avg: number;
         day: string;
     }
 }
-
 type Attributions = {
     url: string;
     name: string;
 }
-
 export interface Aqicn {
     aqi?: number;
     attributions: Attributions[]

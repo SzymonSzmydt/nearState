@@ -7,7 +7,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAirCityData } from '../../../contex/redux/AirCitySlice';
 import { useEffect } from 'react';
 import { RootState } from '../../../contex/redux/store';
-
 export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);
     const dispatch = useDispatch();
@@ -21,9 +20,9 @@ export function Weather() {
             console.error(err);
         }
     };
-    // useEffect(()=> {
-    //     fetchData();
-    // }, []);
+    useEffect(()=> {
+        fetchData();
+    }, []);
     return (
         <section className="flex wrap">
             {current ? (

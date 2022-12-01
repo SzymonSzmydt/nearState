@@ -3,7 +3,6 @@ import { Map } from './Map';
 import { useDispatch } from 'react-redux';
 import { getAqicn } from '../../contex/redux/AqicnCitySlice';
 import { useEffect } from 'react';
-
 export function Home() {
     const dispatch = useDispatch();
     const dataFetch = async () => {
