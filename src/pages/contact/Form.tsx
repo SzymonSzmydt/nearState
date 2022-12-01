@@ -23,7 +23,7 @@ export function Form() {
                         fullName: "",
                         email: "",
                         message: "",
-                        error: "",
+                        math: "",
                         success: "Success!",
                     });
                 },
