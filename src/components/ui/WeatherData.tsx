@@ -5,7 +5,6 @@ type WeatherProps = {
     bgcolor?: string,
     fSize?: string;
 }
-
 export function WeatherData({name, value, symbol, bgcolor, fSize} : WeatherProps) {
     return (
         <section className="flex weather-box" style={{backgroundColor: bgcolor}}>

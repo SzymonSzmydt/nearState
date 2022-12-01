@@ -14,7 +14,6 @@ import App from './App';
 import { Home } from './pages/home/Home';
 import { Contact } from './pages/contact/Contact';
 import { Informations } from './pages/informations/Infortmations';
-
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
@@ -27,11 +26,9 @@ const router = createBrowserRouter(
         </>
     )
 );
-
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
-
 root.render(
     <React.StrictMode>
         <Provider store={store}>

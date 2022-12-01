@@ -1,5 +1,4 @@
 import './css/window.css';
-
 type WindowProps = {
     children: React.ReactNode
 }

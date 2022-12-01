@@ -21,9 +21,9 @@ export function Weather() {
             console.error(err);
         }
     };
-    useEffect(()=> {
-        fetchData();
-    }, []);
+    // useEffect(()=> {
+    //     fetchData();
+    // }, []);
     return (
         <section className="flex wrap">
             {current ? (

@@ -7,19 +7,15 @@ import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 type CityBarProps = {
     index: number;
 }
-
 const citys = ["Katowice", "Poznań", "Warszawa", "Gdansk", "Kraków", "Łódź", "Szczecin", "Wrocław"];
-
 export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
     const dispatch = useDispatch()
     const { aqi, city } = element;
-
     const handleClick = () => {
         dispatch(popUpOff());
         dispatch(indexRank(index));
         dispatch(rankingPopUp(true));
     }
-
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>
@@ -35,13 +31,12 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
                     }}>
                         { citys.filter(e => city?.name.includes(e.slice(0, 4))) }
                 </div>
-                <div
-                    className="flex wrap global_city"
-                    style={{
+                <div className="flex wrap global_city"
+                     style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
                             : "",
-                    }}>
+                     }}>
                     <img
                         src={require(`../../../assets/faces/${earthQualityColor(aqi, "aqius")}.png`)}
                         className="global-glass_img"

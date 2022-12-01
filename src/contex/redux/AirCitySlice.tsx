@@ -1,11 +1,9 @@
 import { createSlice } from '@reduxjs/toolkit'
 import type { PayloadAction } from '@reduxjs/toolkit'
 import { AirVisualApi } from '../types/AirVisualApi';
-
 interface AirCityType {
   data?: AirVisualApi;
 }
-
 const initialState: AirCityType = {
   data: {
     city: "",
@@ -32,7 +30,6 @@ const initialState: AirCityType = {
     },
   }
 }
-
 export const airCitySlice = createSlice({
   name: 'airCity',
   initialState,
@@ -41,7 +38,6 @@ export const airCitySlice = createSlice({
       state.data = action.payload
     },
   },
-})
-
+});
 export const { getAirCityData } = airCitySlice.actions
 export default airCitySlice.reducer

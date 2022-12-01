@@ -2,7 +2,6 @@ import './css/popUp.css';
 import { WindowModule } from '../../window/WindowModule';
 import { useDispatch } from 'react-redux';
 import { legendPopUp } from '../../../contex/redux/PopUpLogic';
-
 type PopUpProps = {
     rank: string;
     range: string;
@@ -10,7 +9,6 @@ type PopUpProps = {
     bgcolor: string;
     description: string;
 }
-
 export function PopUpLegend({rank, range, face, bgcolor, description}: PopUpProps) {
     const dispatch = useDispatch();
     return (

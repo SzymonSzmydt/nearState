@@ -1,6 +1,6 @@
 export const chemicals = [
     {
-        name: "Dwutlenek siarki",
+        name: "dwutlenek siarki",
         pattern: "SO<sub>2</sub>",
         mass: "64,066 g/mol",
         tempTop: -72,
@@ -11,7 +11,7 @@ export const chemicals = [
             "Dwutlenek siarki, ditlenek siarki, SO 2 – nieorganiczny związek chemiczny z grupy tlenków siarki, w którym siarka znajduje się na IV stopniu utlenienia. W warunkach normalnych jest to bezbarwny gaz o ostrym, gryzącym i duszącym zapachu, silnie drażniący drogi oddechowe.",
     },
     {
-        name: "Ozon",
+        name: "ozon",
         pattern: "O<sub>3</sub>",
         mass: "48 g/mol",
         tempTop: -192.2,
@@ -22,7 +22,7 @@ export const chemicals = [
             "Ozon, tritlen lub trójtlen – alotropowa odmiana tlenu składająca się z trójatomowych cząsteczek. Posiada silne własności aseptyczne i toksyczne, w związku z czym stosowany jest przy dezynfekcji wody.",
     },
     {
-        name: "Tlenek azotu",
+        name: "tlenek azotu",
         pattern: "NO",
         mass: "30,01 g/mol",
         tempTop: -164,
@@ -34,7 +34,7 @@ export const chemicals = [
             "Tlenek azotu, NO – nieorganiczny związek chemiczny z grupy tlenków azotu, w którym azot występuje na II stopniu utlenienia. W temperaturze pokojowej jest to bezbarwny gaz o temperaturze topnienia −163,6 °C i temperaturze wrzenia −151,7 °C. Ma jeden niesparowany elektron, stąd jest niestabilny i bardzo reaktywny.",
     },
     {
-        name: "Tlenek węgla",
+        name: "tlenek węgla",
         pattern: "CO",
         mass: "28,01 g/mol",
         tempTop: -205,
@@ -45,7 +45,7 @@ export const chemicals = [
             "Tlenek węgla, CO – nieorganiczny związek chemiczny z grupy tlenków węgla, w którym węgiel występuje na II stopniu utlenienia. Ma silne własności toksyczne.",
     },
     {
-        name: "Benzen",
+        name: "benzen",
         pattern: "C<sub>6</sub>H<sub>6</sub>",
         mass: "78,11 g/mol",
         tempTop: 5.5,

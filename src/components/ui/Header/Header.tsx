@@ -1,6 +1,5 @@
 import './css/header.css';
 import { NavLink } from "react-router-dom";
-
 export function Header() {
     return (
         <header className="flex header">

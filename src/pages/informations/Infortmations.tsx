@@ -1,7 +1,6 @@
 import './css/information.css';
 import { WindowModule } from '../../components/window/WindowModule';
 import { Terms } from './Terms';
-
 export function Informations() {
     return (
         <div className="container-lg informations">

@@ -1,5 +1,4 @@
 import './css/contact.css'
-
 export function DirectContact() {
     return (
         <section className="flex direct">

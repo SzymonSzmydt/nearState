@@ -7,7 +7,6 @@ import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 import { Bar } from '../../Charts/Bar';
 import { jm } from '../../../pages/home/AirQuality/AirPollution';
 import parse from 'html-react-parser';
-
 export function PopUpRanking() {
     const aqicnData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState) => state.popUp.indexR);
@@ -18,7 +17,6 @@ export function PopUpRanking() {
             <WindowModule>
                 <div className="popUp-box">
                     <div className="close" onClick={() => dispatch(rankingPopUp(false))} />
-                    <section>
                         <h3>Informacje dotyczące wybranego miasta</h3>
                         <table className="popUp-box align-tr">
                             <tbody className="popup-box_tbody">
@@ -63,7 +61,6 @@ export function PopUpRanking() {
                                 </tr>
                             </tbody>
                         </table>
-                    </section>
                     <div className="popup-box__chart">
                         <Bar {...forecast?.daily}/>
                     </div>

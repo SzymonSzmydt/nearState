@@ -1,14 +1,13 @@
 import "./css/form.css";
 import { useState } from "react";
 import emailjs from '@emailjs/browser';
-const a = Math.floor(Math.random() * (20 - 1 + 1) + 1);
-const b = Math.floor(Math.random() * (10 - 1 + 1) + 1);
-
+const getRandomNumber = () => Math.floor(Math.random() * (20 - 1 + 1) + 1);
+const a = getRandomNumber();
+const b = getRandomNumber();
 export function Form() {
     const [ mathAnswer, setMathAnswer ] = useState('');
     const [form, setForm] = useState({ fullName: "", email: "", message: ""});
     const [error, setError] = useState({ fullName: '', email: '', message: '', signs: 100, success: '', math: ''});
-
     const sendEmail = () => {
         emailjs
             .send(
@@ -33,7 +32,6 @@ export function Form() {
                 }
             );
     };
-
     const validation = (e: React.FormEvent<HTMLFormElement>) => {
         e.preventDefault();
         if (form.fullName.length < 4 && form.fullName.match(/[0-9]/gi)) {
@@ -50,20 +48,17 @@ export function Form() {
         }
         sendEmail();
     }
-
     const handleChange = (e: React.ChangeEvent<HTMLInputElement>)=> {
         setForm({
             ...form, 
             [e.target?.name] : e.target.value
         });
     }
-
     const textareaTextLengthCheckOut = (e: React.ChangeEvent<HTMLTextAreaElement>) => {
         setForm({...form, message: e.target.value});
         const textLength = e.target.value.length < 100 ? 100 - e.target.value.length : 0;
         setError({...error, signs: textLength})
     }
-    
     return (
         <section className="form__box">
             <form className="flex form" onSubmit={validation}>
