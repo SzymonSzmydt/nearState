@@ -93,6 +93,10 @@ body {
   background-color: var(--color-body-bg);
 }
 
+h2 {
+  font-size: 1.25rem;
+}
+
 a {
   cursor: pointer;
   text-decoration: none;

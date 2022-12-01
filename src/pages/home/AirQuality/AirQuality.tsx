@@ -39,7 +39,7 @@ export function AirQuality() {
                     : null }
                 </section>
                 <section>
-                    <h3>AQI (ang. Air Quality Index)</h3>
+                    <h2>AQI (ang. Air Quality Index)</h2>
                     <article>
                         Jest to ocena jakości powietrza, która obejmuje poziom
                         pyłów zawieszonych PM2.5 i PM10 oraz niektórych
