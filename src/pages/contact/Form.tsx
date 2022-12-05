@@ -11,10 +11,10 @@ export function Form() {
     const sendEmail = () => {
         emailjs
             .send(
-                process.env.REACT_APP_emailJSservice,
-                process.env.REACT_APP_emailJStemplate,
+                process.env.REACT_APP_emailJSservice as string,
+                process.env.REACT_APP_emailJStemplate as string,
                 form,
-                process.env.REACT_APP_emailJSpub
+                process.env.REACT_APP_emailJSpub as string
             )
             .then(
                 () => {

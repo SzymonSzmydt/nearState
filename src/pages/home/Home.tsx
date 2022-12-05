@@ -9,14 +9,14 @@ export function Home() {
         try {
             const result = (
                 await Promise.all([
-                  fetch(process.env.REACT_APP_katowice),
-                  fetch(process.env.REACT_APP_poznan),
-                  fetch(process.env.REACT_APP_warszawa),
-                  fetch(process.env.REACT_APP_gdansk),
-                  fetch(process.env.REACT_APP_krakow),
-                  fetch(process.env.REACT_APP_lodz),
-                  fetch(process.env.REACT_APP_szczecin),
-                  fetch(process.env.REACT_APP_wroclaw)
+                  fetch(process.env.REACT_APP_katowice as string),
+                  fetch(process.env.REACT_APP_poznan as string),
+                  fetch(process.env.REACT_APP_warszawa as string),
+                  fetch(process.env.REACT_APP_gdansk as string),
+                  fetch(process.env.REACT_APP_krakow as string),
+                  fetch(process.env.REACT_APP_lodz as string),
+                  fetch(process.env.REACT_APP_szczecin as string),
+                  fetch(process.env.REACT_APP_wroclaw as string)
                 ])
               ).map((r) => r.json());
               const [katowice, poznan, warszawa, gdansk, krakow, lodz, szczecin, wroclaw] = await Promise.all(
@@ -37,9 +37,9 @@ export function Home() {
                 console.log(err);  
             }
         }
-    useEffect(() => {
-      dataFetch();
-    }, []);
+    // useEffect(() => {
+    //   dataFetch();
+    // }, []);
     return (
         <Window>
             <Map/>

@@ -13,16 +13,16 @@ export function Weather() {
     const { city, current } = airData as [] as AirVisualApi;
     const fetchData = async () => {
         try {
-            const response = await fetch(process.env.REACT_APP_urlNearest);
+            const response = await fetch(process.env.REACT_APP_urlNearest as string);
             const data = await response.json();
             dispatch(getAirCityData(data.data));
         } catch (err) {
             console.error(err);
         }
     };
-    useEffect(()=> {
-        fetchData();
-    }, []);
+    // useEffect(()=> {
+    //     fetchData();
+    // }, []);
     return (
         <section className="flex wrap">
             {current ? (
