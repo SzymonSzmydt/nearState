@@ -1,5 +1,6 @@
 {
-  "name": "pollo",
+  "name": "aqi",
+  "homepage": "https://northshape.eu",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
