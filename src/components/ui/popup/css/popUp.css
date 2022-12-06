@@ -22,7 +22,7 @@
     overflow: hidden;
     animation: slowOpenWindow 0.2s ease-in;
     position: absolute;
-    top: -8rem;
+    top: -0.5rem;
     right: 0.25rem;
     left: 0.25rem;
     z-index: 1;

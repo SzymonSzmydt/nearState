@@ -74,7 +74,7 @@ export function AirPollution() {
               </tr>
             </tbody>
           </table>
-          Ilość zanieczyszczeń występująca w powietrzu
+          Ilość zanieczyszczeń występujących w powietrzu
         </section>
       </WindowModule>
     ) : null;
