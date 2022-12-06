@@ -3,15 +3,23 @@ import { WindowModule } from '../../../components/window/WindowModule';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../contex/redux/store';
 import parse from 'html-react-parser';
+import { Pie } from '../../../components/Charts/Pie';
 export const jm = '<span className="thin-font"> &mu;</span>g/m<sup>3</sup>';
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);
     const index = useSelector((state: RootState)=> state.popUp.indexR);
+    const date = airData[index]?.time?.s;
     return (
         airData ?
         <WindowModule>
             <section className="flex air__pollution">
+                <h2> Aktualnie największe zanieczyszczenie powietrza<br/>
+                    <span className="small-font">
+                    { `Czas pomiaru danych: ${date?.slice(11,16)} | ${date?.slice(0, 10)}` }
+                    </span>
+                </h2> 
                 <h4> { airData ? airData[index]?.city?.name: null } </h4>
+                <Pie />
                 <table className="air__pollution-table">
                     <tbody>
                         <tr className="air__pollution-tr">
@@ -40,7 +48,7 @@ export function AirPollution() {
                         </tr>
                     </tbody>
                 </table>
-                Ilość zanieczyszczeń występująca w powietrzu { airData[index]?.time?.s }
+                Ilość zanieczyszczeń występująca w powietrzu
             </section>
         </WindowModule> : null
     );

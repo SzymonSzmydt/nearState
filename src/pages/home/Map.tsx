@@ -3,7 +3,6 @@ import { AirPollution } from './AirQuality/AirPollution';
 import { Weather } from './weather/Weather';
 import { AirQuality } from './AirQuality/AirQuality';
 import { GlobalRanking } from './global_ranking/GlobalRanking';
-
 export function Map() {
     return (
             <section className="map-box wrap container-lg">

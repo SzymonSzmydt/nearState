@@ -3,6 +3,7 @@ import { Map } from './Map';
 import { useDispatch } from 'react-redux';
 import { getAqicn } from '../../contex/redux/AqicnCitySlice';
 import { useEffect } from 'react';
+const data = JSON.parse(localStorage.getItem("allPromise") || "");
 export function Home() {
     const dispatch = useDispatch();
     const dataFetch = async () => {
@@ -33,13 +34,15 @@ export function Home() {
                 wroclaw.data
                 ].sort((a, b) => b.aqi - a.aqi);
               dispatch(getAqicn(data));
+              localStorage.setItem('allPromise', JSON.stringify(data));
             } catch(err) {
                 console.log(err);  
             }
         }
-    // useEffect(() => {
-    //   dataFetch();
-    // }, []);
+    useEffect(() => {
+      // dataFetch();
+      dispatch(getAqicn(data));
+    }, [data]);
     return (
         <Window>
             <Map/>
