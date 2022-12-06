@@ -1,38 +1,25 @@
 import './css/style.css'
 import { ResponsivePie } from "@nivo/pie";
-
-export function Pie() {
-  const data = [
-    {
-      id: "java",
-      value: 500,
-      color: "hsl(334, 70%, 50%)",
-    },
-    {
-      id: "make",
-      value: 187,
-      color: "hsl(318, 70%, 50%)",
-    },
-    {
-      id: "elixir",
-      value: 418,
-      color: "hsl(55, 70%, 50%)",
-    },
-    {
-      id: "c",
-      value: 458,
-      color: "hsl(60, 70%, 50%)",
-    },
-    {
-      id: "hack",
-      value: 114,
-      color: "hsl(191, 70%, 50%)",
-    },
-  ];
+interface PieProps {
+  co?: number;
+  no2?: number;
+  o3?: number;
+  so2?: number;
+}
+interface PieReturn {
+  id: string;
+  value: number;
+}
+const makeAgoodPie =(co?:number, no2?:number, o3?:number, so2?:number):PieReturn[] => {
+  const names = ['CO', 'NO2', 'O3', 'SO2'];
+  return [co, no2, o3, so2].map((e, i) => typeof e === 'number' ? ({id: names[i], value: e}) : ({id: "X", value: 0}))
+    .filter(e => e.id !== "X");
+};
+export function Pie( { co, no2, o3, so2 }: PieProps) {
   return (
     <div className="pie">
       <ResponsivePie
-        data={data}
+        data={makeAgoodPie(co, no2, o3, so2)}
         margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}
