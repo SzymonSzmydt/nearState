@@ -12,7 +12,7 @@ export function AirPollution() {
     return airData ? (
       <WindowModule>
         <section className="flex air__pollution">
-          <h2> Aktualnie największe zanieczyszczenie powietrza zlokalizowane jest:</h2>
+          <h2> Aktualny pomiar zanieczyszczeń powietrza dla wybranego miasta</h2>
           <h4>
             {" "}
             {airData ? airData[index]?.city?.name : null} <br />

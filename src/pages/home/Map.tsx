@@ -1,8 +1,9 @@
 import './css/map.css';
-import { AirPollution } from './AirQuality/AirPollution';
+import { AirPollution } from './airQuality/AirPollution';
 import { Weather } from './weather/Weather';
-import { AirQuality } from './AirQuality/AirQuality';
+import { AirQuality } from './airQuality/AirQuality';
 import { GlobalRanking } from './global_ranking/GlobalRanking';
+import { Dashpanel } from './dashpanel/Dashpanel';
 export function Map() {
     return (
             <section className="map-box wrap container-lg">
@@ -15,6 +16,7 @@ export function Map() {
                     <div className="map__img">
                         <GlobalRanking/>
                     </div> 
+                    <Dashpanel/>
                 </div>
             </section>
     )

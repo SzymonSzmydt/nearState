@@ -3,7 +3,6 @@ import { rankingPopUp, popUpOff, indexRank } from '../../../contex/redux/PopUpLo
 import { Glass } from '../../../components/window/Glass';
 import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
-
 type CityBarProps = {
     index: number;
 }

@@ -1,0 +1,9 @@
+.search__input {
+    appearance: none;
+    border: 0;
+    border-bottom: 1px solid black;
+}
+
+.search__input:focus-visible {
+    outline: none;
+}

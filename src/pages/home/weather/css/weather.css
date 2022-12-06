@@ -11,6 +11,7 @@
     margin-right: 0.25rem;
     background-color: var(--weather-img);
     border-radius: var(--radius);
+    box-shadow: var(--box-shadow);
 }
 
 .weather-arrow {
