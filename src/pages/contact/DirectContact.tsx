@@ -22,13 +22,11 @@ export function DirectContact() {
                     </a>
                 </div>
                 <div className="flex direct__wrapper-box">
-                    <div className="symbol github" />
-                    <a
-                        href="https://github.com/SzymonSzmydt"
-                        target="_blank"
-                        rel="noreferrer">
-                        Znajdź mnie na Github
-                    </a>
+                    <p>
+                        <strong> 
+                            Zachęcam do skorzystania z formularza
+                        </strong>
+                    </p>
                 </div>
             </div>
         </section>
