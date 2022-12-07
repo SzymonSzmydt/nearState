@@ -6,12 +6,12 @@ interface PieProps {
   o3?: number;
   so2?: number;
 }
-interface PieReturn {
+interface ChartDataProps {
   id: string;
   value: number;
 }
-const makeAgoodPie =(co?:number, no2?:number, o3?:number, so2?:number):PieReturn[] => {
-  const names = ['CO', 'NO2', 'O3', 'SO2'];
+const makeAgoodPie =(co?:number, no2?:number, o3?:number, so2?:number):ChartDataProps[] => {
+  const names = ["CO", "NO2", "O3", "SO2"];
   return [co, no2, o3, so2].map((e, i) => typeof e === 'number' ? ({id: names[i], value: e}) : ({id: "X", value: 0}))
     .filter(e => e.id !== "X");
 };
@@ -20,7 +20,7 @@ export function Pie( { co, no2, o3, so2 }: PieProps) {
     <div className="pie">
       <ResponsivePie
         data={makeAgoodPie(co, no2, o3, so2)}
-        margin={{ top: 40, right: 80, bottom: 80, left: 80 }}
+        margin={{ top: 20, right: 80, bottom: 80, left: 80 }}
         innerRadius={0.5}
         padAngle={0.7}
         cornerRadius={3}
@@ -30,35 +30,15 @@ export function Pie( { co, no2, o3, so2 }: PieProps) {
           from: "color",
           modifiers: [["darker", 0.2]],
         }}
-        arcLinkLabelsSkipAngle={10}
+        arcLinkLabelsSkipAngle={0}
         arcLinkLabelsTextColor="#333333"
         arcLinkLabelsThickness={2}
         arcLinkLabelsColor={{ from: "color" }}
-        arcLabelsSkipAngle={10}
+        arcLabelsSkipAngle={0}
         arcLabelsTextColor={{
           from: "color",
           modifiers: [["darker", 2]],
         }}
-        defs={[
-          {
-            id: "dots",
-            type: "patternDots",
-            background: "inherit",
-            color: "rgba(255, 255, 255, 0.3)",
-            size: 4,
-            padding: 1,
-            stagger: true,
-          },
-          {
-            id: "lines",
-            type: "patternLines",
-            background: "inherit",
-            color: "rgba(255, 255, 255, 0.3)",
-            rotation: -45,
-            lineWidth: 6,
-            spacing: 10,
-          },
-        ]}
         legends={[
           {
             anchor: "bottom",
