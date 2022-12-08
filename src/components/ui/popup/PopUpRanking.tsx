@@ -81,7 +81,7 @@ export function PopUpRanking() {
               </tr>
             </tbody>
           </table>
-          <Bar {...forecast?.daily} />
+          { forecast.daily ? <Bar {...forecast.daily} /> : null }
         </div>
       </WindowModule>
     </section>

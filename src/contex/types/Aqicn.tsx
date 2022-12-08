@@ -3,18 +3,9 @@ export type Avarge = {
     day: string;
 }
 export interface Daily {
-    o3: {
-        avg: number;
-        day: string;
-    },
-    pm10: {
-        avg: number;
-        day: string;
-    },
-    pm25: {
-        avg: number;
-        day: string;
-    }
+    o3: Avarge[],
+    pm10: Avarge[],
+    pm25: Avarge[]
 }
 type Attributions = {
     url: string;
@@ -27,7 +18,7 @@ export interface Aqicn {
         name: string;
     },
     dominentpol?: string;
-    forecast?: {
+    forecast: {
         daily?: Daily;
     },
     iaqi?: {
