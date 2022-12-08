@@ -3,7 +3,7 @@ import { WindowModule } from '../../../components/window/WindowModule';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../contex/redux/store';
 import parse from 'html-react-parser';
-import { Pie } from '../../../components/Charts/Pie';
+import { Pie } from '../../../components/charts/Pie';
 export const jm = '<span className="small-font thin-font"> &mu;</span>g/m<sup>3</sup>';
 export function AirPollution() {
     const airData = useSelector((state: RootState) => state.aqicn.value);

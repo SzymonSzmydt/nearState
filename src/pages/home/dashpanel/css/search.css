@@ -1,9 +1,30 @@
+.form__search {
+    height: 1.5rem;
+}
+
 .search__input {
     appearance: none;
-    border: 0;
-    border-bottom: 1px solid black;
+    max-width: 20rem;
+    height: 2rem;
+    padding: 0 0.5rem;
+    border: 2px solid var(--color-primary);
 }
 
 .search__input:focus-visible {
     outline: none;
+}
+
+.search__btn {
+    cursor: pointer;
+    margin: 0 0.5rem;
+    border: 0;
+    height: 2rem;
+    padding: 0 1rem;
+    color: var(--color-white);
+    background-color: var(--color-primary);
+    transition: background 0.5s;
+}
+
+.search__btn:hover {
+    background-color: var(--weather-img);
 }
