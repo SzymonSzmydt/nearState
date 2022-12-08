@@ -1,28 +1,39 @@
 import "./css/search.css";
-import { useRef } from "react";
+import { useRef, useState } from "react";
 import { WindowModule } from '../../../components/window/WindowModule';
 import { useDispatch } from 'react-redux';
-import { resultList, error } from '../../../contex/redux/SearchSlice';
+import { resultList } from '../../../contex/redux/SearchSlice';
 export function SearchBar() {
+  const [ error, setError ] = useState('');
   const dispatch = useDispatch();
   const ref = useRef<HTMLInputElement | null>(null);
-  const handleClick = async (e: React.FormEvent<HTMLFormElement>) => {
+  const validation = (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
+    setError('');
+    if (ref.current && ref.current.value.length < 3) {
+        return setError(`Za mało liter. Samo "${ref.current?.value}" nie wystarczy`)
+    }
+    searchFetch();
+  }
+  const searchFetch = async () => {
     try {
       const response = await fetch(
         (process.env.REACT_APP_search as string) + ref.current?.value
       );
       const data = await response.json();
-
-      dispatch( resultList(data.data) );
+        if (data.data.length < 1) {
+          return setError(`Nie znaleziono podanej frazy "${ref.current?.value}"`);
+        }
+        dispatch( resultList(data.data) );
     } catch (err) {
       console.error(err);
     }
   };
   return (
     <WindowModule>
+        <div className="flex column">
         <h3>Sprawdź zanieczyszczenie w różnych miastach Polski </h3>
-        <form className="flex wrap search__form" onSubmit={handleClick}>
+        <form className="flex wrap search__form" onSubmit={validation}>
             <input
                 type="text"
                 className="search__input"
@@ -31,8 +42,14 @@ export function SearchBar() {
             />
         <button className="search__btn">Szukaj</button>
         </form>
-            Weź pod uwagę tylko większe miasta, właśnie w takich może znajdować się
-            stacja pomiarowa.
+            <span className="small-font search__error"> 
+            { error ? `${error}` : null } 
+            </span>
+            <span className="small-font search__text-color">
+              Weź pod uwagę tylko większe miasta, właśnie w takich może znajdować się
+              stacja pomiarowa.
+            </span>
+        </div>
     </WindowModule>
   );
 }

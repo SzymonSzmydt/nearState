@@ -1,7 +1,7 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 interface Data {
     uid: number;
-    aqi: number | string;
+    aqi: number;
     time: string[];
     station: {
         name: string;
@@ -10,11 +10,9 @@ interface Data {
 }
 type InitialType = {
     result: Array<Data>;
-    error: boolean;
 }
 const initialState:InitialType = {
     result: [],
-    error: false
 }
 export const searchSlice = createSlice({
     name: 'searchResult',
@@ -22,11 +20,8 @@ export const searchSlice = createSlice({
     reducers: {
         resultList: (state, action:PayloadAction<Array<Data>>) => {
             state.result = action.payload
-        },
-        error: (state, action:PayloadAction<boolean>) => {
-            state.error = action.payload
         }
     }
 });
-export const { resultList, error } = searchSlice.actions;
+export const { resultList } = searchSlice.actions;
 export default searchSlice.reducer

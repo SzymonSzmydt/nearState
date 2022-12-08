@@ -27,6 +27,7 @@
 }
 
 .glass {
+    cursor: pointer;
     width: fit-content;
     margin: 0.5rem auto;
     padding: 0.3rem 0.35rem;
@@ -34,6 +35,11 @@
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
     border: 1px solid rgba(255, 255, 255, 0.3);
+    transition: 0.2s transform;
+}
+
+.glass:hover {
+    transform: scale(1.025);
 }
 
 .weather_box-a {

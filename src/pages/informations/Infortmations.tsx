@@ -2,20 +2,9 @@ import './css/information.css';
 import { WindowModule } from '../../components/window/WindowModule';
 import { Terms } from './Terms';
 export function Informations() {
-    const fetchData = async () => {
-        try {
-            const response = await fetch('https://api.waqi.info/search/?token=8ae7d64675d0ac69d6da0f356910c51cd5672e26&keyword=opol');
-            const data = await response.json();
-            localStorage.setItem('state', JSON.stringify(data.data));
-            console.log(data.data)
-        } catch (err) {
-            console.error(err);
-        }
-    };
     return (
         <div className="container-lg informations">
             <WindowModule>
-                <button onClick={fetchData}>API fetch</button>
                 <h2>Informacje dotyczące danych na stronie</h2>
                 <p>
                     Dane dotyczące jakości powietrza pobierane są ze

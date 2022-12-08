@@ -3,15 +3,8 @@
 }
 
 .global {
-    cursor: pointer;
-    margin: 0;
     border-radius: var(--radius);
     user-select: none;
-    transition: 0.2s transform;
-}
-
-.global:hover {
-    transform: scale(1.025);
 }
 
 .global_city {
@@ -42,7 +35,6 @@
 
 .global-glass_small {
     width: 10rem;
-    flex-direction: column;
     margin: 0 0.5rem;
     padding: 0.5rem 0;
     font-size: 1.25rem;
