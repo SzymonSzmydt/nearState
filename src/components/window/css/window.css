@@ -7,7 +7,7 @@
     animation: slowOpenWindow 0.2s ease-in;
     flex-wrap: wrap;
     width: 100%;
-    margin: 0.5rem 0.25rem;
+    margin: 0.75rem;
     padding: 0.5rem;
     background-color: var(--color-window-module);
     box-shadow: var(--box-shadow);
@@ -29,7 +29,7 @@
 .glass {
     width: fit-content;
     margin: 0.5rem auto;
-    padding: 0 0.5rem;
+    padding: 0.3rem 0.35rem;
     background: rgba(255, 255, 255, 0);
     border-radius: 10px;
     box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);

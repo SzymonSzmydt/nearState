@@ -18,11 +18,11 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>
-                <p className="glass-nr" style={{
+                <span className="glass-nr" style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
                             : "",
-                    }}> {`${index + 1}.`} </p>              
+                    }}> {`${index + 1}.`} </span>              
                 <div className="flex global-glass_small" style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
