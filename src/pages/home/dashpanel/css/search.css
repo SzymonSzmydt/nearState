@@ -1,11 +1,9 @@
-.form__search {
-    height: 1.5rem;
-}
+
 
 .search__input {
     appearance: none;
     max-width: 20rem;
-    height: 2rem;
+    height: 1.75rem;
     padding: 0 0.5rem;
     border: 2px solid var(--color-primary);
 }
@@ -16,9 +14,9 @@
 
 .search__btn {
     cursor: pointer;
-    margin: 0 0.5rem;
+
     border: 0;
-    height: 2rem;
+    height: 1.75rem;
     padding: 0 1rem;
     color: var(--color-white);
     background-color: var(--color-primary);
@@ -27,4 +25,19 @@
 
 .search__btn:hover {
     background-color: var(--weather-img);
+}
+
+@media screen and (max-width: 315px) {
+    .search__btn {
+        width: 100%;
+        margin: 0.25rem 0;
+    }
+
+    .search__input {
+        appearance: none;
+        width: 100%;
+        height: 1.75rem;
+        padding: 0 0.5rem;
+        border: 2px solid var(--color-primary);
+    }
 }

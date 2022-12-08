@@ -24,7 +24,7 @@ export function Weather() {
     //     fetchData();
     // }, []);
     return (
-        <section className="flex wrap">
+        <>
             {current ? (
                 <CityBar city={city} pollution={current.pollution} weather={current.weather}/>
             ) : null}
@@ -62,7 +62,7 @@ export function Weather() {
                     <span className="weather_box-b">Kierunek</span>
                 </div>
             </WindowModule>
-        </section>
+        </>
     );
 }
 function windDirection(wind:number) {

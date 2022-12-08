@@ -16,7 +16,7 @@ export function Map() {
                     <div className="map__img">
                         <GlobalRanking/>
                     </div> 
-                    {/* <Dashpanel/> */}
+                    <Dashpanel/>
                 </div>
             </section>
     )

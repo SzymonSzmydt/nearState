@@ -7,7 +7,6 @@
 .map__box-left {
     flex-direction: column;
     width: 40%;
-    padding: 0 1rem;
     border-radius: var(--radius);
 }
 
