@@ -9,10 +9,16 @@
     align-items: center;
     width: 50%;
     user-select: none;
+    font-weight: 500;
 }
 
-.direct__wrapper h3 {
+.direct h3 {
     text-align: center;
+}
+
+.direct > p:last-child {
+    margin-right: 2rem;
+    align-self: flex-end;
 }
 
 .direct__wrapper-box {
