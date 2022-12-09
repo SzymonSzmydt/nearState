@@ -1,3 +1,22 @@
+.search__aqi, .search__city-name {
+    border-radius: var(--radius);
+    padding: 0.25rem 0.5rem;
+}
+
+.search__nr {
+    margin: 0 0.5rem;
+}
+
+.search__mini-font {
+    font-size: 0.75rem;
+}
+
+.search__aqi {
+    width: 5rem;
+    justify-content: space-between;
+    align-items: baseline;
+}
+
 .search__city-name {
     width: 28rem;
     font-size: 1rem;

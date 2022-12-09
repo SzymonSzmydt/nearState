@@ -1,9 +1,12 @@
 import "./css/search.css";
-import { useRef, useState } from "react";
+import { useRef, useState, Dispatch, SetStateAction } from "react";
 import { useDispatch } from 'react-redux';
 import { resultList } from '../../contex/redux/SearchSlice';
 import { WindowModule } from '../window/WindowModule';
-export function SearchBar() {
+type SearchProps = {
+    state: Dispatch<SetStateAction<boolean>>
+}
+export function SearchBar({ state }: SearchProps ) {
   const [ error, setError ] = useState('');
   const dispatch = useDispatch();
   const ref = useRef<HTMLInputElement | null>(null);
@@ -25,6 +28,7 @@ export function SearchBar() {
           return setError(`Nie znaleziono podanej frazy "${ref.current?.value}"`);
         }
         dispatch( resultList(data.data) );
+        state(true);
     } catch (err) {
       console.error(err);
     }
