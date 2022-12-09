@@ -1,3 +1,4 @@
+import './css/dashpanel.css';
 import { SearchResultList } from './SearchResultList';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../contex/redux/store';
@@ -7,13 +8,14 @@ export function Dashpanel() {
     const searchResult = useSelector((state: RootState)=> state.searchResult.result);
     const buttonRef = useRef<HTMLDivElement | null>(null);
     useEffect(()=> {
-        buttonRef.current?.scrollIntoView({behavior: 'smooth'});
+        if (searchResult.length > 0) {
+            buttonRef.current?.scrollIntoView({behavior: 'smooth', block: 'end'});
+        }
     }, [searchResult]);
     return (
-        <>
+        <div ref={buttonRef}>
             <SearchBar/>
            { searchResult.length > 0 ? <SearchResultList/> : null }
-           <div ref={buttonRef}/>
-        </>
+        </div>
     )
 }
