@@ -12,6 +12,8 @@ export function Dashpanel() {
             buttonRef.current?.scrollIntoView({behavior: 'smooth', block: 'end'});
         }
     }, [searchResult]);
+    console.log(searchResult);
+    
     return (
         <div ref={buttonRef}>
             <SearchBar/>

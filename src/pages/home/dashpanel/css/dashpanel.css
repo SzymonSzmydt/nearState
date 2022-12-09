@@ -1,11 +1,5 @@
-.search__result {
-    width: 100%;
-}
-
-
-
 .search__city-name {
-    width: 100%;
+    width: 28rem;
     font-size: 1rem;
 }
 

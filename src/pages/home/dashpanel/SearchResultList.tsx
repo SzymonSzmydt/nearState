@@ -11,10 +11,14 @@ export function SearchResultList() {
         .filter((e, i) => i < 7 && e["station"]["country"] === "PL")
         .map((e, i) => (
           <Glass key={e["uid"]}>
-            <section className="flex wrap global search__result">
+            <section className="flex wrap">
               <span className="glass-nr search__nr">{`${i + 1}.`}</span>
               <div className="flex search__city-name">
-                 {e["station"]["name"]}
+                {e["station"]["name"]}
+              </div>
+              <div className="search__nr">
+                {e.aqi}
+                <span className="glass-small_font"> US AQI</span>
               </div>
             </section>
           </Glass>
