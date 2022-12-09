@@ -7,7 +7,7 @@
 
 .air__pollution-table {
     margin: 0 0 1rem;
-    width: 80%;
+    width: 60%;
 }
 
 .air__pollution-tr {
@@ -16,11 +16,11 @@
 }
 
 .air__pollution-td {
-    min-width: 4rem;
+    min-width: 40%;
 }
 
 .air__pollution-th {
-    min-width: 8rem;
+    min-width: 60%;
     font-weight: 600;
     padding: 0.75rem;
 }
@@ -39,4 +39,10 @@
 
 .td-border-br {
     border-bottom-right-radius: var(--radius);
+}
+
+@media screen and (max-width: 400px) {
+    .air__pollution-table {
+        width: 100%;
+    }
 }

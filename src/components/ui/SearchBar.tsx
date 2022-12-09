@@ -1,8 +1,8 @@
 import "./css/search.css";
 import { useRef, useState } from "react";
-import { WindowModule } from '../../../components/window/WindowModule';
 import { useDispatch } from 'react-redux';
-import { resultList } from '../../../contex/redux/SearchSlice';
+import { resultList } from '../../contex/redux/SearchSlice';
+import { WindowModule } from '../window/WindowModule';
 export function SearchBar() {
   const [ error, setError ] = useState('');
   const dispatch = useDispatch();
