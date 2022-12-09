@@ -1,5 +1,5 @@
 import './css/dashpanel.css';
-import { SearchResultList } from './SearchResultList';
+import { SearchResultCityBar } from './SearchResultCityBar';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../../contex/redux/store';
 import { SearchBar } from '../../../components/ui/SearchBar';
@@ -17,7 +17,17 @@ export function Dashpanel() {
     return (
         <div ref={buttonRef}>
             <SearchBar/>
-           { searchResult.length > 0 ? <SearchResultList/> : null }
+           { searchResult ? searchResult.length > 0 ? searchResult
+                .filter((e, i) => i < 7 && e["station"]["country"] === "PL")
+                .map((e, i) => (
+                    <SearchResultCityBar 
+                        key={e["uid"]} 
+                        cityName={e["station"]["name"]} 
+                        aqi={e["aqi"]} 
+                        index={i}
+                    />
+                ) ) 
+                : null : null}
         </div>
     )
 }
