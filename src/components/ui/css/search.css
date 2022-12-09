@@ -14,14 +14,6 @@
     outline: none;
 }
 
-.search__city-name {
-    width: 20rem;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-    overflow: hidden;
-    font-size: 1rem;
-}
-
 .search__btn {
     cursor: pointer;
     border: 0;
@@ -54,10 +46,6 @@
         width: 100%;
         margin-top: 0.5rem;
     }
-
-    .search__city-name {
-        width: 15rem;
-    }
 }
 
 @media screen and (max-width: 315px) {
@@ -72,10 +60,5 @@
         height: 1.75rem;
         padding: 0 0.5rem;
         border: 2px solid var(--color-primary);
-    }
-
-    .search__city-name {
-        width: 10rem;
-        font-size: 0.85rem;
     }
 }

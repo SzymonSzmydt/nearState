@@ -8,7 +8,7 @@ export function SearchResultList() {
   return searchResult ? (
     <>
       {searchResult
-        .filter((e, i) => i < 5 && e["station"]["country"] === "PL")
+        .filter((e, i) => i < 7 && e["station"]["country"] === "PL")
         .map((e, i) => (
           <Glass key={e["uid"]}>
             <section className="flex wrap global">
