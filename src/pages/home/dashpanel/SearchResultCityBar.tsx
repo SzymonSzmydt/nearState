@@ -10,10 +10,8 @@ export function SearchResultCityBar({ aqi, cityName, index }: SearchBarProps) {
   return (
           <Glass>
             <section className="flex wrap">
-              <span className="small-font search__nr">{`${index + 1}.`}</span>
-              <div className="search__city-name">
-                { cityName }
-              </div>
+              <span className="small-font search__nr"> {`${index + 1}.`} </span>
+              <span className="search__city-name"> { cityName } </span>
               <div className="flex search__aqi bold search__nr" style={{
                         backgroundColor: aqi
                             ? earthQualityColor(aqi, "color")
