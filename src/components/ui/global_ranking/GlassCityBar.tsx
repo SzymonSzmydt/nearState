@@ -1,3 +1,4 @@
+import './css/global.css';
 import { useDispatch } from 'react-redux';
 import { rankingPopUp, popUpOff, indexRank } from '../../../contex/redux/PopUpLogic';
 import { Glass } from '../../../components/window/Glass';
@@ -15,8 +16,6 @@ export function GlassCityBar({index, citys, ...element}: CityBarProps & Aqicn) {
         dispatch(indexRank(index));
         dispatch(rankingPopUp(true));
     }
-    console.log("citys", citys);
-    
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>
