@@ -6,7 +6,7 @@ import { WindowModule } from '../window/WindowModule';
 type SearchProps = {
     state: Dispatch<SetStateAction<boolean>>
 }
-export function SearchBar({ state }: SearchProps ) {
+export function Search({ state }: SearchProps ) {
   const [ error, setError ] = useState('');
   const dispatch = useDispatch();
   const ref = useRef<HTMLInputElement | null>(null);
@@ -36,22 +36,22 @@ export function SearchBar({ state }: SearchProps ) {
   return (
     <WindowModule>
         <div className="flex column">
-        <h3>Sprawdź zanieczyszczenie w różnych miastach Polski </h3>
-        <form className="flex wrap search__form" onSubmit={validation}>
-            <input
-                type="text"
-                className="search__input"
-                placeholder="Znajdź miasto"
-                ref={ref}
-            />
-        <button className="search__btn">Szukaj</button>
-        </form>
+            <h3>Sprawdź zanieczyszczenie w różnych miastach Polski </h3>
+            <form className="flex wrap" onSubmit={validation}>
+                <input
+                    type="text"
+                    className="search__input"
+                    placeholder="Znajdź miasto"
+                    ref={ref}
+                />
+            <button className="search__btn">Szukaj</button>
+            </form>
             <span className="small-font search__error"> 
-            { error ? `${error}` : null } 
+                { error ? `${error}` : null } 
             </span>
             <span className="small-font search__text-color">
-              Weź pod uwagę tylko większe miasta, właśnie w takich może znajdować się
-              stacja pomiarowa.
+                Weź pod uwagę tylko większe miasta, właśnie w takich może znajdować się
+                stacja pomiarowa.
             </span>
         </div>
     </WindowModule>

@@ -1,5 +1,5 @@
 import './css/dashpanel.css';
-import { SearchBar } from '../../../components/ui/SearchBar';
+import { Search } from '../../../components/ui/Search';
 import { useRef, useEffect, useState } from 'react';
 import { SearchResultBox } from './SearchResultBox';
 export function Dashpanel() {
@@ -13,7 +13,7 @@ export function Dashpanel() {
     }, [scrollToSearchResult]);
     return (
         <div ref={buttonRef}>
-            <SearchBar state={setScrollToSearchResult}/>
+            <Search state={setScrollToSearchResult}/>
             <SearchResultBox/>
         </div>
     )
