@@ -42,9 +42,9 @@ export function Home() {
             }
         }
     useEffect(() => {
-        if (!isLoaded) {
-            dataFetch();
-        }
+        // if (!isLoaded) {
+        //     dataFetch();
+        // }
       dispatch(getPolandAqi(data));
     }, []);
     return (

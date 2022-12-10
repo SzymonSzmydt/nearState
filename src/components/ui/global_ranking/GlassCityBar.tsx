@@ -5,9 +5,9 @@ import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
 type CityBarProps = {
     index: number;
+    citys: string[];
 }
-const citys = ["Katowice", "Poznań", "Warszawa", "Gdansk", "Kraków", "Łódź", "Szczecin", "Wrocław"];
-export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
+export function GlassCityBar({index, citys, ...element}: CityBarProps & Aqicn) {
     const dispatch = useDispatch()
     const { aqi, city } = element;
     const handleClick = () => {
@@ -15,6 +15,8 @@ export function GlassCityBar({index, ...element}: CityBarProps & Aqicn) {
         dispatch(indexRank(index));
         dispatch(rankingPopUp(true));
     }
+    console.log("citys", citys);
+    
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>

@@ -2,7 +2,8 @@ import { createSlice, PayloadAction } from '@reduxjs/toolkit';
 import { Aqicn, AqicnType } from '../types/Aqicn';
 const initialState: AqicnType = {
   value: [],
-  isLoaded: false
+  isLoaded: false,
+  citys: ["London", "Wiedeń", "Warszawa", "Kopenhaga", "Helsinki", "Paryż", "Madryd", "Berlin"]
 }
 export const aqicnEuropeSlice = createSlice({
   name: 'europe',

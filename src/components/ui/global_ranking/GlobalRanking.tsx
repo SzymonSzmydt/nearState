@@ -6,12 +6,14 @@ import { GlassCityBar } from './GlassCityBar'
 export function GlobalRanking() {
     const aqicnData = useSelector((state: RootState) => state.poland.value);
     const ranking = useSelector((state: RootState) => state.popUp.ranking);
+    const citys = useSelector((state: RootState) => state.poland.citys);
     return (
         <div className="global-ranking">
             { aqicnData ? aqicnData.map((element, index) => (
                 <GlassCityBar
                     key={element.idx}
                     index={index}
+                    citys={citys}
                     {...element}
                 />
             )) : null }

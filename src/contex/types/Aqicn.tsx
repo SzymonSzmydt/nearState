@@ -1,6 +1,7 @@
 export type AqicnType = {
   value: Array<Aqicn>;
   isLoaded: boolean;
+  citys: string[];
 }
 export type Avarge = {              
     avg: number;
