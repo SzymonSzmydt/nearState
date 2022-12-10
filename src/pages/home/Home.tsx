@@ -1,10 +1,12 @@
 import { Window } from './../../components/window/Window';
 import { Map } from './Map';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { getPolandAqi } from '../../contex/redux/AqicnPolandSlice';
 import { useEffect } from 'react';
+import { RootState } from '../../contex/redux/store';
 const data = JSON.parse(localStorage.getItem("allPromise") || "");
 export function Home() {
+    const isLoaded = useSelector((state: RootState)=> state.poland.isLoaded);
     const dispatch = useDispatch();
     const dataFetch = async () => {
         try {
@@ -40,9 +42,11 @@ export function Home() {
             }
         }
     useEffect(() => {
-      // dataFetch();
+        if (!isLoaded) {
+            dataFetch();
+        }
       dispatch(getPolandAqi(data));
-    }, [data]);
+    }, []);
     return (
         <Window>
             <Map/>
