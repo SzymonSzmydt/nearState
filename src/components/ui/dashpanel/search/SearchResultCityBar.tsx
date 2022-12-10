@@ -1,5 +1,5 @@
-import { Glass } from "../../../components/window/Glass";
-import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
+import { Glass } from '../../../window/Glass';
+import { earthQualityColor } from '../../../../contex/hooks/EarthQualityColor';
 type SearchBarProps = {
     aqi: number;
     cityName: string;

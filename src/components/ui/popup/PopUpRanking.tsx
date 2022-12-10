@@ -5,7 +5,7 @@ import { rankingPopUp } from "../../../contex/redux/PopUpLogic";
 import { RootState } from "../../../contex/redux/store";
 import { earthQualityColor } from "../../../contex/hooks/EarthQualityColor";
 import { Bar } from "../../charts/Bar";
-import { jm } from "../../../pages/home/airQuality/AirPollution";
+import { jm } from "../airQuality/AirPollution";
 import parse from "html-react-parser";
 export function PopUpRanking() {
   const aqicnData = useSelector((state: RootState) => state.aqicn.value);

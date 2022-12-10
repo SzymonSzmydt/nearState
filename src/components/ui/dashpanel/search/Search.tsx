@@ -1,8 +1,9 @@
 import "./css/search.css";
 import { useRef, useState, Dispatch, SetStateAction } from "react";
 import { useDispatch } from 'react-redux';
-import { resultList } from '../../contex/redux/SearchSlice';
-import { WindowModule } from '../window/WindowModule';
+import { resultList } from '../../../../contex/redux/SearchSlice';
+import { WindowModule } from '../../../window/WindowModule';
+
 type SearchProps = {
     state: Dispatch<SetStateAction<boolean>>
 }

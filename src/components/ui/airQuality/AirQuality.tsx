@@ -7,7 +7,10 @@ import { PopUpLegend } from '../../../components/ui/popup/PopUpLegend';
 import { useDispatch, useSelector } from 'react-redux';
 import { popUpOff, legendPopUp, chemicalPopUp, indexPopUp } from '../../../contex/redux/PopUpLogic';
 import { RootState } from '../../../contex/redux/store';
-export function AirQuality() {
+type AirQualityProps = {
+    title: string;
+}
+export function AirQuality({ title }: AirQualityProps) {
     const dispatch = useDispatch();
     const chemicalPop = useSelector((state: RootState) => state.popUp.chemical);
     const legendPop = useSelector((state: RootState) => state.popUp.legend);
@@ -20,8 +23,7 @@ export function AirQuality() {
     }
     return (
         <WindowModule>
-            <>
-                <h1 className="h1">Dane o jakości powietrza i jego zanieczyszczeniu w miastach
+                <h1 className="h1"> { title }
                     <span className="small-font"> - US AQI </span>
                 </h1>
                 <section className="flex wrap legend__section">
@@ -58,7 +60,6 @@ export function AirQuality() {
                         które często są wynikiem spalania paliw.
                     </article>
                 </section>
-            </>
         </WindowModule>
     );
 }

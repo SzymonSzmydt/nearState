@@ -3,9 +3,15 @@
 }
 
 .global {
+    cursor: pointer;
     align-items: stretch;
     border-radius: var(--radius);
     user-select: none;
+    transition: 0.2s transform;
+}
+
+.global:hover {
+    transform: scale(1.025);
 }
 
 .global_city {

@@ -1,7 +1,7 @@
 import './css/dashpanel.css';
-import { Search } from '../../../components/ui/Search';
 import { useRef, useEffect, useState } from 'react';
 import { SearchResultBox } from './SearchResultBox';
+import { Search } from './search/Search'
 export function Dashpanel() {
     const [ scrollToSearchResult, setScrollToSearchResult ] = useState(false);
     const buttonRef = useRef<HTMLDivElement | null>(null);
