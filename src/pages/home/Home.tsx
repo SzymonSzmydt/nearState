@@ -1,7 +1,7 @@
 import { Window } from './../../components/window/Window';
 import { Map } from './Map';
 import { useDispatch } from 'react-redux';
-import { getAqicn } from '../../contex/redux/AqicnCitySlice';
+import { getPolandAqi } from '../../contex/redux/AqicnPolandSlice';
 import { useEffect } from 'react';
 const data = JSON.parse(localStorage.getItem("allPromise") || "");
 export function Home() {
@@ -33,7 +33,7 @@ export function Home() {
                 szczecin.data, 
                 wroclaw.data
                 ].sort((a, b) => b.aqi - a.aqi);
-              dispatch(getAqicn(data));
+              dispatch(getPolandAqi(data));
               localStorage.setItem('allPromise', JSON.stringify(data));
             } catch(err) {
                 console.log(err);  
@@ -41,7 +41,7 @@ export function Home() {
         }
     useEffect(() => {
       // dataFetch();
-      dispatch(getAqicn(data));
+      dispatch(getPolandAqi(data));
     }, [data]);
     return (
         <Window>

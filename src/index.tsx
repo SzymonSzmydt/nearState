@@ -14,11 +14,13 @@ import App from './App';
 import { Home } from './pages/home/Home';
 import { Contact } from './pages/contact/Contact';
 import { Informations } from './pages/informations/Infortmations';
+import { Europe } from './pages/europe/Europe';
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
             <Route path="/" element={<App />}>
                 <Route index={true} element={<Home />} />
+                <Route path="europe" element={ <Europe /> } />
                 <Route path="contact" element={<Contact />} />
                 <Route path="informations" element={<Informations />} />
             </Route>

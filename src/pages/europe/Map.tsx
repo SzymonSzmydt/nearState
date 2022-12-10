@@ -1,4 +1,3 @@
-import './css/map.css';
 import { Dashpanel } from '../../components/ui/dashpanel/Dashpanel';
 import { AirQuality } from '../../components/ui/airQuality/AirQuality';
 import { AirPollution } from '../../components/ui/airQuality/AirPollution';

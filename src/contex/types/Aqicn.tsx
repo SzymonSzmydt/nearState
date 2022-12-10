@@ -1,3 +1,6 @@
+export type AqicnType = {
+  value: Array<Aqicn>
+}
 export type Avarge = {              
     avg: number;
     day: string;
