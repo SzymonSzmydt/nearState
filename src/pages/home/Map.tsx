@@ -31,7 +31,7 @@ export function Map() {
               : null}
             {ranking ? <PopUpRanking /> : null}
         </div>
-        <Dashpanel />
+        <Dashpanel map="pl"/>
       </div>
     </section>
   );

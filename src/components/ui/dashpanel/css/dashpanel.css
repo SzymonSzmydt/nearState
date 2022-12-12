@@ -26,10 +26,17 @@
 .search__resultbox {
     width: 100%;
     height: 19.25rem;
-    background-image: url('../../../../assets/poland.png');
     background-repeat: no-repeat;
     background-size: contain;
     background-position: center;
+}
+
+.pl {
+    background-image: url('../../../../assets/poland.png');
+}
+
+.eu {
+    background-image: url('../../../../assets/eu.png');
 }
 
 @media screen and (max-width: 500px) {

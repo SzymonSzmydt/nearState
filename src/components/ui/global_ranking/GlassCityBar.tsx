@@ -4,6 +4,7 @@ import { rankingPopUp, popUpOff, indexRank } from '../../../contex/redux/PopUpLo
 import { Glass } from '../../../components/window/Glass';
 import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
+import { useCallback } from 'react';
 type CityBarProps = {
     index: number;
     citys: string[];
@@ -11,11 +12,11 @@ type CityBarProps = {
 export function GlassCityBar({index, citys, ...element}: CityBarProps & Aqicn) {
     const dispatch = useDispatch()
     const { aqi, city } = element;
-    const handleClick = () => {
+    const handleClick = useCallback(() => {
         dispatch(popUpOff());
         dispatch(indexRank(index));
         dispatch(rankingPopUp(true));
-    }
+    }, [rankingPopUp, popUpOff, indexRank]);
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>

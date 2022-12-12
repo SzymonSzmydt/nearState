@@ -2,7 +2,10 @@ import './css/dashpanel.css';
 import { useRef, useEffect, useState } from 'react';
 import { SearchResultBox } from './SearchResultBox';
 import { Search } from './search/Search'
-export function Dashpanel() {
+export type TypeOfMapProps = {
+    map: string;
+}
+export function Dashpanel({ map }: TypeOfMapProps) {
     const [ scrollToSearchResult, setScrollToSearchResult ] = useState(false);
     const buttonRef = useRef<HTMLDivElement | null>(null);
     useEffect(()=> {
@@ -14,7 +17,7 @@ export function Dashpanel() {
     return (
         <div ref={buttonRef}>
             <Search state={setScrollToSearchResult}/>
-            <SearchResultBox/>
+            <SearchResultBox map={map}/>
         </div>
     )
 }
