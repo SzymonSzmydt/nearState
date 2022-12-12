@@ -6,7 +6,8 @@ import parse from 'html-react-parser';
 import { Pie } from '../../../components/charts/Pie';
 export const jm = '<span className="small-font thin-font"> &mu;</span>g/m<sup>3</sup>';
 export function AirPollution() {
-    const airData = useSelector((state: RootState) => state.poland.value);
+    const region = useSelector((state: RootState) => state.popUp.region )
+    const airData = useSelector((state: RootState) => state[`${region}`].value);
     const index = useSelector((state: RootState)=> state.popUp.indexR);
     const date = airData[index]?.time?.s;
     return airData ? (
