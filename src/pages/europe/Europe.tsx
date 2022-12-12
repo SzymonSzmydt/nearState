@@ -13,7 +13,7 @@ export function Europe() {
             const result = (
                 await Promise.all([
                   fetch(process.env.REACT_APP_londyn as string),
-                  fetch(process.env.REACT_APP_wieden as string),
+                  fetch(process.env.REACT_APP_budapeszt as string),
                   fetch(process.env.REACT_APP_warszawa as string),
                   fetch(process.env.REACT_APP_kopenhaga as string),
                   fetch(process.env.REACT_APP_helsinki as string),
@@ -22,12 +22,12 @@ export function Europe() {
                   fetch(process.env.REACT_APP_berlin as string)
                 ])
               ).map((r) => r.json());
-              const [londyn, wieden, warszawa, kopenhaga, helsinki, paryz, madryd, berlin] = await Promise.all(
+              const [londyn, budapeszt, warszawa, kopenhaga, helsinki, paryz, madryd, berlin] = await Promise.all(
                 result
               );
               const data = [
                 londyn.data,
-                wieden.data, 
+                budapeszt.data, 
                 warszawa.data, 
                 kopenhaga.data, 
                 helsinki.data, 

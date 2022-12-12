@@ -3,7 +3,7 @@ import { Aqicn, AqicnType } from '../types/Aqicn';
 const initialState: AqicnType = {
   value: [],
   isLoaded: false,
-  citys: ["Londyn", "Wiedeń", "Warszawa", "Kopenhaga", "Helsinki", "Paryż", "Madryd", "Berlin"]
+  citys: ["London", "Budapest", "Warszawa", "Copenhagen", "Helsinki", "Paris", "Madryd", "Berlin"]
 }
 export const aqicnEuropeSlice = createSlice({
   name: 'europe',
