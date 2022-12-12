@@ -14,9 +14,9 @@ export function Informations() {
                     zapewnienia wysokiego poziomu dokładności dla każdej
                     wartości AQI, stosuje się kilka rozwiązań do przetwarzania
                     uczenia maszynowego. Na przykład weryfikowana jest spójność
-                    danych w czasie rzeczywistym z sąsiednimi stacjami, co
+                    danych w czasie rzeczywistym z&nbsp;sąsiednimi stacjami, co
                     pozwala automatycznie wykrywać wadliwe stacje monitorujące
-                    iw razie potrzeby usuwać je z mapy.
+                    i&nbsp;w&nbsp;razie potrzeby usuwać je z&nbsp;mapy.
                 </p>
             </WindowModule>
             <Terms />
