@@ -7,7 +7,7 @@ export function SearchResultBox( { map }: TypeOfMapProps) {
     return (
         <div className={`search__resultbox ${map}`}>
              { searchResult ? searchResult.length > 0 ? searchResult
-                .filter((e, i) => i < 7 && e["station"]["country"] === "PL")
+                .filter((e, i) => i < 7)
                 .map((e, i) => (
                     <SearchResultCityBar
                         key={e["uid"]} 

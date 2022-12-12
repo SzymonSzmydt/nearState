@@ -1,9 +1,8 @@
 import "./css/search.css";
-import { useRef, useState, Dispatch, SetStateAction } from "react";
+import { useRef, useState, Dispatch, SetStateAction, useCallback } from 'react';
 import { useDispatch } from 'react-redux';
 import { resultList } from '../../../../contex/redux/SearchSlice';
 import { WindowModule } from '../../../window/WindowModule';
-
 type SearchProps = {
     state: Dispatch<SetStateAction<boolean>>
 }
@@ -19,7 +18,7 @@ export function Search({ state }: SearchProps ) {
     }
     searchFetch();
   }
-  const searchFetch = async () => {
+  const searchFetch = useCallback(async () => {
     try {
       const response = await fetch(
         (process.env.REACT_APP_search as string) + ref.current?.value
@@ -33,11 +32,11 @@ export function Search({ state }: SearchProps ) {
     } catch (err) {
       console.error(err);
     }
-  };
+  }, [resultList])
   return (
     <WindowModule>
         <div className="flex column">
-            <h3>Sprawdź zanieczyszczenie w różnych miastach Polski </h3>
+            <h3>Sprawdź zanieczyszczenie w innych miastach </h3>
             <form className="flex wrap" onSubmit={validation}>
                 <input
                     type="text"

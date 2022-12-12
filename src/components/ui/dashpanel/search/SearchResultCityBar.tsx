@@ -6,7 +6,6 @@ type SearchBarProps = {
     index: number;
 }
 export function SearchResultCityBar({ aqi, cityName, index }: SearchBarProps) {
-
   return (
           <Glass>
             <section className="flex wrap">
