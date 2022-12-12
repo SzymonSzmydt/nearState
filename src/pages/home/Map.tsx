@@ -1,5 +1,4 @@
 import "./css/map.css";
-import { Weather } from "./weather/Weather";
 import { AirQuality } from "../../components/ui/airQuality/AirQuality";
 import { AirPollution } from "../../components/ui/airQuality/AirPollution";
 import { Dashpanel } from "../../components/ui/dashpanel/Dashpanel";
@@ -7,6 +6,7 @@ import { GlassCityBar } from '../../components/ui/global_ranking/GlassCityBar';
 import { PopUpRanking } from '../../components/ui/popup/PopUpRanking';
 import { useSelector } from 'react-redux';
 import { RootState } from '../../contex/redux/store';
+import { Weather } from '../../components/ui/weather/Weather';
 export function Map() {
     const aqicnData = useSelector((state: RootState) => state.poland.value);
     const ranking = useSelector((state: RootState) => state.popUp.ranking);

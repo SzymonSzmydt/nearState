@@ -5,6 +5,7 @@ import { useSelector } from "react-redux";
 import { RootState } from "../../contex/redux/store";
 import { GlassCityBar } from "../../components/ui/global_ranking/GlassCityBar";
 import { PopUpRanking } from "../../components/ui/popup/PopUpRanking";
+import { Weather } from '../../components/ui/weather/Weather';
 export function Map() {
   const aqicnData = useSelector((state: RootState) => state.europe.value);
   const ranking = useSelector((state: RootState) => state.popUp.ranking);
@@ -20,6 +21,7 @@ export function Map() {
         <AirPollution />
       </div>
       <div className="map__box-right">
+        <Weather />
         <div className="map__img global-ranking">
           {aqicnData
             ? aqicnData.map((element, index) => (
