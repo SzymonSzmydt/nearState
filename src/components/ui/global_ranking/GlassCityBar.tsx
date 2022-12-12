@@ -40,11 +40,7 @@ export function GlassCityBar({index, citys, area, ...element}: CityBarProps & Aq
                             ? earthQualityColor(aqi, "color")
                             : "",
                      }}>
-                    <img
-                        src={require(`../../../assets/faces/${earthQualityColor(aqi, "aqius")}.png`)}
-                        className="global-glass_img"
-                        alt="Twarz odzwierciedlająca zanieczyszczenie powietrza"
-                    />
+                    <div className={`img global-glass_img ${earthQualityColor(aqi,"aqius")}`}/>
                     <div className="global-aqius">
                         { aqi }
                         <span className="glass-small_font"> US AQI</span>

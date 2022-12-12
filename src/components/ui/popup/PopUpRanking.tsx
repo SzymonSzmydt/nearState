@@ -33,13 +33,7 @@ export function PopUpRanking() {
                     style={{ backgroundColor: earthQualityColor(aqi, "color") }}
                     className="flex popup-box__img"
                   >
-                    <img
-                      src={require(`../../../assets/faces/${earthQualityColor(
-                        aqi,
-                        "aqius"
-                      )}.png`)}
-                      className="popUp-img"
-                    />
+                    <div className={`img popUp-img ${earthQualityColor(aqi,"aqius")}`}/>
                     <span className="popUp-box-p margin-up">{aqi} </span>
                     <span className="small-font">
                       <b>US AQI</b>

@@ -5,7 +5,7 @@ import { region } from '../../contex/redux/PopUpLogic';
 import { getEuropeAqi, getEuLoaded } from '../../contex/redux/AqicnEuropeSlice';
 import { useEffect } from 'react';
 import { RootState } from '../../contex/redux/store';
-const data = JSON.parse(localStorage.getItem("europe") || "");
+// const data = JSON.parse(localStorage.getItem("europe") || "");
 export function Europe() {
     const isLoaded = useSelector((state: RootState)=> state.europe.isLoaded);
     const dispatch = useDispatch();
@@ -38,17 +38,17 @@ export function Europe() {
                 ].sort((a, b) => b.aqi - a.aqi);
               dispatch(getEuropeAqi(data));
               dispatch(getEuLoaded(true));
-              localStorage.setItem('europe', JSON.stringify(data));
+            //   localStorage.setItem('europe', JSON.stringify(data));
             } catch(err) {
                 console.log(err);  
             }
         }
     useEffect(() => {
-        // if (!isLoaded) {
-        //     dataFetch();
-        // }
+        if (!isLoaded) {
+            dataFetch();
+        }
       dispatch(region('europe'));
-      dispatch(getEuropeAqi(data));
+    //   dispatch(getEuropeAqi(data));
     }, []);
     return (
         <Window>

@@ -30,7 +30,7 @@
     font-weight: 600;
 }
 
-@media screen and (max-width: 350px) {
+@media screen and (max-width: 500px) {
     .header__logo {
         font-size: 1.25rem;
     }
@@ -45,16 +45,13 @@
     }
 }
 
-@media screen and (max-width: 250px) {
+@media screen and (max-width: 380px) {
     .header__logo {
-        font-size: 0.9rem;
-    }
-    .header__logo > span:last-child {
-        font-size: 1rem;
+        display: none;
     }
 
     .header__nav {
-        font-size: 0.65rem;
+        font-size: 0.7rem;
         font-weight: 500;
     }
 }

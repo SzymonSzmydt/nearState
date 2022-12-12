@@ -17,7 +17,7 @@ export function PopUpLegend({rank, range, face, bgcolor, description}: PopUpProp
                 <div className="popUp-box">
                     <div className="close" onClick={() => dispatch(legendPopUp(false))} />
                     <section className="flex">
-                        <img src={require(`../../../assets/faces/${face}.png`)} alt="Jakość powietrza" className="popUp-img"/>
+                        <div className={`img popUp-img ${face}`}/>
                         <table className="popUp-box">
                             <tbody>
                                 <tr className="popup-box__tr">

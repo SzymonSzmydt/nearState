@@ -5,13 +5,13 @@ import { WeatherData } from '../../../components/ui/WeatherData';
 import { CityBar } from './CityBar';
 import { useSelector, useDispatch } from 'react-redux';
 import { getAirCityData } from '../../../contex/redux/AirCitySlice';
-import { useEffect } from 'react';
+import { useEffect, useCallback } from 'react';
 import { RootState } from '../../../contex/redux/store';
 export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);
     const dispatch = useDispatch();
     const { city, current } = airData as [] as AirVisualApi;
-    const fetchData = async () => {
+    const fetchData = useCallback(async () => {
         try {
             const response = await fetch(process.env.REACT_APP_urlNearest as string);
             const data = await response.json();
@@ -19,10 +19,12 @@ export function Weather() {
         } catch (err) {
             console.error(err);
         }
-    };
-    // useEffect(()=> {
-    //     fetchData();
-    // }, []);
+    }, [process.env.REACT_APP_urlNearest]);
+    useEffect(()=> {
+        if (city !== 'Wroclaw') {
+            fetchData();
+        }
+    }, []);
     return (
         <>
             {current ? (

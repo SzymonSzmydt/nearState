@@ -32,11 +32,11 @@
 }
 
 .pl {
-    background-image: url('../../../../assets/poland.png');
+    background-image: url('../../../../assets/poland.webp');
 }
 
 .eu {
-    background-image: url('../../../../assets/eu.png');
+    background-image: url('../../../../assets/eu.webp');
 }
 
 @media screen and (max-width: 500px) {

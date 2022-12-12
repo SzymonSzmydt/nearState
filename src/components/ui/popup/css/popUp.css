@@ -58,6 +58,27 @@
 .popUp-img {
     margin: 0 1rem;
     width: 2.5rem;
+    height: 2.5rem;
+}
+
+.aqi1 {
+    background-image: url('../../../../assets/faces/aqi1.webp');
+}
+
+.aqi2 {
+    background-image: url('../../../../assets/faces/aqi2.webp');
+}
+
+.aqi3 {
+    background-image: url('../../../../assets/faces/aqi3.webp');
+}
+
+.aqi4 {
+    background-image: url('../../../../assets/faces/aqi4.webp');
+}
+
+.aqi5 {
+    background-image: url('../../../../assets/faces/aqi5.webp');
 }
 
 .margin-up {
