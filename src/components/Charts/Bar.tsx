@@ -1,24 +1,25 @@
 import { ResponsiveBar } from "@nivo/bar";
 import { Avarge, Daily } from '../../contex/types/Aqicn';
+import { useCallback } from 'react'
 type BarProps = {
   O3: number;
   pm10: number;
   pm25: number;
   day: string;
 }
-function MakeAGoodObject(x: Avarge[], y: Avarge[], z: Avarge[]): BarProps[] {
-  return x.map((e, i) => ({
-    O3: e["avg"],
-    pm10: y[i]["avg"],
-    pm25: z[i]["avg"],
-    day: e["day"]?.slice(5,10),
-  }));
-}
 export function Bar({ o3, pm10, pm25 }: Daily) {
+    const MakeAGoodObject = useCallback((): BarProps[] => {
+        return o3.map((e, i) => ({
+          O3: e["avg"],
+          pm10: pm10[i]["avg"],
+          pm25: pm25[i]["avg"],
+          day: e["day"]?.slice(5,10),
+        }));
+      }, [o3, pm10, pm25]);
   return (
     <div className="bar">
       <ResponsiveBar
-        data={MakeAGoodObject(o3, pm10, pm25)}
+        data={MakeAGoodObject()}
         keys={["O3", "pm10", "pm25"]}
         indexBy="day"
         margin={{ top: 50, right: 130, bottom: 50, left: 60 }}

@@ -9,6 +9,8 @@ export function Header() {
                     <span>state</span>
                 </NavLink>
                 <nav className="header__nav">
+                    <NavLink to="/" className="link a"> Polska </NavLink>
+                    <NavLink to="europe" className="link a"> Europa </NavLink>
                     <NavLink to="informations" className="link a"> Informacje </NavLink>
                     <NavLink to="contact" className="link a"> Kontakt </NavLink>
                 </nav>
