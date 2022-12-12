@@ -27,6 +27,7 @@ export function Map() {
                   key={element.idx}
                   index={index}
                   citys={citys}
+                  area={'europe'}
                   {...element}
                 />
               ))

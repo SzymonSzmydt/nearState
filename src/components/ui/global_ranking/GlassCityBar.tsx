@@ -1,6 +1,6 @@
 import './css/global.css';
 import { useDispatch } from 'react-redux';
-import { rankingPopUp, popUpOff, indexRank } from '../../../contex/redux/PopUpLogic';
+import { rankingPopUp, popUpOff, indexRank, region } from '../../../contex/redux/PopUpLogic';
 import { Glass } from '../../../components/window/Glass';
 import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
@@ -8,13 +8,15 @@ import { useCallback } from 'react';
 type CityBarProps = {
     index: number;
     citys: string[];
+    area: "poland" | "europe";
 }
-export function GlassCityBar({index, citys, ...element}: CityBarProps & Aqicn) {
+export function GlassCityBar({index, citys, area, ...element}: CityBarProps & Aqicn) {
     const dispatch = useDispatch()
     const { aqi, city } = element;
     const handleClick = useCallback(() => {
         dispatch(popUpOff());
         dispatch(indexRank(index));
+        dispatch(region(area))
         dispatch(rankingPopUp(true));
     }, [rankingPopUp, popUpOff, indexRank]);
     return (

@@ -26,7 +26,7 @@ export function Map() {
         <div className="map__img global-ranking">
             {aqicnData
               ? aqicnData.map((element, index) => (
-                  <GlassCityBar key={element.idx} index={index} citys={citys} {...element} />
+                  <GlassCityBar key={element.idx} index={index} citys={citys} {...element} area={'poland'}/>
                 ))
               : null}
             {ranking ? <PopUpRanking /> : null}

@@ -5,13 +5,15 @@ interface PopUpType {
     ranking: boolean;
     index: number;
     indexR: number;
+    region: "poland" | "europe";
 }
 const initialState: PopUpType = {
     chemical: false,
     legend: false,
     ranking: false,
     index: 0,
-    indexR: 0
+    indexR: 0,
+    region: "poland"
 }
 export const popUpSlice = createSlice({
   name: 'popUp',
@@ -37,7 +39,10 @@ export const popUpSlice = createSlice({
       },
       indexRank: (state, action:PayloadAction<number>) => {
         state.indexR = action.payload
-    },
+      },
+      region: (state, action:PayloadAction<"poland" | "europe">) => {
+        state.region = action.payload
+      }
   },
 })
 export const { 
@@ -46,6 +51,7 @@ export const {
     chemicalPopUp,
     rankingPopUp, 
     indexPopUp,
-    indexRank
+    indexRank,
+    region
 } = popUpSlice.actions
 export default popUpSlice.reducer

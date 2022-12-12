@@ -8,7 +8,8 @@ import { Bar } from "../../charts/Bar";
 import { jm } from "../airQuality/AirPollution";
 import parse from "html-react-parser";
 export function PopUpRanking() {
-  const aqicnData = useSelector((state: RootState) => state.poland.value);
+  const region = useSelector((state: RootState) => state.popUp.region);
+  const aqicnData = useSelector((state: RootState) => state[`${region}`].value);
   const index = useSelector((state: RootState) => state.popUp.indexR);
   const dispatch = useDispatch();
   const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
