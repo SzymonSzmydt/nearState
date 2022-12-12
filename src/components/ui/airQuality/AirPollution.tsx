@@ -7,9 +7,14 @@ import { Pie } from '../../../components/charts/Pie';
 export const jm = '<span className="small-font thin-font"> &mu;</span>g/m<sup>3</sup>';
 export function AirPollution() {
     const region = useSelector((state: RootState) => state.popUp.region )
-    const airData = useSelector((state: RootState) => state[`${region}`].value);
+    const poland = useSelector((state: RootState) => state.poland.value);
+    const europe = useSelector((state: RootState) => state.europe.value);
+    const airData = region === 'poland' ? poland : europe;
     const index = useSelector((state: RootState)=> state.popUp.indexR);
     const date = airData[index]?.time?.s;
+    console.log(airData);
+    console.log(region);
+    
     return airData ? (
       <WindowModule>
         <section className="flex air__pollution">

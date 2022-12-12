@@ -1,6 +1,7 @@
 import { Window } from './../../components/window/Window';
 import { Map } from './Map';
 import { useDispatch, useSelector } from 'react-redux';
+import { region } from '../../contex/redux/PopUpLogic';
 import { getEuropeAqi, getEuLoaded } from '../../contex/redux/AqicnEuropeSlice';
 import { useEffect } from 'react';
 import { RootState } from '../../contex/redux/store';
@@ -46,6 +47,7 @@ export function Europe() {
         // if (!isLoaded) {
         //     dataFetch();
         // }
+      dispatch(region('europe'));
       dispatch(getEuropeAqi(data));
     }, []);
     return (
