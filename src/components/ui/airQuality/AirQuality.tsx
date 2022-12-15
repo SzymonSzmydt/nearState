@@ -17,9 +17,9 @@ type AirQualityProps = {
 };
 export function AirQuality({ title }: AirQualityProps) {
   const dispatch = useDispatch();
-  const chemicalPop = useSelector((state: RootState) => state.popUp.chemical);
-  const legendPop = useSelector((state: RootState) => state.popUp.legend);
-  const indexPop = useSelector((state: RootState) => state.popUp.index);
+  const chemicalPop = useSelector((state: RootState) => state.popup.chemical);
+  const legendPop = useSelector((state: RootState) => state.popup.legend);
+  const indexPop = useSelector((state: RootState) => state.popup.index);
   const handleClick = (index: number, fn: "chemical" | "legend") => {
     dispatch(popupOff());
     if (fn && fn === "chemical") dispatch(chemicalPopup(true));
