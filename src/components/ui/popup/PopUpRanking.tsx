@@ -1,29 +1,29 @@
-import "./css/popUp.css";
+import "./css/popup.css";
 import { WindowModule } from "../../window/WindowModule";
 import { useSelector, useDispatch } from "react-redux";
-import { rankingPopUp } from "../../../contex/redux/PopUpLogic";
+import { rankingPopup } from "../../../contex/redux/PopupLogic";
 import { RootState } from "../../../contex/redux/store";
 import { earthQualityColor } from "../../../contex/hooks/EarthQualityColor";
 import { Bar } from "../../charts/Bar";
 import { jm } from "../airQuality/AirPollution";
 import parse from "html-react-parser";
-export function PopUpRanking() {
-  const region = useSelector((state: RootState) => state.popUp.region);
+export function PopupRanking() {
+  const region = useSelector((state: RootState) => state.popup.region);
   const aqicnData = useSelector((state: RootState) => state[`${region}`].value);
-  const index = useSelector((state: RootState) => state.popUp.indexR);
+  const index = useSelector((state: RootState) => state.popup.indexR);
   const dispatch = useDispatch();
   const { aqi, city, dominentpol, forecast, iaqi, time } = aqicnData[index];
   const date = time?.s;
   return (
     <section className="popup-ranking">
       <WindowModule>
-        <div className="popUp-box">
+        <div className="popup-box">
           <div
             className="close"
             onClick={() => dispatch(rankingPopUp(false))}
           />
           <h3>Informacje dotyczące wybranego miasta</h3>
-          <table className="popUp-box align-tr">
+          <table className="popup-box align-tr">
             <tbody className="popup-box_tbody">
               <tr>
                 <td className="popup-box__td">Monitoring</td>
@@ -33,8 +33,8 @@ export function PopUpRanking() {
                     style={{ backgroundColor: earthQualityColor(aqi, "color") }}
                     className="flex popup-box__img"
                   >
-                    <div className={`img popUp-img ${earthQualityColor(aqi,"aqius")}`}/>
-                    <span className="popUp-box-p margin-up">{aqi} </span>
+                    <div className={`img popup-img ${earthQualityColor(aqi,"aqius")}`}/>
+                    <span className="popup-box-p margin-up">{aqi} </span>
                     <span className="small-font">
                       <b>US AQI</b>
                     </span>

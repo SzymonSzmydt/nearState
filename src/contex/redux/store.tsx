@@ -2,14 +2,14 @@ import { configureStore } from '@reduxjs/toolkit'
 import airCityReducer from '../redux/AirCitySlice'
 import aqicnPolandReducer from '../redux/AqicnPolandSlice'
 import aqicnEuropeReducer from '../redux/AqicnEuropeSlice'
-import popUpSliceReducer from './PopUpLogic';
+import popupSliceReducer from './PopupLogic';
 import searchSliceReducer from './SearchSlice';
 export const store = configureStore({
   reducer: {
     airCity: airCityReducer,
     poland: aqicnPolandReducer,
     europe: aqicnEuropeReducer,
-    popUp: popUpSliceReducer,
+    popUp: popupSliceReducer,
     searchResult: searchSliceReducer
   },
 })

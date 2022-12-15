@@ -2,7 +2,7 @@ import { WindowModule } from '../../../components/window/WindowModule';
 import './css/chemical.css'
 import parse from 'html-react-parser';
 import { useDispatch } from 'react-redux';
-import { chemicalPopUp } from '../../../contex/redux/PopUpLogic';
+import { chemicalPopup } from '../../../contex/redux/PopupLogic';
 interface ChemicalProps {
     compound?: {
         name?: string;
@@ -22,7 +22,7 @@ export function Chemical({ compound }: ChemicalProps) {
         <section className="chemical">
             <WindowModule bgcolor={"var(--color-popup)"}>
                 <div className="chemical-box">
-                    <div className="close" onClick={() => dispatch(chemicalPopUp(false))} />
+                    <div className="close" onClick={() => dispatch(chemicalPopup(false))} />
                         <p className="chemical-box_p">
                             <b> {compound.name} </b> - {parse(compound.pattern)}
                         </p>

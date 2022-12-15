@@ -3,13 +3,13 @@ import { WindowModule } from "../../../components/window/WindowModule";
 import { Chemical } from "../../../components/ui/popup/Chemical";
 import { chemicals } from "../../../contex/ChemicalData";
 import { legend } from "../../../contex/types/AirLegendDescription";
-import { PopUpLegend } from "../../../components/ui/popup/PopUpLegend";
+import { PopupLegend } from "../../../components/ui/popup/PopupLegend";
 import { useDispatch, useSelector } from "react-redux";
 import {
-  popUpOff,
-  legendPopUp,
-  chemicalPopUp,
-  indexPopUp,
+  popupOff,
+  legendPopup,
+  chemicalPopup,
+  indexPopup,
 } from "../../../contex/redux/PopUpLogic";
 import { RootState } from "../../../contex/redux/store";
 type AirQualityProps = {
@@ -45,7 +45,7 @@ export function AirQuality({ title }: AirQualityProps) {
               <span> {element.range} </span>
             </div>
           ))}
-          {legendPop ? <PopUpLegend {...legend[indexPop]} /> : null}
+          {legendPop ? <PopupLegend {...legend[indexPop]} /> : null}
         </section>
         <>
           <h2>AQI (ang. Air Quality Index)</h2>

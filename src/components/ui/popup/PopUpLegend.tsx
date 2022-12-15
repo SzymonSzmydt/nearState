@@ -1,7 +1,7 @@
-import './css/popUp.css';
+import './css/popup.css';
 import { WindowModule } from '../../window/WindowModule';
 import { useDispatch } from 'react-redux';
-import { legendPopUp } from '../../../contex/redux/PopUpLogic';
+import { legendPopUp } from '../../../contex/redux/PopupLogic';
 type PopUpProps = {
     rank: string;
     range: string;
@@ -9,16 +9,16 @@ type PopUpProps = {
     bgcolor: string;
     description: string;
 }
-export function PopUpLegend({rank, range, face, bgcolor, description}: PopUpProps) {
+export function PopupLegend({rank, range, face, bgcolor, description}: PopUpProps) {
     const dispatch = useDispatch();
     return (
-        <section className="popUp">
+        <section className="popup">
             <WindowModule bgcolor={bgcolor}>
-                <div className="popUp-box">
+                <div className="popup-box">
                     <div className="close" onClick={() => dispatch(legendPopUp(false))} />
                     <section className="flex">
-                        <div className={`img popUp-img ${face}`}/>
-                        <table className="popUp-box">
+                        <div className={`img popup-img ${face}`}/>
+                        <table className="popup-box">
                             <tbody>
                                 <tr className="popup-box__tr">
                                     <td> Jakość powietrza </td>

@@ -1,5 +1,5 @@
 import { createSlice, PayloadAction } from '@reduxjs/toolkit'
-interface PopUpType {
+interface PopupType {
     chemical: boolean;
     legend: boolean;
     ranking: boolean;
@@ -7,7 +7,7 @@ interface PopUpType {
     indexR: number;
     region: "poland" | "europe";
 }
-const initialState: PopUpType = {
+const initialState: PopupType = {
     chemical: false,
     legend: false,
     ranking: false,
@@ -15,26 +15,26 @@ const initialState: PopUpType = {
     indexR: 0,
     region: "poland"
 }
-export const popUpSlice = createSlice({
-  name: 'popUp',
+export const popupSlice = createSlice({
+  name: 'popup',
   initialState,
   reducers: {
-      popUpOff: (state) => {
+      popupOff: (state) => {
         state.chemical = false,
         state.legend = false,
         state.ranking = false,
         state.index = 0
       },
-      legendPopUp: (state, action:PayloadAction<boolean>) => {
+      legendPopup: (state, action:PayloadAction<boolean>) => {
         state.legend = action.payload
       },
-      chemicalPopUp: (state, action:PayloadAction<boolean>) => {
+      chemicalPopup: (state, action:PayloadAction<boolean>) => {
         state.chemical = action.payload
       },
-      rankingPopUp: (state, action:PayloadAction<boolean>) => {
+      rankingPopup: (state, action:PayloadAction<boolean>) => {
         state.ranking = action.payload
       },
-      indexPopUp: (state, action:PayloadAction<number>) => {
+      indexPopup: (state, action:PayloadAction<number>) => {
         state.index = action.payload
       },
       indexRank: (state, action:PayloadAction<number>) => {
@@ -46,12 +46,12 @@ export const popUpSlice = createSlice({
   },
 })
 export const { 
-    popUpOff, 
-    legendPopUp, 
-    chemicalPopUp,
-    rankingPopUp, 
-    indexPopUp,
+    popupOff, 
+    legendPopup, 
+    chemicalPopup,
+    rankingPopup, 
+    indexPopup,
     indexRank,
     region
-} = popUpSlice.actions
-export default popUpSlice.reducer
+} = popupSlice.actions
+export default popupSlice.reducer

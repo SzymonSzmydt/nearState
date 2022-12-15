@@ -1,6 +1,6 @@
 import './css/global.css';
 import { useDispatch } from 'react-redux';
-import { rankingPopUp, popUpOff, indexRank, region } from '../../../contex/redux/PopUpLogic';
+import { rankingPopup, popupOff, indexRank, region } from '../../../contex/redux/PopupLogic';
 import { Glass } from '../../../components/window/Glass';
 import { Aqicn } from '../../../contex/types/Aqicn';
 import { earthQualityColor } from '../../../contex/hooks/EarthQualityColor';
@@ -18,7 +18,7 @@ export function GlassCityBar({index, citys, area, ...element}: CityBarProps & Aq
         dispatch(indexRank(index));
         dispatch(region(area))
         dispatch(rankingPopUp(true));
-    }, [rankingPopUp, popUpOff, indexRank]);
+    }, [rankingPopup, popupOff, indexRank]);
     return (
         <Glass>
             <section className="flex wrap global" onClick={handleClick}>
