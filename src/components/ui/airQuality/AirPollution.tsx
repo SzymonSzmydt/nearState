@@ -12,16 +12,12 @@ export function AirPollution() {
     const date = airData[index]?.time?.s;
     return airData ? (
       <WindowModule>
-        <section className="flex air__pollution">
+        <article className="flex air__pollution">
           <h2> Aktualny pomiar zanieczyszczeń powietrza dla wybranego miasta</h2>
           <h4>
-            {" "}
             {airData ? airData[index]?.city?.name : null} <br />
             <span className="small-font thin-font">
-              {`Czas pomiaru danych: ${date?.slice(11, 16)} | ${date?.slice(
-                0,
-                10
-              )}`}
+              {`Czas pomiaru danych: ${date?.slice(11, 16)} | ${date?.slice(0,10)}`}
             </span>
           </h4>
           <Pie
@@ -42,33 +38,27 @@ export function AirPollution() {
               </tr>
               <tr className="air__pollution-tr">
                 <td className="air__pollution-td">
-                  {" "}
-                  NO<sub>2</sub>{" "}
+                  NO<sub>2</sub>
                 </td>
                 <th className="air__pollution-th">
-                  {" "}
                   {airData[index]?.iaqi?.no2?.v}
                   {airData[index]?.iaqi?.no2?.v ? parse(jm) : "brak pomiaru"}
                 </th>
               </tr>
               <tr className="air__pollution-tr">
                 <td className="air__pollution-td  td-border-bl">
-                  {" "}
-                  O<sub>3</sub>{" "}
+                  O<sub>3</sub>
                 </td>
                 <th className="air__pollution-th td-border-br">
-                  {" "}
                   {airData[index]?.iaqi?.o3?.v}
                   {airData[index]?.iaqi?.o3?.v ? parse(jm) : "brak pomiaru"}
                 </th>
               </tr>
               <tr className="air__pollution-tr">
                 <td className="air__pollution-td  td-border-bl">
-                  {" "}
-                  SO<sub>2</sub>{" "}
+                  SO<sub>2</sub>
                 </td>
                 <th className="air__pollution-th td-border-br">
-                  {" "}
                   {airData[index]?.iaqi?.so2?.v}
                   {airData[index]?.iaqi?.so2?.v ? parse(jm) : "brak pomiaru"}
                 </th>
@@ -76,7 +66,7 @@ export function AirPollution() {
             </tbody>
           </table>
           Ilość zanieczyszczeń występujących w powietrzu
-        </section>
+        </article>
       </WindowModule>
     ) : null;
 }
