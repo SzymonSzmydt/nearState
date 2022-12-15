@@ -2,7 +2,7 @@ import { Window } from './../../components/window/Window';
 import { Map } from './Map';
 import { useDispatch, useSelector } from 'react-redux';
 import { getPolandAqi } from '../../contex/redux/AqicnPolandSlice';
-import { region } from '../../contex/redux/PopUpLogic';
+import { region } from '../../contex/redux/PopupLogic';
 import { useEffect } from 'react';
 import { RootState } from '../../contex/redux/store';
 // const data = JSON.parse(localStorage.getItem("allPromise") || "");
