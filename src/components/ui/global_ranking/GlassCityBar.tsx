@@ -14,10 +14,10 @@ export function GlassCityBar({index, citys, area, ...element}: CityBarProps & Aq
     const dispatch = useDispatch()
     const { aqi, city } = element;
     const handleClick = useCallback(() => {
-        dispatch(popUpOff());
+        dispatch(popupOff());
         dispatch(indexRank(index));
         dispatch(region(area))
-        dispatch(rankingPopUp(true));
+        dispatch(rankingPopup(true));
     }, [rankingPopup, popupOff, indexRank]);
     return (
         <Glass>

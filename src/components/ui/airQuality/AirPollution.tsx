@@ -6,9 +6,9 @@ import parse from 'html-react-parser';
 import { Pie } from '../../../components/charts/Pie';
 export const jm = '<span className="small-font thin-font"> &mu;</span>g/m<sup>3</sup>';
 export function AirPollution() {
-    const region = useSelector((state: RootState) => state.popUp.region )
+    const region = useSelector((state: RootState) => state.popup.region )
     const airData = useSelector((state: RootState) => state[region].value);
-    const index = useSelector((state: RootState)=> state.popUp.indexR);
+    const index = useSelector((state: RootState)=> state.popup.indexR);
     const date = airData[index]?.time?.s;
     return airData ? (
       <WindowModule>
@@ -31,7 +31,6 @@ export function AirPollution() {
               <tr className="air__pollution-tr">
                 <td className="air__pollution-td td-border-tl"> CO </td>
                 <th className="air__pollution-th td-border-tr">
-                  {" "}
                   {airData[index]?.iaqi?.co?.v}
                   {airData[index]?.iaqi?.co?.v ? parse(jm) : "brak pomiaru"}
                 </th>

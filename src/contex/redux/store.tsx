@@ -9,7 +9,7 @@ export const store = configureStore({
     airCity: airCityReducer,
     poland: aqicnPolandReducer,
     europe: aqicnEuropeReducer,
-    popUp: popupSliceReducer,
+    popup: popupSliceReducer,
     searchResult: searchSliceReducer
   },
 })
