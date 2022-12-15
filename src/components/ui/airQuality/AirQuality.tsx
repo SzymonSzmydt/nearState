@@ -10,7 +10,7 @@ import {
   legendPopup,
   chemicalPopup,
   indexPopup,
-} from "../../../contex/redux/PopUpLogic";
+} from "../../../contex/redux/PopupLogic";
 import { RootState } from "../../../contex/redux/store";
 type AirQualityProps = {
   title: string;
@@ -21,10 +21,10 @@ export function AirQuality({ title }: AirQualityProps) {
   const legendPop = useSelector((state: RootState) => state.popUp.legend);
   const indexPop = useSelector((state: RootState) => state.popUp.index);
   const handleClick = (index: number, fn: "chemical" | "legend") => {
-    dispatch(popUpOff());
-    if (fn && fn === "chemical") dispatch(chemicalPopUp(true));
-    else if (fn && fn === "legend") dispatch(legendPopUp(true));
-    dispatch(indexPopUp(index));
+    dispatch(popupOff());
+    if (fn && fn === "chemical") dispatch(chemicalPopup(true));
+    else if (fn && fn === "legend") dispatch(legendPopup(true));
+    dispatch(indexPopup(index));
   };
   return (
     <WindowModule>
