@@ -20,7 +20,7 @@ export function PopupRanking() {
         <div className="popup-box">
           <div
             className="close"
-            onClick={() => dispatch(rankingPopUp(false))}
+            onClick={() => dispatch(rankingPopup(false))}
           />
           <h3>Informacje dotyczące wybranego miasta</h3>
           <table className="popup-box align-tr">

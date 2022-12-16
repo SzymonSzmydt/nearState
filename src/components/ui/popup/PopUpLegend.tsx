@@ -1,7 +1,6 @@
-import './css/popup.css';
 import { WindowModule } from '../../window/WindowModule';
 import { useDispatch } from 'react-redux';
-import { legendPopUp } from '../../../contex/redux/PopupLogic';
+import { legendPopup } from '../../../contex/redux/PopupLogic';
 type PopUpProps = {
     rank: string;
     range: string;
@@ -15,7 +14,7 @@ export function PopupLegend({rank, range, face, bgcolor, description}: PopUpProp
         <section className="popup">
             <WindowModule bgcolor={bgcolor}>
                 <div className="popup-box">
-                    <div className="close" onClick={() => dispatch(legendPopUp(false))} />
+                    <div className="close" onClick={() => dispatch(legendPopup(false))} />
                     <section className="flex">
                         <div className={`img popup-img ${face}`}/>
                         <table className="popup-box">
