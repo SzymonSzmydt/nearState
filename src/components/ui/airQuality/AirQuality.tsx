@@ -31,7 +31,6 @@ export function AirQuality({ title }: AirQualityProps) {
       <article>
         <h1 className="h1">
           {title}
-          <span className="small-font"> - US AQI </span>
         </h1>
         <section className="flex wrap legend__section">
           {legend.map((element, index) => (

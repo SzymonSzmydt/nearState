@@ -5,7 +5,7 @@ import { getPolandAqi } from '../../contex/redux/AqicnPolandSlice';
 import { region } from '../../contex/redux/PopupLogic';
 import { useEffect } from 'react';
 import { RootState } from '../../contex/redux/store';
-// const data = JSON.parse(localStorage.getItem("allPromise") || "");
+const data = JSON.parse(localStorage.getItem("allPromise") || "");
 export function Home() {
     const isLoaded = useSelector((state: RootState)=> state.poland.isLoaded);
     const dispatch = useDispatch();
@@ -37,17 +37,17 @@ export function Home() {
                 wroclaw.data
                 ].sort((a, b) => b.aqi - a.aqi);
               dispatch(getPolandAqi(data));
-            //   localStorage.setItem('allPromise', JSON.stringify(data));
+              localStorage.setItem('allPromise', JSON.stringify(data));
             } catch(err) {
                 console.log(err);  
             }
         }
     useEffect(() => {
-        if (!isLoaded) {
-            dataFetch();
-        }
+        // if (!isLoaded) {
+        //     dataFetch();
+        // }
       dispatch(region('poland'));
-    //   dispatch(getPolandAqi(data));
+      dispatch(getPolandAqi(data));
     }, []);
     return (
         <Window>

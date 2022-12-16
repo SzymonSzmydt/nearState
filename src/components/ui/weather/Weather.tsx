@@ -7,6 +7,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import { getAirCityData } from '../../../contex/redux/AirCitySlice';
 import { useEffect, useCallback } from 'react';
 import { RootState } from '../../../contex/redux/store';
+const data = JSON.parse(localStorage.getItem('wroclaw') || "");
 export function Weather() {
     const airData = useSelector((state: RootState) => state.airCity.data);
     const dispatch = useDispatch();
@@ -16,14 +17,16 @@ export function Weather() {
             const response = await fetch(process.env.REACT_APP_urlNearest as string);
             const data = await response.json();
             dispatch(getAirCityData(data.data));
+            localStorage.setItem('wroclaw', JSON.stringify(data));
         } catch (err) {
             console.error(err);
         }
     }, [process.env.REACT_APP_urlNearest]);
     useEffect(()=> {
-        if (city !== 'Wroclaw') {
-            fetchData();
-        }
+    //     if (city !== 'Wroclaw') {
+    //         fetchData();
+    //     }
+    dispatch(getAirCityData(data));
     }, []);
     return (
         <>
