@@ -15,7 +15,7 @@ export function Map() {
       <div className="flex map__box-left">
         <AirQuality
           title={
-            "Dane o jakości powietrza i jego zanieczyszczeniu w europejskich miastach"
+            "Zanieczyszczenie powietrza w europejskich miastach wygląda następująco"
           }
         />
         <AirPollution />

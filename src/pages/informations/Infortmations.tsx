@@ -1,11 +1,15 @@
 import "./css/information.css";
-import { WindowModule } from "../../components/window/WindowModule";
+import { WindowModule } from '../../components/window/WindowModule';
 import { Terms } from "./Terms";
 import { Window } from "../../components/window/Window";
+import { AirQualityLegend } from '../../components/ui/airQuality/AirQualityLegend';
 export function Informations() {
   return (
     <Window>
       <div className="informations container-lg">
+        <WindowModule>
+            <AirQualityLegend/>
+        </WindowModule>
         <WindowModule>
           <h2>Informacje dotyczące danych na stronie</h2>
           <p>
