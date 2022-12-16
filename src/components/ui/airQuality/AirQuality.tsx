@@ -2,28 +2,24 @@ import "./css/ariQuality.css";
 import { WindowModule } from "../../../components/window/WindowModule";
 import { Chemical } from "../../../components/ui/popup/Chemical";
 import { chemicals } from "../../../contex/ChemicalData";
-import { legend } from "../../../contex/types/AirLegendDescription";
-import { PopupLegend } from "../../../components/ui/popup/PopupLegend";
 import { useDispatch, useSelector } from "react-redux";
 import {
   popupOff,
-  legendPopup,
   chemicalPopup,
   indexPopup,
 } from "../../../contex/redux/PopupLogic";
 import { RootState } from "../../../contex/redux/store";
+import { AirQualityLegend } from './AirQualityLegend';
 type AirQualityProps = {
   title: string;
 };
 export function AirQuality({ title }: AirQualityProps) {
   const dispatch = useDispatch();
   const chemicalPop = useSelector((state: RootState) => state.popup.chemical);
-  const legendPop = useSelector((state: RootState) => state.popup.legend);
   const indexPop = useSelector((state: RootState) => state.popup.index);
-  const handleClick = (index: number, fn: "chemical" | "legend") => {
+  const handleClick = (index: number) => {
     dispatch(popupOff());
-    if (fn && fn === "chemical") dispatch(chemicalPopup(true));
-    else if (fn && fn === "legend") dispatch(legendPopup(true));
+    dispatch(chemicalPopup(true));
     dispatch(indexPopup(index));
   };
   return (
@@ -32,21 +28,7 @@ export function AirQuality({ title }: AirQualityProps) {
         <h1 className="h1">
           {title}
         </h1>
-        <section className="flex wrap legend__section">
-          {legend.map((element, index) => (
-            <div
-              key={element.rank}
-              className="flex legend"
-              style={{ backgroundColor: element.bgcolor }}
-              onClick={() => handleClick(index, "legend")}
-            >
-              <span> {element.rank} </span>
-              <span> {element.range} </span>
-            </div>
-          ))}
-          {legendPop ? <PopupLegend {...legend[indexPop]} /> : null}
-        </section>
-        <>
+        <AirQualityLegend />
           <h2>AQI (ang. Air Quality Index)</h2>
           Jest to ocena jakości powietrza, która obejmuje poziom pyłów
           zawieszonych PM2.5 i PM10 oraz niektórych zanieczyszczeń gazowych,
@@ -56,7 +38,7 @@ export function AirQuality({ title }: AirQualityProps) {
               {chemicals.map((item, index) => (
                 <li
                   key={item.name}
-                  onClick={() => handleClick(index, "chemical")}
+                  onClick={() => handleClick(index)}
                 >
                   {item.name}
                 </li>
@@ -65,7 +47,6 @@ export function AirQuality({ title }: AirQualityProps) {
             {chemicalPop ? <Chemical compound={chemicals[indexPop]} /> : null}
           </div>
           które często są wynikiem spalania paliw.
-        </>
       </article>
     </WindowModule>
   );
