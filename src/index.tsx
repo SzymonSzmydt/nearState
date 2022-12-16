@@ -18,7 +18,7 @@ import { Europe } from './pages/europe/Europe';
 const router = createBrowserRouter(
     createRoutesFromElements(
         <>
-            <Route path="/" element={<App />}>
+            <Route path="/" element={<App />} errorElement={<App />}>
                 <Route index={true} element={<Home />} />
                 <Route path="europe" element={ <Europe /> } />
                 <Route path="contact" element={<Contact />} />
