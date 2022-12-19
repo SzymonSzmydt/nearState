@@ -3,6 +3,7 @@ import { WindowModule } from '../../components/window/WindowModule';
 import { Terms } from "./Terms";
 import { Window } from "../../components/window/Window";
 import { AirQualityLegend } from '../../components/ui/airQuality/AirQualityLegend';
+import { NavLink } from 'react-router-dom';
 export function Informations() {
   return (
     <Window>
@@ -21,7 +22,8 @@ export function Informations() {
             maszynowego. Na&nbsp;przykład weryfikowana jest spójność danych w&nbsp;czasie
             rzeczywistym z&nbsp;sąsiednimi stacjami, co&nbsp;pozwala automatycznie
             wykrywać wadliwe stacje monitorujące i&nbsp;w&nbsp;razie potrzeby
-            usuwać je&nbsp;z&nbsp;mapy.
+            usuwać je&nbsp;z&nbsp;mapy.<br/><br/>
+            W razie pytań zapraszam <NavLink to="/contact"> <em> do kontaktu. </em> </NavLink>
           </p>
         </WindowModule>
       </div>
