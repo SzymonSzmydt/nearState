@@ -22,7 +22,6 @@ export const popupSlice = createSlice({
       popupOff: (state) => {
         state.chemical = false,
         state.legend = false,
-        state.ranking = false,
         state.index = 0
       },
       legendPopup: (state, action:PayloadAction<boolean>) => {
