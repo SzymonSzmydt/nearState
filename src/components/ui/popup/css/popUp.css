@@ -2,9 +2,9 @@
     overflow: hidden;
     animation: slowOpenWindow 0.2s ease-in;
     position: absolute;
-    top: -8rem;
-    right: -8rem;
-    left: 12rem;
+    top: 6rem;
+    right: 0;
+    left: 0;
     z-index: 1;
 }
 
