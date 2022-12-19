@@ -7,6 +7,7 @@ import { PopupRanking } from "../../components/ui/popup/PopupRanking";
 import { Weather } from '../../components/ui/weather/Weather';
 import { WindowModule } from '../../components/window/WindowModule';
 import { AirQualityLegend } from '../../components/ui/airQuality/AirQualityLegend';
+import { Spinner } from '../../components/spinner/Spinner';
 export function Map() {
   const aqicnData = useSelector((state: RootState) => state.europe.value);
   const ranking = useSelector((state: RootState) => state.popup.ranking);
@@ -21,7 +22,7 @@ export function Map() {
       </div>
       <div className="map__box-right">
         <Weather />
-        <div className="map__img global-ranking">
+        <div className="map__img">
           {aqicnData
             ? aqicnData.map((element, index) => (
                 <GlassCityBar
@@ -32,7 +33,7 @@ export function Map() {
                   {...element}
                 />
               ))
-            : null}
+            : < Spinner/>}
           {ranking ? <PopupRanking /> : null}
         </div>
         <Dashpanel map={"eu"}/>
