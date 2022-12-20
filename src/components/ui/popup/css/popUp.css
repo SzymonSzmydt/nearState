@@ -17,6 +17,12 @@
     font-weight: 600;
 }
 
+.popup-box_tbody > tr > td:not(.rowspan), th {
+    padding: 0 0.5rem;
+    border-radius: var(--radius);
+    background-color: var(--color-home-title);
+}
+
 .popup-ranking {
     user-select: none;
     overflow: hidden;

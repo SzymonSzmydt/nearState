@@ -28,7 +28,7 @@ export function PopupRanking() {
               <tr>
                 <td className="popup-box__td">Monitoring</td>
                 <th className="popup-box__th"> {city?.name} </th>
-                <td rowSpan={5}>
+                <td className="rowspan" rowSpan={5}>
                   <div
                     style={{ backgroundColor: earthQualityColor(aqi, "color") }}
                     className="flex popup-box__img"
@@ -44,7 +44,6 @@ export function PopupRanking() {
               <tr>
                 <td className="popup-box__td">AQI</td>
                 <th className="popup-box__th"> {aqi} </th>
-                <td></td>
               </tr>
               <tr>
                 <td className="popup-box__td">Dane z dnia</td>
@@ -52,7 +51,6 @@ export function PopupRanking() {
                   {" "}
                   {`${date?.slice(11, 16)} | ${date?.slice(0, 10)}`}{" "}
                 </th>
-                <td></td>
               </tr>
               <tr>
                 <td className="popup-box__td"> Pył zawieszony dominujący </td>
